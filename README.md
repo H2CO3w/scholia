@@ -1,5 +1,4 @@
 # scholia
-<img width="891" height="1247" alt="d35019320f84a010d09acb220d270156" src="https://github.com/user-attachments/assets/56de2efe-01fc-475c-87dc-9b103a8f43f3" />
 
 *(package name `dsh-scholia`)*
 
@@ -13,6 +12,8 @@ Everything here is generated from a real corpus of Mathlib declarations plus
 out-of-corpus Lean sources used as regression fixtures.
 
 ## What it produces
+
+<img width="1070" height="682" alt="3424460d00818798fc142cd9386a5c76" src="https://github.com/user-attachments/assets/5151abf8-24d5-4394-83ce-a9a0db2a5b40" />
 
 | Artifact | What it is |
 |---|---|
