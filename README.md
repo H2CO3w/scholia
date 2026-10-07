@@ -1,4 +1,5 @@
 # scholia
+<img width="891" height="1247" alt="d35019320f84a010d09acb220d270156" src="https://github.com/user-attachments/assets/56de2efe-01fc-475c-87dc-9b103a8f43f3" />
 
 *(package name `dsh-scholia`)*
 
