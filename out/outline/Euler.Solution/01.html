@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · EulerProof · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.EulerProof" data-a4m-index="1" data-a4m-members="1" data-a4m-sections="94">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="02.html" data-a4m-nav="next">Next 2 · ClosedTranslationGraph →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">1</span>EulerProof</h1>
+<p class="a4m-station__module">Euler.EulerProof</p>
+<p class="a4m-station__doc">Explicit numerical estimates for the factorial majorants used in the proposed Euler construction. These lemmas prove combinatorial implications; they do not assert the analytic estimates needed to apply the implications to Euler.</p>
+<h2 class="a4m-station__family">Sections</h2>
+<ul class="a4m-station__sections">
+  <li class="a4m-station__section" data-a4m-section="EulerPacketGrowth" data-a4m-lines="1928" data-a4m-decls="64">EulerPacketGrowth</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketRay" data-a4m-lines="1013" data-a4m-decls="37">EulerPacketRay</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketPerturbation" data-a4m-lines="616" data-a4m-decls="19">EulerPacketPerturbation</li>
+  <li class="a4m-station__section" data-a4m-section="EulerScale" data-a4m-lines="514" data-a4m-decls="23">EulerScale</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketFrameStability" data-a4m-lines="508" data-a4m-decls="16">EulerPacketFrameStability</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMixedCylinderTransport" data-a4m-lines="482" data-a4m-decls="39">EulerMixedCylinderTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerJetProductBounds" data-a4m-lines="413" data-a4m-decls="27">EulerJetProductBounds</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSmoothSobolev" data-a4m-lines="409" data-a4m-decls="39">EulerSmoothSobolev</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketFrameRenewal" data-a4m-lines="406" data-a4m-decls="15">EulerPacketFrameRenewal</li>
+  <li class="a4m-station__section" data-a4m-section="EulerNoncompactTransport" data-a4m-lines="380" data-a4m-decls="24">EulerNoncompactTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSobolevProducts" data-a4m-lines="327" data-a4m-decls="24">EulerSobolevProducts</li>
+  <li class="a4m-station__section" data-a4m-section="EulerGevrey" data-a4m-lines="309" data-a4m-decls="16">EulerGevrey</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSobolev" data-a4m-lines="300" data-a4m-decls="31">EulerSobolev</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderTransport" data-a4m-lines="293" data-a4m-decls="20">EulerCylinderTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedGradientSpace" data-a4m-lines="288" data-a4m-decls="44">EulerLiftedGradientSpace</li>
+  <li class="a4m-station__section" data-a4m-section="EulerGevreyCutoff" data-a4m-lines="282" data-a4m-decls="30">EulerGevreyCutoff</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketBridge" data-a4m-lines="265" data-a4m-decls="7">EulerPacketBridge</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderMollifier" data-a4m-lines="259" data-a4m-decls="36">EulerCylinderMollifier</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketSourceScales" data-a4m-lines="248" data-a4m-decls="15">EulerPacketSourceScales</li>
+  <li class="a4m-station__section" data-a4m-section="EulerInverseRegularity" data-a4m-lines="241" data-a4m-decls="20">EulerInverseRegularity</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderAlgebra" data-a4m-lines="232" data-a4m-decls="14">EulerCylinderAlgebra</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketFrameQuantitative" data-a4m-lines="230" data-a4m-decls="3">EulerPacketFrameQuantitative</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedCurl" data-a4m-lines="227" data-a4m-decls="19">EulerLiftedCurl</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketScaleGeometry" data-a4m-lines="227" data-a4m-decls="8">EulerPacketScaleGeometry</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSpatialCutoffs" data-a4m-lines="222" data-a4m-decls="34">EulerSpatialCutoffs</li>
+  <li class="a4m-station__section" data-a4m-section="EulerVectorCalculus" data-a4m-lines="218" data-a4m-decls="20">EulerVectorCalculus</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPeriodicProfile" data-a4m-lines="216" data-a4m-decls="21">EulerPeriodicProfile</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketStage" data-a4m-lines="203" data-a4m-decls="4">EulerPacketStage</li>
+  <li class="a4m-station__section" data-a4m-section="EulerDNSelection" data-a4m-lines="199" data-a4m-decls="4">EulerDNSelection</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketSourceTime" data-a4m-lines="195" data-a4m-decls="12">EulerPacketSourceTime</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMollifierUniform" data-a4m-lines="189" data-a4m-decls="10">EulerMollifierUniform</li>
+  <li class="a4m-station__section" data-a4m-section="EulerRealMixedTransport" data-a4m-lines="187" data-a4m-decls="13">EulerRealMixedTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderCoordinates" data-a4m-lines="185" data-a4m-decls="20">EulerCylinderCoordinates</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSmoothLimit" data-a4m-lines="179" data-a4m-decls="20">EulerSmoothLimit</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketCoefficientControl" data-a4m-lines="174" data-a4m-decls="4">EulerPacketCoefficientControl</li>
+  <li class="a4m-station__section" data-a4m-section="EulerWeightedConvolution" data-a4m-lines="153" data-a4m-decls="6">EulerWeightedConvolution</li>
+  <li class="a4m-station__section" data-a4m-section="EulerWeightedPressure" data-a4m-lines="151" data-a4m-decls="5">EulerWeightedPressure</li>
+  <li class="a4m-station__section" data-a4m-section="EulerRepresentativeMetricEvolution" data-a4m-lines="147" data-a4m-decls="7">EulerRepresentativeMetricEvolution</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSobolevTransport" data-a4m-lines="142" data-a4m-decls="9">EulerSobolevTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderSobolev" data-a4m-lines="135" data-a4m-decls="19">EulerCylinderSobolev</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedMetricEvolution" data-a4m-lines="133" data-a4m-decls="7">EulerLiftedMetricEvolution</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPressureJetIdentities.SpatialJet" data-a4m-lines="132" data-a4m-decls="8">SpatialJet</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSobolevDerivativeNorm" data-a4m-lines="128" data-a4m-decls="6">EulerSobolevDerivativeNorm</li>
+  <li class="a4m-station__section" data-a4m-section="EulerTerminalEnergy" data-a4m-lines="126" data-a4m-decls="6">EulerTerminalEnergy</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketUniformScaleSums" data-a4m-lines="120" data-a4m-decls="6">EulerPacketUniformScaleSums</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketExistence" data-a4m-lines="119" data-a4m-decls="10">EulerPacketExistence</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSpatialSobolevInverse.SmoothCoefficient" data-a4m-lines="117" data-a4m-decls="10">SmoothCoefficient</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPressureSpatialRegularity" data-a4m-lines="115" data-a4m-decls="3">EulerPressureSpatialRegularity</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCoerciveProjection" data-a4m-lines="114" data-a4m-decls="11">EulerCoerciveProjection</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketUniformScaleChoice" data-a4m-lines="114" data-a4m-decls="4">EulerPacketUniformScaleChoice</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedPressure" data-a4m-lines="112" data-a4m-decls="11">EulerLiftedPressure</li>
+  <li class="a4m-station__section" data-a4m-section="EulerEnergyBootstrap" data-a4m-lines="109" data-a4m-decls="4">EulerEnergyBootstrap</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCoverMollificationFubini" data-a4m-lines="102" data-a4m-decls="6">EulerCoverMollificationFubini</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedWeakDerivative" data-a4m-lines="102" data-a4m-decls="8">EulerLiftedWeakDerivative</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMetricEnergyEvolution" data-a4m-lines="101" data-a4m-decls="5">EulerMetricEnergyEvolution</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSpatialSobolevInverse.SpatialJet" data-a4m-lines="100" data-a4m-decls="10">SpatialJet</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCompactSmoothJet" data-a4m-lines="98" data-a4m-decls="8">EulerCompactSmoothJet</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderGradient" data-a4m-lines="95" data-a4m-decls="6">EulerCylinderGradient</li>
+  <li class="a4m-station__section" data-a4m-section="EulerGevreyInverse" data-a4m-lines="93" data-a4m-decls="4">EulerGevreyInverse</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLagrangian" data-a4m-lines="93" data-a4m-decls="9">EulerLagrangian</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketBaseScales" data-a4m-lines="93" data-a4m-decls="6">EulerPacketBaseScales</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCylinderGraphTrace" data-a4m-lines="88" data-a4m-decls="3">EulerCylinderGraphTrace</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketUniformLogBounds" data-a4m-lines="87" data-a4m-decls="2">EulerPacketUniformLogBounds</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketAlgebra" data-a4m-lines="80" data-a4m-decls="3">EulerPacketAlgebra</li>
+  <li class="a4m-station__section" data-a4m-section="EulerGraphPullback" data-a4m-lines="79" data-a4m-decls="8">EulerGraphPullback</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketTargetCompression" data-a4m-lines="79" data-a4m-decls="2">EulerPacketTargetCompression</li>
+  <li class="a4m-station__section" data-a4m-section="EulerEnergyParameters" data-a4m-lines="77" data-a4m-decls="6">EulerEnergyParameters</li>
+  <li class="a4m-station__section" data-a4m-section="EulerGevreyFunctions" data-a4m-lines="71" data-a4m-decls="4">EulerGevreyFunctions</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPressureGevrey" data-a4m-lines="71" data-a4m-decls="2">EulerPressureGevrey</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketWeights" data-a4m-lines="69" data-a4m-decls="8">EulerPacketWeights</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSpatialSobolevInverse" data-a4m-lines="68" data-a4m-decls="3">EulerSpatialSobolevInverse</li>
+  <li class="a4m-station__section" data-a4m-section="EulerIntervalTrace" data-a4m-lines="64" data-a4m-decls="2">EulerIntervalTrace</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSmoothUniformLimit" data-a4m-lines="62" data-a4m-decls="3">EulerSmoothUniformLimit</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSetIntegralL2" data-a4m-lines="61" data-a4m-decls="5">EulerSetIntegralL2</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMollifierTensors" data-a4m-lines="60" data-a4m-decls="2">EulerMollifierTensors</li>
+  <li class="a4m-station__section" data-a4m-section="EulerLiftedEulerAlgebra" data-a4m-lines="59" data-a4m-decls="4">EulerLiftedEulerAlgebra</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSmoothTensorLimit" data-a4m-lines="59" data-a4m-decls="2">EulerSmoothTensorLimit</li>
+  <li class="a4m-station__section" data-a4m-section="EulerDeformationVolume" data-a4m-lines="55" data-a4m-decls="3">EulerDeformationVolume</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketFiniteScaleChoice" data-a4m-lines="55" data-a4m-decls="1">EulerPacketFiniteScaleChoice</li>
+  <li class="a4m-station__section" data-a4m-section="EulerTransportDerivatives" data-a4m-lines="53" data-a4m-decls="6">EulerTransportDerivatives</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSobolevBreakdown" data-a4m-lines="52" data-a4m-decls="1">EulerSobolevBreakdown</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPacketScaleActivation" data-a4m-lines="50" data-a4m-decls="2">EulerPacketScaleActivation</li>
+  <li class="a4m-station__section" data-a4m-section="EulerAnglePartition" data-a4m-lines="49" data-a4m-decls="7">EulerAnglePartition</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMetricTransport" data-a4m-lines="49" data-a4m-decls="5">EulerMetricTransport</li>
+  <li class="a4m-station__section" data-a4m-section="EulerCoverMollification" data-a4m-lines="48" data-a4m-decls="4">EulerCoverMollification</li>
+  <li class="a4m-station__section" data-a4m-section="EulerMollifierRepresentative" data-a4m-lines="48" data-a4m-decls="6">EulerMollifierRepresentative</li>
+  <li class="a4m-station__section" data-a4m-section="EulerVectorCylinder" data-a4m-lines="41" data-a4m-decls="3">EulerVectorCylinder</li>
+  <li class="a4m-station__section" data-a4m-section="EulerBreakdownCriterion" data-a4m-lines="38" data-a4m-decls="2">EulerBreakdownCriterion</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSmoothPressureRepresentative" data-a4m-lines="38" data-a4m-decls="2">EulerSmoothPressureRepresentative</li>
+  <li class="a4m-station__section" data-a4m-section="EulerWeightedEnergy" data-a4m-lines="34" data-a4m-decls="2">EulerWeightedEnergy</li>
+  <li class="a4m-station__section" data-a4m-section="EulerStrongSmoothJet" data-a4m-lines="32" data-a4m-decls="1">EulerStrongSmoothJet</li>
+  <li class="a4m-station__section" data-a4m-section="EulerSpatialSobolevInverse.CoefficientJet" data-a4m-lines="31" data-a4m-decls="3">CoefficientJet</li>
+  <li class="a4m-station__section" data-a4m-section="EulerRealCylinder" data-a4m-lines="28" data-a4m-decls="2">EulerRealCylinder</li>
+  <li class="a4m-station__section" data-a4m-section="EulerPressureJetIdentities" data-a4m-lines="20" data-a4m-decls="1">EulerPressureJetIdentities</li>
+</ul>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="02.html" data-a4m-nav="next">Next 2 · ClosedTranslationGraph →</a></p>
+</main>
+</body>
+</html>

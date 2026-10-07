@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>78 · EulerSingularity · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.EulerSingularity" data-a4m-index="78" data-a4m-members="26">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="77.html" data-a4m-nav="prev">← Previous 77 · EulerC1Limsup</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="79.html" data-a4m-nav="next">Next 79 · ComparatorSingularityNorms →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">78</span>EulerSingularity</h1>
+<p class="a4m-station__module">Euler.EulerSingularity</p>
+<p class="a4m-station__doc">The final statement for the concrete packet construction. The initial velocity is an ordinary compactly supported smooth field on Euclidean three-space. Its maximal solution has a positive finite lifespan, a divergent C¹ upper limit, and an infinite integral of the actual curl supremum. All packet, scale, local existence, continuation, and logarithmic estimate inputs have been constructed in the imported proofs. `Evolution.sobolevSolutionClass` supplies one continuous strong time derivative in every spatial Sobolev order for every shorter restriction. The norm specification theorems below identify the quantities in the statement with the pointwise suprema of the actual velocity, derivative, and curl.</p>
+<section class="a4m-station__group" data-a4m-family="Ordinary">
+<h2 class="a4m-station__family">Ordinary</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryBKMReduction"><span class="a4m-station__member-name">OrdinaryBKMReduction</span><span class="a4m-station__member-path">Euler.OrdinaryBKMReduction</span><p class="a4m-station__member-doc">Reduction of the vorticity blowup criterion to the whole-space logarithmic gradient inequality. The geometric inequality remains an explicit hypothesis here and is discharged by the kernel argument.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerBKM"><span class="a4m-station__member-name">OrdinaryEulerBKM</span><span class="a4m-station__member-path">Euler.OrdinaryEulerBKM</span><p class="a4m-station__member-doc">The ordinary Euler vorticity blowup criterion, with the whole-space logarithmic estimate proved and instantiated. No spatial estimate or unboundedness assumption remains in these conclusions.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerClassicalClass"><span class="a4m-station__member-name">OrdinaryEulerClassicalClass</span><span class="a4m-station__member-path">Euler.OrdinaryEulerClassicalClass</span><p class="a4m-station__member-doc">The reverse bridge from ordinary scalar-pressure Euler to the projected equation. The only regularity inputs are the velocity and its actual strong time derivative in all spatial Sobolev orders. Neither a pressure-force regularity hypothesis nor a projected equation is assumed. The scalar pressure may be changed by an arbitrary function of time.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerKineticEnergy"><span class="a4m-station__member-name">OrdinaryEulerKineticEnergy</span><span class="a4m-station__member-path">Euler.OrdinaryEulerKineticEnergy</span><p class="a4m-station__member-doc">Exact conservation of kinetic energy for the ordinary smooth Euler class, using the genuine noncompact transport and pressure cancellations.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerLogarithmicControl"><span class="a4m-station__member-name">OrdinaryEulerLogarithmicControl</span><span class="a4m-station__member-path">Euler.OrdinaryEulerLogarithmicControl</span><p class="a4m-station__member-doc">The scalar part of the vorticity continuation argument. A genuine logarithmic gradient estimate bounds the gradient integral using only the time integral of its continuous vorticity coefficient.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerNontriviality"><span class="a4m-station__member-name">OrdinaryEulerNontriviality</span><span class="a4m-station__member-path">Euler.OrdinaryEulerNontriviality</span><p class="a4m-station__member-doc">The genuine zero Euler solution rules out zero initial data for a positive finite maximal lifespan.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerSobolevClass"><span class="a4m-station__member-name">OrdinaryEulerSobolevClass</span><span class="a4m-station__member-path">Euler.OrdinaryEulerSobolevClass</span><p class="a4m-station__member-doc">Characterization of the ordinary smooth Euler class by its actual velocity alone. Pressure regularity follows from the projected equation. Every solution has one continuous strong time derivative in every spatial Sobolev order.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerVorticity"><span class="a4m-station__member-name">OrdinaryEulerVorticity</span><span class="a4m-station__member-path">Euler.OrdinaryEulerVorticity</span><p class="a4m-station__member-doc">Genuine ordinary vorticity fields, their continuous supremum norms, and actual time integrals. These are literal curls of the velocity.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryLogarithmicGradient"><span class="a4m-station__member-name">OrdinaryLogarithmicGradient</span><span class="a4m-station__member-path">Euler.OrdinaryLogarithmicGradient</span><p class="a4m-station__member-doc">The whole-space logarithmic gradient estimate. Every input norm belongs to the given smooth L² field, and the vorticity is its literal curl. The proof uses the constructed Gaussian kernel and its true heat equation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryMaximalVorticity"><span class="a4m-station__member-name">OrdinaryMaximalVorticity</span><span class="a4m-station__member-path">Euler.OrdinaryMaximalVorticity</span><p class="a4m-station__member-doc">Actual vorticity supremum norms and their partial integrals on a half-open maximal Euler interval. All quantities agree exactly with the genuine smooth solutions on every shorter closed interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryMaximalVorticityIntegral"><span class="a4m-station__member-name">OrdinaryMaximalVorticityIntegral</span><span class="a4m-station__member-path">Euler.OrdinaryMaximalVorticityIntegral</span><p class="a4m-station__member-doc">The actual nonnegative vorticity density of a maximal Euler solution has an infinite extended integral whenever its genuine partial vorticity integrals are unbounded. The only unboundedness input is the explicit family statement used by the BKM continuation argument.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryVorticityCoordinates"><span class="a4m-station__member-name">OrdinaryVorticityCoordinates</span><span class="a4m-station__member-path">Euler.OrdinaryVorticityCoordinates</span><p class="a4m-station__member-doc">Scalar components of genuine smooth velocity and vorticity fields, their exact elliptic identity, and a fixed coordinate operator bound.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Whole">
+<h2 class="a4m-station__family">Whole</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussian"><span class="a4m-station__member-name">WholeSpaceGaussian</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussian</span><p class="a4m-station__member-doc">The normalized Gaussian on ordinary three-dimensional space. The estimates below concern the literal Bochner integral, including its L²-to-uniform bound. The parameterization exp(-|x|²/t) has heat generator one quarter of the Laplacian.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianElliptic"><span class="a4m-station__member-name">WholeSpaceGaussianElliptic</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianElliptic</span><p class="a4m-station__member-doc">The logarithmic middle heat scales for an actual elliptic curl equation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianEvolution"><span class="a4m-station__member-name">WholeSpaceGaussianEvolution</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianEvolution</span><p class="a4m-station__member-doc">The true heat-time evolution of Gaussian averaging on ordinary space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianFields"><span class="a4m-station__member-name">WholeSpaceGaussianFields</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianFields</span><p class="a4m-station__member-doc">The heat estimates specialized to genuine ordinary smooth L² fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianHigh"><span class="a4m-station__member-name">WholeSpaceGaussianHigh</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianHigh</span><p class="a4m-station__member-doc">The small-time heat remainder from genuine third spatial L² derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianIntegration"><span class="a4m-station__member-name">WholeSpaceGaussianIntegration</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianIntegration</span><p class="a4m-station__member-doc">Integration by parts for the literal whole-space Gaussian average.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianKernel"><span class="a4m-station__member-name">WholeSpaceGaussianKernel</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianKernel</span><p class="a4m-station__member-doc">Actual first and second Gaussian kernels and their integrable bounds.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianLow"><span class="a4m-station__member-name">WholeSpaceGaussianLow</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianLow</span><p class="a4m-station__member-doc">The low-frequency derivative of the true Gaussian average is controlled by the ordinary L² norm of the original field.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianScale"><span class="a4m-station__member-name">WholeSpaceGaussianScale</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianScale</span><p class="a4m-station__member-doc">The same Gaussian average as a continuous dilation of a fixed kernel.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceGaussianTimeKernel"><span class="a4m-station__member-name">WholeSpaceGaussianTimeKernel</span><span class="a4m-station__member-path">Euler.WholeSpaceGaussianTimeKernel</span><p class="a4m-station__member-doc">The literal time derivative of the Gaussian density and local domination.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.WholeSpaceLogarithmic"><span class="a4m-station__member-name">WholeSpaceLogarithmic</span><span class="a4m-station__member-path">Euler.WholeSpaceLogarithmic</span><p class="a4m-station__member-doc">The actual whole-space logarithmic derivative estimate for a scalar elliptic equation whose right-hand side is the derivative of bounded fields.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.EulerSingularity"><span class="a4m-station__member-name">EulerSingularity</span><span class="a4m-station__member-path">Euler.EulerSingularity</span><p class="a4m-station__member-doc">The final statement for the concrete packet construction. The initial velocity is an ordinary compactly supported smooth field on Euclidean three-space. Its maximal solution has a positive finite lifespan, a divergent C¹ upper limit, and an infinite integral of the actual curl supremum. All packet, scale, local existence, continuation, and logarithmic estimate inputs have been constructed in the imported proofs. `Evolution.sobolevSolutionClass` supplies one continuous strong time derivative in every spatial Sobolev order for every shorter restriction. The norm specification theorems below identify the quantities in the statement with the pointwise suprema of the actual velocity, derivative, and curl.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.LogarithmicCutoffOptimization"><span class="a4m-station__member-name">LogarithmicCutoffOptimization</span><span class="a4m-station__member-path">Euler.LogarithmicCutoffOptimization</span><p class="a4m-station__member-doc">Optimization of the actual heat-scale estimate used in the whole-space logarithmic gradient bound.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.NonnegativeImproperIntegral"><span class="a4m-station__member-name">NonnegativeImproperIntegral</span><span class="a4m-station__member-path">Euler.NonnegativeImproperIntegral</span><p class="a4m-station__member-doc">Unbounded finite partial integrals of a nonnegative function force its extended integral on the half-open interval to be infinite. Local integrability is explicit, so no totalized real integral is used as a substitute for an improper integral.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="77.html" data-a4m-nav="prev">← Previous 77 · EulerC1Limsup</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="79.html" data-a4m-nav="next">Next 79 · ComparatorSingularityNorms →</a></p>
+</main>
+</body>
+</html>

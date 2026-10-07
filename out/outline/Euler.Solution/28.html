@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>28 · MeanPressureRepresentative · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.MeanPressureRepresentative" data-a4m-index="28" data-a4m-members="39">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="27.html" data-a4m-nav="prev">← Previous 27 · MeanContinuousPressure</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="29.html" data-a4m-nav="next">Next 29 · MeanPacketData →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">28</span>MeanPressureRepresentative</h1>
+<p class="a4m-station__module">Euler.MeanPressureRepresentative</p>
+<p class="a4m-station__doc"># A normalized scalar pressure for the actual mean solution The radial integral is applied to the real F-adjoint pressure force, whose closed-gradient-space membership was proved from the actual Gram equation. The resulting scalar is spatially smooth, normalized at zero, and gives the pointwise physical equation. No scalar potential or pressure time derivative is assumed.</p>
+<section class="a4m-station__group" data-a4m-family="Mean">
+<h2 class="a4m-station__family">Mean</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanBoundaryDifference"><span class="a4m-station__member-name">MeanBoundaryDifference</span><span class="a4m-station__member-path">Euler.MeanBoundaryDifference</span><p class="a4m-station__member-doc">Exact spatial difference-quotient commutators with the actual mixed boundary operator.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanBoundaryMixed"><span class="a4m-station__member-name">MeanBoundaryMixed</span><span class="a4m-station__member-path">Euler.MeanBoundaryMixed</span><p class="a4m-station__member-doc">Genuine mixed cutoff Newtonian operators and their quantitative dependence on both cutoffs.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanBoundaryOperator"><span class="a4m-station__member-name">MeanBoundaryOperator</span><span class="a4m-station__member-path">Euler.MeanBoundaryOperator</span><p class="a4m-station__member-doc">Construction of the actual mean boundary operator by homogeneous-gradient completion and the Hilbert adjoint. No bounded inverse Laplacian on L² is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanBoundaryTranslation"><span class="a4m-station__member-name">MeanBoundaryTranslation</span><span class="a4m-station__member-path">Euler.MeanBoundaryTranslation</span><p class="a4m-station__member-doc">The actual translation action on homogeneous gradients and localized Newtonian operators.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanClassicalConstraints"><span class="a4m-station__member-name">MeanClassicalConstraints</span><span class="a4m-station__member-path">Euler.MeanClassicalConstraints</span><p class="a4m-station__member-doc">Classical divergence and pressure identities for the reconstructed mean fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanClassicalWordBounds"><span class="a4m-station__member-name">MeanClassicalWordBounds</span><span class="a4m-station__member-path">Euler.MeanClassicalWordBounds</span><p class="a4m-station__member-doc"># Genuine classical spatial words have exactly the strong L² word norms Each derivative of the canonical smooth representative is identified with the corresponding actual L² translation derivative. Consequently finite Hq sums and external ordered-word sums transfer with constant one, including uniform time evaluation. There is no tensor-to-word radius conversion.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCoefficientFrame"><span class="a4m-station__member-name">MeanCoefficientFrame</span><span class="a4m-station__member-path">Euler.MeanCoefficientFrame</span><p class="a4m-station__member-doc">Genuine matrix-frame identities induce the operator identities used by the mean inverse.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCoefficientMultipliers"><span class="a4m-station__member-name">MeanCoefficientMultipliers</span><span class="a4m-station__member-path">Euler.MeanCoefficientMultipliers</span><p class="a4m-station__member-doc">Continuous matrix fields act as genuine bounded operators on ordinary R³ L².</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCoefficientPath"><span class="a4m-station__member-name">MeanCoefficientPath</span><span class="a4m-station__member-path">Euler.MeanCoefficientPath</span><p class="a4m-station__member-doc">Spatial translation calculus for coefficients uniformly on a compact time interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCoefficientSpatial"><span class="a4m-station__member-name">MeanCoefficientSpatial</span><span class="a4m-station__member-path">Euler.MeanCoefficientSpatial</span><p class="a4m-station__member-doc">Spatial translations and their genuine uniform-norm derivatives for matrix coefficients.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCoefficientTime"><span class="a4m-station__member-name">MeanCoefficientTime</span><span class="a4m-station__member-path">Euler.MeanCoefficientTime</span><p class="a4m-station__member-doc">Pointwise time differentiation of actual matrix fields yields differentiation of their L² multiplication operators. The bridge is proved by evaluating the Bochner fundamental theorem of calculus, not by assuming operator derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCutoffCurlBound"><span class="a4m-station__member-name">MeanCutoffCurlBound</span><span class="a4m-station__member-path">Euler.MeanCutoffCurlBound</span><p class="a4m-station__member-doc">A genuine ordinary-space cutoff-curl dual estimate. All spatial norms and integrals in this file use Lebesgue measure on Euclidean three-space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCutoffDifferenceBound"><span class="a4m-station__member-name">MeanCutoffDifferenceBound</span><span class="a4m-station__member-path">Euler.MeanCutoffDifferenceBound</span><p class="a4m-station__member-doc">Uniform bounds for actual cutoff difference quotients from classical derivative bounds.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanCutoffTaylor"><span class="a4m-station__member-name">MeanCutoffTaylor</span><span class="a4m-station__member-path">Euler.MeanCutoffTaylor</span><p class="a4m-station__member-doc">Uniform Taylor remainders for the actual smooth compact cutoffs.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanGradientTestSpace"><span class="a4m-station__member-name">MeanGradientTestSpace</span><span class="a4m-station__member-path">Euler.MeanGradientTestSpace</span><p class="a4m-station__member-doc">The actual homogeneous first-order test space on ordinary Euclidean three-space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanOrbitSobolev"><span class="a4m-station__member-name">MeanOrbitSobolev</span><span class="a4m-station__member-path">Euler.MeanOrbitSobolev</span><p class="a4m-station__member-doc">Genuine Sobolev arrays and bounded spatial evaluation for ordinary L² translation orbits.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanOrdinaryLift"><span class="a4m-station__member-name">MeanOrdinaryLift</span><span class="a4m-station__member-path">Euler.MeanOrdinaryLift</span><p class="a4m-station__member-doc">An isometric embedding of ordinary R³ L² into the angle-independent part of the unit cylinder.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPathSpatialRepresentative"><span class="a4m-station__member-name">MeanPathSpatialRepresentative</span><span class="a4m-station__member-path">Euler.MeanPathSpatialRepresentative</span><p class="a4m-station__member-doc">Jointly continuous ordinary spatial representatives of continuous L² paths with smooth spatial orbits.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPressurePotential"><span class="a4m-station__member-name">MeanPressurePotential</span><span class="a4m-station__member-path">Euler.MeanPressurePotential</span><p class="a4m-station__member-doc">A canonically normalized actual scalar potential for ordinary mean pressure gradients.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPressureRepresentative"><span class="a4m-station__member-name">MeanPressureRepresentative</span><span class="a4m-station__member-path">Euler.MeanPressureRepresentative</span><p class="a4m-station__member-doc"># A normalized scalar pressure for the actual mean solution The radial integral is applied to the real F-adjoint pressure force, whose closed-gradient-space membership was proved from the actual Gram equation. The resulting scalar is spatially smooth, normalized at zero, and gives the pointwise physical equation. No scalar potential or pressure time derivative is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanSmoothRepresentative"><span class="a4m-station__member-name">MeanSmoothRepresentative</span><span class="a4m-station__member-path">Euler.MeanSmoothRepresentative</span><p class="a4m-station__member-doc">Genuine smooth ordinary-space representatives reconstructed from smooth L² translation orbits.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanSpatialDerivative"><span class="a4m-station__member-name">MeanSpatialDerivative</span><span class="a4m-station__member-path">Euler.MeanSpatialDerivative</span><p class="a4m-station__member-doc">Strong ordinary L² spatial derivatives are the classical derivatives of the reconstructed field.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanSpatialEvaluation"><span class="a4m-station__member-name">MeanSpatialEvaluation</span><span class="a4m-station__member-path">Euler.MeanSpatialEvaluation</span><p class="a4m-station__member-doc">Bounded point evaluation and joint continuity of reconstructed ordinary-space fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanWeakCurl"><span class="a4m-station__member-name">MeanWeakCurl</span><span class="a4m-station__member-path">Euler.MeanWeakCurl</span><p class="a4m-station__member-doc">The ordinary closed L² gradient space has zero distributional curl. For smooth representatives this gives actual pointwise symmetry of the derivative.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="H6">
+<h2 class="a4m-station__family">H6</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.H6NonlinearProduct"><span class="a4m-station__member-name">H6NonlinearProduct</span><span class="a4m-station__member-path">Euler.H6NonlinearProduct</span><p class="a4m-station__member-doc">Fixed H⁶ algebra estimates at every external derivative order, for actual nonlinear fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.H6PressureCommutator"><span class="a4m-station__member-name">H6PressureCommutator</span><span class="a4m-station__member-path">Euler.H6PressureCommutator</span><p class="a4m-station__member-doc">Positive external-order commutators in actual fixed-order Sobolev blocks.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.H6PressureConstants"><span class="a4m-station__member-name">H6PressureConstants</span><span class="a4m-station__member-path">Euler.H6PressureConstants</span><p class="a4m-station__member-doc">Explicit polynomial dependence of the fixed-order inverse on coefficient bounds.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.H6PressureInverse"><span class="a4m-station__member-name">H6PressureInverse</span><span class="a4m-station__member-path">Euler.H6PressureInverse</span><p class="a4m-station__member-doc">The actual coercive pressure inverse in fixed Sobolev blocks, followed by external Gevrey weighting.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Cylinder">
+<h2 class="a4m-station__family">Cylinder</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.CylinderSobolevDensity"><span class="a4m-station__member-name">CylinderSobolevDensity</span><span class="a4m-station__member-path">Euler.CylinderSobolevDensity</span><p class="a4m-station__member-doc">Smooth mollifications are dense in every actual complete cylinder Sobolev space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.CylinderSobolevEmbedding"><span class="a4m-station__member-name">CylinderSobolevEmbedding</span><span class="a4m-station__member-path">Euler.CylinderSobolevEmbedding</span><p class="a4m-station__member-doc">Genuine L∞ control of finite-order cylinder Sobolev fields, obtained by smooth density.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.CylinderSobolevOperators"><span class="a4m-station__member-name">CylinderSobolevOperators</span><span class="a4m-station__member-path">Euler.CylinderSobolevOperators</span><p class="a4m-station__member-doc">Continuous operators and exact norm comparisons on the actual complete cylinder Sobolev spaces.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.BoundedCoefficientSmooth"><span class="a4m-station__member-name">BoundedCoefficientSmooth</span><span class="a4m-station__member-path">Euler.BoundedCoefficientSmooth</span><p class="a4m-station__member-doc">All-order parameter regularity of actual bounded smooth coefficient translations.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.CanonicalGraphPotential"><span class="a4m-station__member-name">CanonicalGraphPotential</span><span class="a4m-station__member-path">Euler.CanonicalGraphPotential</span><p class="a4m-station__member-doc">Radial reconstruction of a canonically normalized scalar potential.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ClassicalPressureCurl"><span class="a4m-station__member-name">ClassicalPressureCurl</span><span class="a4m-station__member-path">Euler.ClassicalPressureCurl</span><p class="a4m-station__member-doc">Classical lifted closedness of actual smooth representatives of the closed L² gradient space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.GraphPressurePotential"><span class="a4m-station__member-name">GraphPressurePotential</span><span class="a4m-station__member-path">Euler.GraphPressurePotential</span><p class="a4m-station__member-doc">A genuine smooth scalar graph pressure obtained from the closed lifted L² gradient space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.IsometricActionCalculus"><span class="a4m-station__member-name">IsometricActionCalculus</span><span class="a4m-station__member-path">Euler.IsometricActionCalculus</span><p class="a4m-station__member-doc">Closed differentiability for strongly continuous linear isometric actions.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.SmoothCoefficientPath"><span class="a4m-station__member-name">SmoothCoefficientPath</span><span class="a4m-station__member-path">Euler.SmoothCoefficientPath</span><p class="a4m-station__member-doc">All-order spatial translation regularity uniformly over a compact parameter interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.SobolevJointEvaluation"><span class="a4m-station__member-name">SobolevJointEvaluation</span><span class="a4m-station__member-path">Euler.SobolevJointEvaluation</span><p class="a4m-station__member-doc">Joint continuity of evaluation of genuine cylinder Sobolev fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.SobolevPointEvaluation"><span class="a4m-station__member-name">SobolevPointEvaluation</span><span class="a4m-station__member-path">Euler.SobolevPointEvaluation</span><p class="a4m-station__member-doc">Actual continuous representatives and point evaluation as bounded linear maps on cylinder H3.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="27.html" data-a4m-nav="prev">← Previous 27 · MeanContinuousPressure</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="29.html" data-a4m-nav="next">Next 29 · MeanPacketData →</a></p>
+</main>
+</body>
+</html>

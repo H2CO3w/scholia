@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>74 · PacketFiniteLifespan · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.PacketFiniteLifespan" data-a4m-index="74" data-a4m-members="26">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="73.html" data-a4m-nav="prev">← Previous 73 · PacketInfiniteConstruction</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="75.html" data-a4m-nav="next">Next 75 · EulerFiniteLifespan →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">74</span>PacketFiniteLifespan</h1>
+<p class="a4m-station__module">Euler.PacketFiniteLifespan</p>
+<p class="a4m-station__doc">The limiting initial datum of the actual recursive packet family. Its genuine Euler solutions have a positive, finite maximal horizon.</p>
+<section class="a4m-station__group" data-a4m-family="Ordinary">
+<h2 class="a4m-station__family">Ordinary</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryAdvectionLimit"><span class="a4m-station__member-name">OrdinaryAdvectionLimit</span><span class="a4m-station__member-path">Euler.OrdinaryAdvectionLimit</span><p class="a4m-station__member-doc">Passing the actual nonlinear advection and Helmholtz pressure to a strong ordinary Sobolev limit. Only a uniform H³ bound is used in the product estimate; pressure convergence is a consequence.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerCauchy"><span class="a4m-station__member-name">OrdinaryEulerCauchy</span><span class="a4m-station__member-path">Euler.OrdinaryEulerCauchy</span><p class="a4m-station__member-doc">The packet-sequence form of ordinary Euler compactness: a common H³ bound, uniform initial Sobolev bounds, and initial L² Cauchy data produce an actual smooth Euler limit on the same positive interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerEndpoint"><span class="a4m-station__member-name">OrdinaryEulerEndpoint</span><span class="a4m-station__member-path">Euler.OrdinaryEulerEndpoint</span><p class="a4m-station__member-doc">A genuine smooth endpoint under a finite gradient integral. Shorter Euler solutions are rescaled to a common interval; the already proved smooth limit supplies the endpoint, and uniqueness identifies it with every original partial solution. No analytic radius is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerGradientControl"><span class="a4m-station__member-name">OrdinaryEulerGradientControl</span><span class="a4m-station__member-path">Euler.OrdinaryEulerGradientControl</span><p class="a4m-station__member-doc">Actual gradient-supremum control of Euler Sobolev norms. The gradient norm is a constructed continuous path, its time integral controls H³, and the checked H³-tame estimate then propagates every higher order on the same time interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerLifespan"><span class="a4m-station__member-name">OrdinaryEulerLifespan</span><span class="a4m-station__member-path">Euler.OrdinaryEulerLifespan</span><p class="a4m-station__member-doc">The maximal positive horizon of a fixed ordinary Euler datum. Existence below the supremum and failure above it follow from restriction; membership of the endpoint is deliberately left to a continuation theorem.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerLimit"><span class="a4m-station__member-name">OrdinaryEulerLimit</span><span class="a4m-station__member-path">Euler.OrdinaryEulerLimit</span><p class="a4m-station__member-doc">A common-interval Euler limit constructed from genuine smooth Euler evolutions. The only compactness inputs are actual uniform Sobolev bounds and L² Cauchy convergence. The nonlinear term, pressure, and time equation are all recovered in the proof.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerLocalCauchy"><span class="a4m-station__member-name">OrdinaryEulerLocalCauchy</span><span class="a4m-station__member-path">Euler.OrdinaryEulerLocalCauchy</span><p class="a4m-station__member-doc">A common short interval for an Euler family with Cauchy initial H3 data. A fixed tail member supplies the reference solution; the actual stability theorem supplies the uniform H3 bound needed by the limit.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerRescaling"><span class="a4m-station__member-name">OrdinaryEulerRescaling</span><span class="a4m-station__member-path">Euler.OrdinaryEulerRescaling</span><p class="a4m-station__member-doc">The genuine time/amplitude symmetry of ordinary Euler, including restriction to a shorter closed time interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerRestriction"><span class="a4m-station__member-name">OrdinaryEulerRestriction</span><span class="a4m-station__member-path">Euler.OrdinaryEulerRestriction</span><p class="a4m-station__member-doc">Restriction of a genuine ordinary Euler evolution to an initial closed interval. The reference size of the original solution still bounds every restricted velocity.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerUniqueness"><span class="a4m-station__member-name">OrdinaryEulerUniqueness</span><span class="a4m-station__member-path">Euler.OrdinaryEulerUniqueness</span><p class="a4m-station__member-doc">Uniqueness of actual smooth ordinary Euler evolutions, including their pressure force. No assumed energy inequality is needed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerVaryingHorizon"><span class="a4m-station__member-name">OrdinaryEulerVaryingHorizon</span><span class="a4m-station__member-path">Euler.OrdinaryEulerVaryingHorizon</span><p class="a4m-station__member-doc">H³ stability on varying initial horizons. The comparison constant uses only the original reference Euler solution and its full horizon.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryFieldScaling"><span class="a4m-station__member-name">OrdinaryFieldScaling</span><span class="a4m-station__member-path">Euler.OrdinaryFieldScaling</span><p class="a4m-station__member-doc">Literal scalar multiplication of smooth ordinary L² fields and all of their genuine spatial derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryGradientEnergy"><span class="a4m-station__member-name">OrdinaryGradientEnergy</span><span class="a4m-station__member-path">Euler.OrdinaryGradientEnergy</span><p class="a4m-station__member-doc">Sharp H³ transport energy with the actual L-infinity norm of the velocity gradient. The pressure and undifferentiated transport cancel before the cubic-test interpolation estimate is used.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryGradientInterpolation"><span class="a4m-station__member-name">OrdinaryGradientInterpolation</span><span class="a4m-station__member-path">Euler.OrdinaryGradientInterpolation</span><p class="a4m-station__member-doc">The sharp middle-derivative interpolation needed by H³ Euler energy. Everything is an actual smooth L² field. Cubic testing and noncompact integration by parts prove the L⁴ inequality without a support or interpolation hypothesis.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryGradientLimit"><span class="a4m-station__member-name">OrdinaryGradientLimit</span><span class="a4m-station__member-path">Euler.OrdinaryGradientLimit</span><p class="a4m-station__member-doc">Common-interval smooth Euler limits under a uniform bound on the actual time integral of the velocity gradient. The H³ bound, all higher bounds, and path Cauchy convergence are derived from the true equations.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryGradientProducts"><span class="a4m-station__member-name">OrdinaryGradientProducts</span><span class="a4m-station__member-path">Euler.OrdinaryGradientProducts</span><p class="a4m-station__member-doc">Sharp H³ products controlled by the actual velocity gradient. The only middle product is D²u D²u, handled by cubic testing.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryGradientStability"><span class="a4m-station__member-name">OrdinaryGradientStability</span><span class="a4m-station__member-path">Euler.OrdinaryGradientStability</span><p class="a4m-station__member-doc">L² stability with the actual time integral of the reference gradient. The spatial cancellation is exact; no energy differential inequality is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryHelmholtzField"><span class="a4m-station__member-name">OrdinaryHelmholtzField</span><span class="a4m-station__member-path">Euler.OrdinaryHelmholtzField</span><p class="a4m-station__member-doc">The genuine Helmholtz projection preserves ordinary smooth L² fields and continuous paths of all their jets. Euler pressure and time derivatives are recovered from velocity, not supplied as estimates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryStrongTime"><span class="a4m-station__member-name">OrdinaryStrongTime</span><span class="a4m-station__member-path">Euler.OrdinaryStrongTime</span><p class="a4m-station__member-doc">A genuine L² evolution lifts to every ordinary Sobolev order when the proposed derivative has continuous actual spatial jets. Bounded Sobolev evaluation then supplies the classical pointwise time law.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryVariableGronwall"><span class="a4m-station__member-name">OrdinaryVariableGronwall</span><span class="a4m-station__member-path">Euler.OrdinaryVariableGronwall</span><p class="a4m-station__member-doc">A variable-coefficient Gronwall estimate from a genuine one-sided time derivative. The integrating factor uses the actual time integral.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Packet">
+<h2 class="a4m-station__family">Packet</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketFiniteLifespan"><span class="a4m-station__member-name">PacketFiniteLifespan</span><span class="a4m-station__member-path">Euler.PacketFiniteLifespan</span><p class="a4m-station__member-doc">The limiting initial datum of the actual recursive packet family. Its genuine Euler solutions have a positive, finite maximal horizon.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketSourceScaleShift"><span class="a4m-station__member-name">PacketSourceScaleShift</span><span class="a4m-station__member-path">Euler.PacketSourceScaleShift</span><p class="a4m-station__member-doc">Exact reindexing of the prescribed scale sequence after finitely many exceptional initial stages. No new choice of asymptotic scales is made.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketStageContradiction"><span class="a4m-station__member-name">PacketStageContradiction</span><span class="a4m-station__member-path">Euler.PacketStageContradiction</span><p class="a4m-station__member-doc">Any actual family of packet stages with convergent H³ initial data excludes an ordinary Euler evolution on the base horizon. Each stage is compared only on its own genuine horizon.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketStageInitialLimit"><span class="a4m-station__member-name">PacketStageInitialLimit</span><span class="a4m-station__member-path">Euler.PacketStageInitialLimit</span><p class="a4m-station__member-doc">The literal initial increments of an actual stage family have one smooth L² limit in every Sobolev order. The finite exceptional prefix is retained in the initial velocity of stage one.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketStageLocalExistence"><span class="a4m-station__member-name">PacketStageLocalExistence</span><span class="a4m-station__member-path">Euler.PacketStageLocalExistence</span><p class="a4m-station__member-doc">An actual stage family with convergent initial data has a genuine positive-time Euler solution for its limiting datum. Only the already proved common packet interval and actual stability are used.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Parent">
+<h2 class="a4m-station__family">Parent</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentOrdinaryEvolution"><span class="a4m-station__member-name">ParentOrdinaryEvolution</span><span class="a4m-station__member-path">Euler.ParentOrdinaryEvolution</span><p class="a4m-station__member-doc">The actual particle-parent Euler solution supplies the ordinary Sobolev evolution used by the H³ stability estimate. The solenoidal constraint at the endpoints follows by L² continuity from the interior.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="73.html" data-a4m-nav="prev">← Previous 73 · PacketInfiniteConstruction</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="75.html" data-a4m-nav="next">Next 75 · EulerFiniteLifespan →</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 · MeanStrongEquation · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.MeanStrongEquation" data-a4m-index="14" data-a4m-members="7">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="13.html" data-a4m-nav="prev">← Previous 13 · MeanMomentumBoundary</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="15.html" data-a4m-nav="next">Next 15 · MeanStrongInverse →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">14</span>MeanStrongEquation</h1>
+<p class="a4m-station__module">Euler.MeanStrongEquation</p>
+<p class="a4m-station__doc"># The actual mean strong equation and initial velocity condition The time variational solution is upgraded to genuine H² solenoidal coordinates using its derived AC momentum and the constructed coercive Gram inverse. The initial momentum trace then cancels the original M0 boundary term. The final fields contain the actual projected equation (9) and `z_t(0)=L A z(0)`.</p>
+<section class="a4m-station__group" data-a4m-family="Transverse">
+<h2 class="a4m-station__family">Transverse</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.TransverseCoordinateRegularity"><span class="a4m-station__member-name">TransverseCoordinateRegularity</span><span class="a4m-station__member-path">Euler.TransverseCoordinateRegularity</span><p class="a4m-station__member-doc"># Genuine time-H¹ transverse coordinates The coordinates are obtained by applying the constructed frame left inverse to the physical displacement. Their time derivative is an actual Bochner L² field, and differentiating the reconstructed displacement gives the exact kinetic coordinate identity used in the strong transverse equation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.TransverseGramPath"><span class="a4m-station__member-name">TransverseGramPath</span><span class="a4m-station__member-path">Euler.TransverseGramPath</span><p class="a4m-station__member-doc"># Time-dependent inverse of a coercive transverse Gram matrix The coefficient inverse and its derivative are constructed from the frame and its quantitative lower bound. These are coefficient theorems, independent of any chosen variational solution.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.TransverseStrongAlgebra"><span class="a4m-station__member-name">TransverseStrongAlgebra</span><span class="a4m-station__member-path">Euler.TransverseStrongAlgebra</span><p class="a4m-station__member-doc"># Coefficient identities in the strong transverse equation The only cancellation used here is the source frame equation `Q_tt = -H Q`. The time derivatives of the Gram and mixed coefficients are genuine derivatives of the prescribed coefficient paths.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.TransverseStrongEquation"><span class="a4m-station__member-name">TransverseStrongEquation</span><span class="a4m-station__member-path">Euler.TransverseStrongEquation</span><p class="a4m-station__member-doc"># Strong transverse evolution from the actual variational solve The weak momentum identity supplies an actual absolutely continuous momentum. The constructed Gram inverse then upgrades the coordinate derivative to H¹. Differentiating the momentum identity and using `Q_tt = -H Q` gives the literal projected equation (10), with no assumed acceleration or differential inverse.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanFrameCoefficients"><span class="a4m-station__member-name">MeanFrameCoefficients</span><span class="a4m-station__member-path">Euler.MeanFrameCoefficients</span><p class="a4m-station__member-doc"># Actual coefficient adapters for the mean solenoidal frame A bounded inverse deformation supplies a strictly positive lower frame bound on the ordinary infinite-dimensional solenoidal Hilbert space. The actual mean constraint supplies the range property needed to reconstruct coordinates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanStrongEquation"><span class="a4m-station__member-name">MeanStrongEquation</span><span class="a4m-station__member-path">Euler.MeanStrongEquation</span><p class="a4m-station__member-doc"># The actual mean strong equation and initial velocity condition The time variational solution is upgraded to genuine H² solenoidal coordinates using its derived AC momentum and the constructed coercive Gram inverse. The initial momentum trace then cancels the original M0 boundary term. The final fields contain the actual projected equation (9) and `z_t(0)=L A z(0)`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.TimeH1FieldProduct"><span class="a4m-station__member-name">TimeH1FieldProduct</span><span class="a4m-station__member-path">Euler.TimeH1FieldProduct</span><p class="a4m-station__member-doc"># Operator products of genuine H¹ fields with arbitrary terminal trace Unlike a terminal primitive, a momentum field need not vanish at the final time. This file constructs the derivative of a C¹ coefficient times any actual AC representative with Bochner L² value and derivative classes.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="13.html" data-a4m-nav="prev">← Previous 13 · MeanMomentumBoundary</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="15.html" data-a4m-nav="next">Next 15 · MeanStrongInverse →</a></p>
+</main>
+</body>
+</html>

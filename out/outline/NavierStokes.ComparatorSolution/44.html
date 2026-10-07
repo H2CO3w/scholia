@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>44 · ActualParticularCycleData · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.ActualParticularCycleData" data-a4m-index="44" data-a4m-members="11">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="43.html" data-a4m-nav="prev">← Previous 43 · ActualCycleCoherence</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="45.html" data-a4m-nav="next">Next 45 · ActualCurrentParticularPhysical →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">44</span>ActualParticularCycleData</h1>
+<p class="a4m-station__module">NavierStokes.ActualParticularCycleData</p>
+<p class="a4m-station__doc"># Particular-wave data for the actual correction cycle The record below names the particular half of the cycle's analytic data. Its producer uses the literal fixed-parameter solve and incoming invariant.</p>
+<section class="a4m-station__group" data-a4m-family="Actual">
+<h2 class="a4m-station__family">Actual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCarrierTransport"><span class="a4m-station__member-name">ActualCarrierTransport</span><span class="a4m-station__member-path">NavierStokes.ActualCarrierTransport</span><p class="a4m-station__member-doc"># Binding the primitive carrier transport to the actual cycle parameters The geometry and support proofs live below the stage controls in `ActualCarrierTransportBase`. This module identifies them with the literal canonical parameter record without adding a solved-field assumption.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCycleAssembly"><span class="a4m-station__member-name">ActualCycleAssembly</span><span class="a4m-station__member-path">NavierStokes.ActualCycleAssembly</span><p class="a4m-station__member-doc"># The actual finite signed-wave assembly The selected primary slots, physical windows, and absolute auxiliary coordinate are shared by the current block and both wave increments. Support comes from the canonical source carrier and the actual native mask/cutoff product. Quantitative wave bounds are separate inputs.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCyclePeriodicity"><span class="a4m-station__member-name">ActualCyclePeriodicity</span><span class="a4m-station__member-path">NavierStokes.ActualCyclePeriodicity</span><p class="a4m-station__member-doc"># Auxiliary periodicity of the actual correction coefficients The total velocity does not determine the periods of each stored harmonic coefficient. This module tracks the individual velocity, pressure and Gaussian coefficients on precisely the bands whose common cover is ordered. The differential residual preserves these periods on its open slow domain.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualParticularCycleData"><span class="a4m-station__member-name">ActualParticularCycleData</span><span class="a4m-station__member-path">NavierStokes.ActualParticularCycleData</span><p class="a4m-station__member-doc"># Particular-wave data for the actual correction cycle The record below names the particular half of the cycle's analytic data. Its producer uses the literal fixed-parameter solve and incoming invariant.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualParticularDynamics"><span class="a4m-station__member-name">ActualParticularDynamics</span><span class="a4m-station__member-path">NavierStokes.ActualParticularDynamics</span><p class="a4m-station__member-doc"># Exact dynamics of the actual particular correction The current harmonic residual is solved on the common cover. Geometry and carrier identities are proved for the actual selected primary labels; quantitative controls are supplied by `ActualParticularStageControls`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualParticularGaussian"><span class="a4m-station__member-name">ActualParticularGaussian</span><span class="a4m-station__member-path">NavierStokes.ActualParticularGaussian</span><p class="a4m-station__member-doc"># The weighted Gaussian error of the actual particular update The native estimates are those of the selected actual Volterra solves, already transferred back to the original label and band in `raw_jets`. Gaussian decay is applied at that original band. The square-root moving-edge weight is kept through the entire estimate, including the uncovered source term.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualParticularMeanGain"><span class="a4m-station__member-name">ActualParticularMeanGain</span><span class="a4m-station__member-path">NavierStokes.ActualParticularMeanGain</span><p class="a4m-station__member-doc"># The actual post-particular mean data Only the particular wave is needed to prepare the signed request. The common assembly below is independent of a signed family or any signed output estimate.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSeedPeriodicity"><span class="a4m-station__member-name">ActualSeedPeriodicity</span><span class="a4m-station__member-path">NavierStokes.ActualSeedPeriodicity</span><p class="a4m-station__member-doc"># Torus periodicity of the actual seed coefficients The common cover is required to precede the fixed physical label's native cover. Under this ordering, the actual exact-curl velocity, pressure, and retained Gaussian coefficients are invariant under every torus deck shift.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualWaveCoefficientPeriodicity"><span class="a4m-station__member-name">ActualWaveCoefficientPeriodicity</span><span class="a4m-station__member-path">NavierStokes.ActualWaveCoefficientPeriodicity</span><p class="a4m-station__member-doc"># Deck translations of the actual wave-block coefficients Native coefficient translations pass through the literal angular section, finite harmonic sum, conjugate pairing, and coordinate reindexing. The particular source assumption is made on full native parameter fibers.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ClosedNativeWaveIdentities"><span class="a4m-station__member-name">ClosedNativeWaveIdentities</span><span class="a4m-station__member-path">NavierStokes.ClosedNativeWaveIdentities</span><p class="a4m-station__member-doc"># Actual wave identities at closed native-cell points All derivatives below are ambient derivatives at the selected point. No openness of a quantitative control cell, nor a zero germ at its flat boundary, is required.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ModeSolenoidalReindex"><span class="a4m-station__member-name">ModeSolenoidalReindex</span><span class="a4m-station__member-path">NavierStokes.ModeSolenoidalReindex</span><p class="a4m-station__member-doc"># Actual harmonic divergence under a change of product association The same complex single-mode field is pulled back along the cylinder isometry. Its genuine cylindrical divergence is preserved, including the transported radial and axial directions. No new divergence premise is needed for the associated particular-solver coordinates.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="43.html" data-a4m-nav="prev">← Previous 43 · ActualCycleCoherence</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="45.html" data-a4m-nav="next">Next 45 · ActualCurrentParticularPhysical →</a></p>
+</main>
+</body>
+</html>

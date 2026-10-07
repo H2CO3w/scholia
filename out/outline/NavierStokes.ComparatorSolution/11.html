@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11 · OutgoingDilation · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.OutgoingDilation" data-a4m-index="11" data-a4m-members="4">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="10.html" data-a4m-nav="prev">← Previous 10 · OutgoingProfile</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="12.html" data-a4m-nav="next">Next 12 · HeatedOutgoing →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">11</span>OutgoingDilation</h1>
+<p class="a4m-station__module">NavierStokes.OutgoingDilation</p>
+<p class="a4m-station__doc"># Actual radial dilation of the constructed outgoing profile The entrance radius rescales the radial variable. All moment laws below are proved by change of variables in the actual integrals. The final section locates the clean terminal switch and the second reserved compensation patch. No heat edit is applied in this module.</p>
+<section class="a4m-station__group" data-a4m-family="Heat">
+<h2 class="a4m-station__family">Heat</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.HeatTailEdit"><span class="a4m-station__member-name">HeatTailEdit</span><span class="a4m-station__member-path">NavierStokes.HeatTailEdit</span><p class="a4m-station__member-doc"># The actual terminal heat edit and its integral debts The switch uses logarithmic time: it starts at tail time `1/5` and is complete at tail time `1/2`. Quantitative estimates below are proved for the actual improper integrals, then applied to the constructed outgoing tail. No debt bound is an input to the final outgoing-tail theorems.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Outgoing">
+<h2 class="a4m-station__family">Outgoing</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.OutgoingDilation"><span class="a4m-station__member-name">OutgoingDilation</span><span class="a4m-station__member-path">NavierStokes.OutgoingDilation</span><p class="a4m-station__member-doc"># Actual radial dilation of the constructed outgoing profile The entrance radius rescales the radial variable. All moment laws below are proved by change of variables in the actual integrals. The final section locates the clean terminal switch and the second reserved compensation patch. No heat edit is applied in this module.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Radial">
+<h2 class="a4m-station__family">Radial</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.RadialHeatProfile"><span class="a4m-station__member-name">RadialHeatProfile</span><span class="a4m-station__member-path">NavierStokes.RadialHeatProfile</span><p class="a4m-station__member-doc"># The radial heat continuation profile The profile is defined by the actual gamma-normalized improper integral in Lemma 4.4. Its derivative kernels have gamma-integrable bounds on the whole closed half-line of nonnegative profile arguments.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Terminal">
+<h2 class="a4m-station__family">Terminal</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.TerminalCompensation"><span class="a4m-station__member-name">TerminalCompensation</span><span class="a4m-station__member-path">NavierStokes.TerminalCompensation</span><p class="a4m-station__member-doc"># Three exact terminal compensation moments Three constructed, separated additive bumps in a positive interval repair the pressure, energy, and angular moments. Factoring out the positive shaped-wait amplitude leaves one fixed quadratic map, so its smooth inverse and estimates are uniform in the transverse parameter.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="10.html" data-a4m-nav="prev">← Previous 10 · OutgoingProfile</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="12.html" data-a4m-nav="next">Next 12 · HeatedOutgoing →</a></p>
+</main>
+</body>
+</html>

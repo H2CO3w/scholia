@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>71 · PacketStageInputs · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.PacketStageInputs" data-a4m-index="71" data-a4m-members="16">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="70.html" data-a4m-nav="prev">← Previous 70 · PacketStageGuards</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="72.html" data-a4m-nav="next">Next 72 · PacketJoinedSuccessor →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">71</span>PacketStageInputs</h1>
+<p class="a4m-station__module">Euler.PacketStageInputs</p>
+<p class="a4m-station__doc">Actual packet inputs at every finite stage, together with the source-only parameter cap and the chosen frequency guard.</p>
+<section class="a4m-station__group" data-a4m-family="Packet">
+<h2 class="a4m-station__family">Packet</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketFieldPhysicalSobolev"><span class="a4m-station__member-name">PacketFieldPhysicalSobolev</span><span class="a4m-station__member-path">Euler.PacketFieldPhysicalSobolev</span><p class="a4m-station__member-doc">Fixed physical Sobolev bounds from the genuine all-order cylinder word bounds. The constants are finite polynomials at each fixed order; the oscillating phase costs only the indicated power of its frequency.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketGeometryInitialAmplitude"><span class="a4m-station__member-name">PacketGeometryInitialAmplitude</span><span class="a4m-station__member-path">Euler.PacketGeometryInitialAmplitude</span><p class="a4m-station__member-doc">The actual chosen primary amplitude has exponential initial decay. Its prefactor is a fixed polynomial in the same source parameters.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialBounds"><span class="a4m-station__member-name">PacketInitialBounds</span><span class="a4m-station__member-path">Euler.PacketInitialBounds</span><p class="a4m-station__member-doc">Initial high and mean estimates retain their distinct small factors. The only truncation-dependent quantity is the already controlled tail base.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialCostPolynomial"><span class="a4m-station__member-name">PacketInitialCostPolynomial</span><span class="a4m-station__member-path">Euler.PacketInitialCostPolynomial</span><p class="a4m-station__member-doc">At each fixed Sobolev order, the two actual initial-increment costs are fixed polynomials in the source primitives. Frequency and amplitude are kept outside these polynomials.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialInput"><span class="a4m-station__member-name">PacketInitialInput</span><span class="a4m-station__member-path">Euler.PacketInitialInput</span><p class="a4m-station__member-doc">Genuine parent/geometry inputs for an initial increment. The high and mean fields below are the actual solved profiles, not prescribed bounds.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialPhysical"><span class="a4m-station__member-name">PacketInitialPhysical</span><span class="a4m-station__member-path">Euler.PacketInitialPhysical</span><p class="a4m-station__member-doc">The high initial increment retains its small amplitude, while the mean initial increment is O(k⁻²) without any oscillatory-graph loss.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialPolynomialBounds"><span class="a4m-station__member-name">PacketInitialPolynomialBounds</span><span class="a4m-station__member-path">Euler.PacketInitialPolynomialBounds</span><p class="a4m-station__member-doc">Fixed-order source polynomial bounds for the literal initial increments. These use the same finite frequency guard as the constructed exact packet.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitialSmoothFields"><span class="a4m-station__member-name">PacketInitialSmoothFields</span><span class="a4m-station__member-path">Euler.PacketInitialSmoothFields</span><p class="a4m-station__member-doc">Ordinary smooth square-integrable fields realizing both actual initial increments, with the same concrete high and mean functions.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitializedInitial"><span class="a4m-station__member-name">PacketInitializedInitial</span><span class="a4m-station__member-path">Euler.PacketInitializedInitial</span><p class="a4m-station__member-doc">Source (22) for the literal initialized packet. The constants at each fixed Sobolev order are independent of its truncation and frequency.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInitializedInitialExact"><span class="a4m-station__member-name">PacketInitializedInitialExact</span><span class="a4m-station__member-path">Euler.PacketInitializedInitialExact</span><p class="a4m-station__member-doc">The exact correction has zero initial value, so the two actual compactly supported initial increments are precisely the finite-packet high and mean fields whose physical Sobolev bounds were proved above.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketStageInputs"><span class="a4m-station__member-name">PacketStageInputs</span><span class="a4m-station__member-path">Euler.PacketStageInputs</span><p class="a4m-station__member-doc">Actual packet inputs at every finite stage, together with the source-only parameter cap and the chosen frequency guard.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketStagePhysicalBounds"><span class="a4m-station__member-name">PacketStagePhysicalBounds</span><span class="a4m-station__member-path">Euler.PacketStagePhysicalBounds</span><p class="a4m-station__member-doc">Physical estimates on the actual shortened parent state.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketUniformInitialBounds"><span class="a4m-station__member-name">PacketUniformInitialBounds</span><span class="a4m-station__member-path">Euler.PacketUniformInitialBounds</span><p class="a4m-station__member-doc">The actual initial increments for the canonical uniformly selected packet satisfy source (22), with fixed-order polynomial costs.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Parent">
+<h2 class="a4m-station__family">Parent</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentForwardNormalParameters"><span class="a4m-station__member-name">ParentForwardNormalParameters</span><span class="a4m-station__member-path">Euler.ParentForwardNormalParameters</span><p class="a4m-station__member-doc">The zero-history normal stage has the same fixed parameter envelope as every positive-history stage. Its actual initial coordinate has norm one.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentGeometryForwardChoice"><span class="a4m-station__member-name">ParentGeometryForwardChoice</span><span class="a4m-station__member-path">Euler.ParentGeometryForwardChoice</span><p class="a4m-station__member-doc">The actual zero-history geometry constructs the forward packet and its new smooth Euler state at the uniformly chosen frequency.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentGeometryInitialBounds"><span class="a4m-station__member-name">ParentGeometryInitialBounds</span><span class="a4m-station__member-path">Euler.ParentGeometryInitialBounds</span><p class="a4m-station__member-doc">Source-only initial estimates for the actual packet constructed from a parent and its activation geometry. No initial-field estimate is an input.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="70.html" data-a4m-nav="prev">← Previous 70 · PacketStageGuards</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="72.html" data-a4m-nav="next">Next 72 · PacketJoinedSuccessor →</a></p>
+</main>
+</body>
+</html>

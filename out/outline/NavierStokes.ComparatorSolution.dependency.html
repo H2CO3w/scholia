@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NavierStokes.ComparatorSolution — main-line outline (dependency order) · ai4math main line</title>
+<style>
+/* main-line outline: single column. Serif + paper palette (same source as the graph view); no dark theme. */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-outline { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-outline__title { margin: 0 0 .35rem; font-size: 1.15rem; text-align: center; }
+.a4m-outline__list { list-style: none; margin: 0; padding: 0; }
+.a4m-outline__row { margin: 0 0 1.05rem; }
+.a4m-outline__head { margin: 0; display: flex; align-items: baseline; gap: .5em; font-size: .95rem; }
+.a4m-outline__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .78rem; min-width: 2.2em; text-align: right; }
+.a4m-outline__sep { color: var(--a4m-muted); }
+.a4m-outline__name { font-weight: 700; }
+.a4m-outline__link { color: var(--a4m-fg); text-decoration: none; }
+.a4m-outline__link:hover { text-decoration: underline; }
+/* in-page expansion: native <details> does the work without any script; JS only adds expand-all/collapse-all and remembers the state */
+.a4m-outline__details { margin: .3rem 0 0 3.2em; }
+.a4m-outline__summary { cursor: pointer; color: var(--a4m-muted); font-size: .78rem; }
+.a4m-outline__station { margin: .8rem 0 0; }
+.a4m-outline__station-head { margin: 0; font-size: .9rem; }
+.a4m-outline__station-path { margin: .05rem 0 0; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-outline__station-doc { margin: .15rem 0 0; font-size: .85rem; text-align: justify; }
+.a4m-outline__enhance { margin: 0 0 1.25rem; display: flex; gap: 1em; font-size: .78rem; }
+.a4m-outline__enhance button { font: inherit; cursor: pointer; }
+.a4m-outline__module { margin: .1rem 0 0 3.2em; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-outline__doc { margin: .25rem 0 0 3.2em; font-size: .87rem; text-align: justify; }
+/* multi-section file: container + namespace sub-items (indented, no border or fill) */
+.a4m-outline__sub { list-style: none; margin: .35rem 0 0 3.2em; padding: 0; }
+.a4m-outline__sub-item--rest { font-style: italic; }
+.a4m-outline__sub-item { font-size: .82rem; padding: .05rem 0; color: var(--a4m-muted); }
+</style>
+</head>
+<body>
+<main class="a4m-outline" data-a4m-outline="mainline" data-a4m-order="dependency" data-a4m-total="609" data-a4m-covered="609" data-a4m-merged-below="0">
+<h1 class="a4m-outline__title">NavierStokes.ComparatorSolution — main-line outline (dependency order)</h1>
+<ol class="a4m-outline__list">
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ComparatorSolution" data-a4m-added="5" data-a4m-index="1" data-a4m-dep-index="0" data-a4m-lines="33" data-a4m-decls="2">
+<p class="a4m-outline__head"><span class="a4m-outline__index">1</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ComparatorSolution</span></p>
+<p class="a4m-outline__module">NavierStokes.ComparatorSolution</p>
+<p class="a4m-outline__doc"># Navier–Stokes Comparator submission: options (C) and (D) Expose the project's proof adapters under the reference theorem names. The adapters import `ComparatorDefinitions`, never the challenge module.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ComparatorTheorem" data-a4m-added="1" data-a4m-index="2" data-a4m-dep-index="1" data-a4m-lines="56" data-a4m-decls="2">
+<p class="a4m-outline__head"><span class="a4m-outline__index">2</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ComparatorTheorem</span></p>
+<p class="a4m-outline__module">NavierStokes.ComparatorTheorem</p>
+<p class="a4m-outline__doc"># The full periodic corollary implies option (D) For every positive viscosity, the full periodic corollary supplies a solution that blows up exactly at time one. Its same force and zero datum satisfy every condition in the comparator, including the force derivative decay bounds. No result here uses any of the comparator's unproved statements.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.PeriodicPaperComparator" data-a4m-added="1" data-a4m-index="3" data-a4m-dep-index="2" data-a4m-lines="55" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">3</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PeriodicPaperComparator</span></p>
+<p class="a4m-outline__module">NavierStokes.PeriodicPaperComparator</p>
+<p class="a4m-outline__doc"># The periodic paper theorem implies the exact comparator statement The force in this adapter is precisely the candidate's force, with its argument order changed from `(time, space)` to `space, time`. Neither viscosity nor time is rescaled. The smooth periodic force's compact future time support supplies all decay estimates required by the comparator.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.PeriodicComparatorSolution" data-a4m-added="1" data-a4m-index="4" data-a4m-dep-index="3" data-a4m-lines="44" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">4</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PeriodicComparatorSolution</span></p>
+<p class="a4m-outline__module">NavierStokes.PeriodicComparatorSolution</p>
+<p class="a4m-outline__doc"># The periodic comparator in the paper's coordinates A smooth comparator solution gives a global smooth periodic solution for the same viscosity and force. Only the order of the spacetime arguments changes.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.PeriodicPaperTheorem" data-a4m-added="13" data-a4m-index="5" data-a4m-dep-index="4" data-a4m-lines="165" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">5</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PeriodicPaperTheorem</span></p>
+<p class="a4m-outline__module">NavierStokes.PeriodicPaperTheorem</p>
+<p class="a4m-outline__doc"># The full periodic corollary of the paper The torus is represented by spatially periodic lifts to R³. The support clauses intersect topological support with the closed fundamental cube: they do not assert compact support of a nonzero periodic lift on all of R³.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.R3.Theorem" data-a4m-added="69" data-a4m-index="6" data-a4m-dep-index="5" data-a4m-lines="82" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">6</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">Theorem</span></p>
+<p class="a4m-outline__module">NavierStokes.R3.Theorem</p>
+<p class="a4m-outline__doc"># Theorem 1.1: unconditional whole-space forced Navier–Stokes blowup The actual selected construction supplies the viscosity-one fields. Spatial rescaling gives every positive viscosity while retaining singular time one, compact support in strictly positive time for the force, and one kinetic-energy bound for all times before the singularity. Whole-space comparison excludes a global smooth finite-energy solution with the same prescribed force and datum.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.R3.ActualCandidate" data-a4m-added="7" data-a4m-index="7" data-a4m-dep-index="6" data-a4m-lines="156" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">7</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCandidate</span></p>
+<p class="a4m-outline__module">NavierStokes.R3.ActualCandidate</p>
+<p class="a4m-outline__doc"># The full whole-space candidate from the selected construction The selected construction supplies its actual compact spatial fields and a globally smooth force. A smooth time cutoff preserves the equation and puts the force's entire topological support strictly inside positive time. The whole-space energy estimate then gives one bound up to the singular time.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.R3ActualCandidate" data-a4m-added="5" data-a4m-index="8" data-a4m-dep-index="7" data-a4m-lines="24" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">8</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">R3ActualCandidate</span></p>
+<p class="a4m-outline__module">NavierStokes.R3ActualCandidate</p>
+<p class="a4m-outline__doc"># The project's actual sums give a compact whole-space candidate This is an extraction from `selected_witness`, which retains the original potential, direct field, and pressure sums. It does not invoke whole-space uniqueness or claim the comparator's nonexistence conclusion.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCandidateAssembly" data-a4m-added="18" data-a4m-index="9" data-a4m-dep-index="8" data-a4m-lines="1188" data-a4m-decls="103">
+<p class="a4m-outline__head"><span class="a4m-outline__index">9</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCandidateAssembly</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCandidateAssembly</p>
+<p class="a4m-outline__doc"># Literal physical data for the actual candidate The initial fields use the same primary choice and the same initialized mean state as `ActualCandidateConstruction`. Their support, smoothness, and axis germs are derived from those constructors.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualSignedWaveData" data-a4m-added="16" data-a4m-index="10" data-a4m-dep-index="9" data-a4m-lines="689" data-a4m-decls="72">
+<p class="a4m-outline__head"><span class="a4m-outline__index">10</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualSignedWaveData</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualSignedWaveData</p>
+<p class="a4m-outline__doc"># Physical wave data for the actual signed cycle fields The native family is the family in `ActualSignedExterior`. Geometry, profiles and native source bounds are assembled before any physical estimate is applied.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.GluedStageEstimates" data-a4m-added="15" data-a4m-index="11" data-a4m-dep-index="10" data-a4m-lines="749" data-a4m-decls="52">
+<p class="a4m-outline__head"><span class="a4m-outline__index">11</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">GluedStageEstimates</span></p>
+<p class="a4m-outline__module">NavierStokes.GluedStageEstimates</p>
+<p class="a4m-outline__doc"># Stage estimates with the current-band particular fields The signed waves and mean increments retain their actual native inputs. The particular contribution is an independently constructed physical field, with no physical copy-family representation imposed on it.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualValidBandWaves" data-a4m-added="10" data-a4m-index="12" data-a4m-dep-index="11" data-a4m-lines="367" data-a4m-decls="31">
+<p class="a4m-outline__head"><span class="a4m-outline__index">12</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualValidBandWaves</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualValidBandWaves</p>
+<p class="a4m-outline__doc"># The actual particular waves on valid physical charts The physical representative uses only the literal current-band solve. Its compatibility is obtained from the corresponding current-source transport laws. No value of a reference solve on an excluded face is used to define the physical representative.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCurrentWaveSupport" data-a4m-added="13" data-a4m-index="13" data-a4m-dep-index="12" data-a4m-lines="719" data-a4m-decls="44">
+<p class="a4m-outline__head"><span class="a4m-outline__index">13</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCurrentWaveSupport</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCurrentWaveSupport</p>
+<p class="a4m-outline__doc"># Support of the actual current-band waves The refined source carrier contains the fixed profile annulus. Its strict exterior supplies zero germs of the literal current-band Volterra outputs. The physical support argument uses the continuous Cartesian radius divided by the square root of the physical similarity scale. In particular, it does not differentiate a polar chart at the axis or use an excluded dyadic face of a fixed reference formula.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCurrentParticularPhysical" data-a4m-added="3" data-a4m-index="14" data-a4m-dep-index="13" data-a4m-lines="889" data-a4m-decls="60">
+<p class="a4m-outline__head"><span class="a4m-outline__index">14</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCurrentParticularPhysical</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCurrentParticularPhysical</p>
+<p class="a4m-outline__doc"># Physical fields of the actual current-band particular solve The copy solve in this file is evaluated at the current band. The choice of a polar angle depends only on the Cartesian point and is independent of the band. No regularity of a fixed-reference continuation is used.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualParticularCycleData" data-a4m-added="11" data-a4m-index="15" data-a4m-dep-index="14" data-a4m-lines="822" data-a4m-decls="65">
+<p class="a4m-outline__head"><span class="a4m-outline__index">15</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualParticularCycleData</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualParticularCycleData</p>
+<p class="a4m-outline__doc"># Particular-wave data for the actual correction cycle The record below names the particular half of the cycle's analytic data. Its producer uses the literal fixed-parameter solve and incoming invariant.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCycleCoherence" data-a4m-added="28" data-a4m-index="16" data-a4m-dep-index="15" data-a4m-lines="869" data-a4m-decls="68">
+<p class="a4m-outline__head"><span class="a4m-outline__index">16</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCycleCoherence</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCycleCoherence</p>
+<p class="a4m-outline__doc"># Coherence of the actual correction recurrence The incoming chart comparisons retain every radial, free auxiliary and angular variable. The actual initialized state and labeled coefficients start the induction together. The two literal wave constructions supply the transport used by the mean, pressure, and alias operations.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualParticularCoherence" data-a4m-added="24" data-a4m-index="17" data-a4m-dep-index="16" data-a4m-lines="1074" data-a4m-decls="66">
+<p class="a4m-outline__head"><span class="a4m-outline__index">17</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualParticularCoherence</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualParticularCoherence</p>
+<p class="a4m-outline__doc"># Coherence of the actual particular increment The source is the residual of the current state. Its reference value is rebased to the native cover before solving. The identities below retain the full auxiliary fibers and the differentiated copy cutoffs.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCopySliceRegularity" data-a4m-added="5" data-a4m-index="18" data-a4m-dep-index="17" data-a4m-lines="235" data-a4m-decls="17">
+<p class="a4m-outline__head"><span class="a4m-outline__index">18</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCopySliceRegularity</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCopySliceRegularity</p>
+<p class="a4m-outline__doc"># Continuity on the actual finite tangent-copy intervals The projected operator is built from the selected frame's normal, normal motion, base action, and damping. Only the native slow point and finite clock interval enter its regularity; the transverse coordinate is free.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualParticularStageControls" data-a4m-added="5" data-a4m-index="19" data-a4m-dep-index="18" data-a4m-lines="1495" data-a4m-decls="144">
+<p class="a4m-outline__head"><span class="a4m-outline__index">19</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualParticularStageControls</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualParticularStageControls</p>
+<p class="a4m-outline__doc"># Actual particular-wave data on the active label-band pairs The reference phase and native slot are those of the existing initializer choice. The forced fields use the literal current harmonic residual. Active pair estimates do not impose polynomial clock bounds on inactive bands. The actual source support and transported cutoff then globalize the native estimates. The final theorems give uniform bounds for the literal common and finite-harmonic fields from the current analytic invariant.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ParticularPaddedBackground" data-a4m-added="2" data-a4m-index="20" data-a4m-dep-index="19" data-a4m-lines="335" data-a4m-decls="15">
+<p class="a4m-outline__head"><span class="a4m-outline__index">20</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParticularPaddedBackground</span></p>
+<p class="a4m-outline__module">NavierStokes.ParticularPaddedBackground</p>
+<p class="a4m-outline__doc"># Actual particular background on the full retained carrier The retained source mask gives the padded native scale interval `(1/4,4)`. The cells below use its phase carrier and closed clock core without adding the narrower dyadic mask of the original primary coefficient support.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualCarrierGeometry" data-a4m-added="1" data-a4m-index="21" data-a4m-dep-index="20" data-a4m-lines="358" data-a4m-decls="29">
+<p class="a4m-outline__head"><span class="a4m-outline__index">21</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualCarrierGeometry</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualCarrierGeometry</p>
+<p class="a4m-outline__doc"># Geometry of the actual broad primary carrier The Gaussian source carrier keeps the native slow mask and source rectangle, but does not keep a separate dyadic mask. A single geometric threshold, chosen before the actual primary family, controls this larger carrier.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualInitialExcluded" data-a4m-added="11" data-a4m-index="22" data-a4m-dep-index="21" data-a4m-lines="1387" data-a4m-decls="99">
+<p class="a4m-outline__head"><span class="a4m-outline__index">22</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualInitialExcluded</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualInitialExcluded</p>
+<p class="a4m-outline__doc"># Excluded errors of the actual initialized state The base term is the normalized residual of the same fixed slow base. The primary Gaussian and current gauge aliases are retained literally.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualInitialMean" data-a4m-added="5" data-a4m-index="23" data-a4m-dep-index="22" data-a4m-lines="678" data-a4m-decls="63">
+<p class="a4m-outline__head"><span class="a4m-outline__index">23</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualInitialMean</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualInitialMean</p>
+<p class="a4m-outline__doc"># Mean estimates for the chosen initial primary family This module uses the literal primary choice, band labels, common gauge and rank data from `CorrectionInitialization.ActualPrimary`. In particular the stored base error is the actual base residual, whose angular continuity is used only on the positive-time domain.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualPrimaryCoherence" data-a4m-added="3" data-a4m-index="24" data-a4m-dep-index="23" data-a4m-lines="1943" data-a4m-decls="176">
+<p class="a4m-outline__head"><span class="a4m-outline__index">24</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualPrimaryCoherence</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualPrimaryCoherence</p>
+<p class="a4m-outline__doc"># Coherence of the constructed primary waves The phase, coefficient, cutoff, and chart in this file are the actual `CorrectionInitialization.ActualPrimary` constructors. Their differentiated curl correction and Gaussian term are transported on the whole free lift.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-sections="16" data-a4m-station="NavierStokes.CorrectionInitialization" data-a4m-added="5" data-a4m-index="25" data-a4m-dep-index="24" data-a4m-lines="5563" data-a4m-decls="393">
+<p class="a4m-outline__head"><span class="a4m-outline__index">25</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">CorrectionInitialization</span></p>
+<p class="a4m-outline__module">NavierStokes.CorrectionInitialization</p>
+<p class="a4m-outline__doc"># Construction of the initial correction fields The operations in this file use the actual shifted pressure primitive, torus inverse, stream potential, and five-row inverse. The covariance identity is also differentiated as an identity of functions, retaining all derivatives of the squared partition. Quantitative initialization is assembled below from the estimates on these same operations.</p>
+<details class="a4m-outline__details" data-a4m-expand="namespaces">
+<summary class="a4m-outline__summary">Expand sections</summary>
+<ol class="a4m-outline__sub">
+  <li class="a4m-outline__sub-item" data-a4m-namespace="PrimaryConstruction" data-a4m-lines="735" data-a4m-decls="37">PrimaryConstruction</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="AssembledPrimary" data-a4m-lines="229" data-a4m-decls="6">AssembledPrimary</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="ActualPrimary" data-a4m-lines="195" data-a4m-decls="43">ActualPrimary</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="LocalAverage" data-a4m-lines="172" data-a4m-decls="9">LocalAverage</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="MovingInitialization" data-a4m-lines="153" data-a4m-decls="4">MovingInitialization</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="CommonWindow" data-a4m-lines="125" data-a4m-decls="19">CommonWindow</li>
+  <li class="a4m-outline__sub-item a4m-outline__sub-item--rest" data-a4m-namespaces-rest="10">… (10 more sections in this file)</li>
+</ol>
+</details></li>
+<li class="a4m-outline__row" data-a4m-sections="9" data-a4m-station="NavierStokes.CorrectionStep" data-a4m-added="23" data-a4m-index="26" data-a4m-dep-index="25" data-a4m-lines="9850" data-a4m-decls="560">
+<p class="a4m-outline__head"><span class="a4m-outline__index">26</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">CorrectionStep</span></p>
+<p class="a4m-outline__module">NavierStokes.CorrectionStep</p>
+<p class="a4m-outline__doc"># Exact field bookkeeping for one correction cycle The residuals in this file are the differentiated nonlinear fields in (32). In particular, changing the wave covariance and changing a mean velocity are not treated as independent black-box state transitions. Every old/new cross term is retained in the displayed residual differences.</p>
+<details class="a4m-outline__details" data-a4m-expand="namespaces">
+<summary class="a4m-outline__summary">Expand sections</summary>
+<ol class="a4m-outline__sub">
+  <li class="a4m-outline__sub-item" data-a4m-namespace="CycleParameters" data-a4m-lines="135" data-a4m-decls="29">CycleParameters</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="NavierStokes.CorrectionStep" data-a4m-lines="89" data-a4m-decls="9">CorrectionStep</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="GaugeSupported" data-a4m-lines="83" data-a4m-decls="13">GaugeSupported</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="PeriodizedSignedParameters" data-a4m-lines="74" data-a4m-decls="14">PeriodizedSignedParameters</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="ParticularParameters" data-a4m-lines="72" data-a4m-decls="9">ParticularParameters</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="CycleState" data-a4m-lines="47" data-a4m-decls="7">CycleState</li>
+  <li class="a4m-outline__sub-item a4m-outline__sub-item--rest" data-a4m-namespaces-rest="3">… (3 more sections in this file)</li>
+</ol>
+</details></li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.LabelSupportPreservation" data-a4m-added="1" data-a4m-index="27" data-a4m-dep-index="26" data-a4m-lines="602" data-a4m-decls="27">
+<p class="a4m-outline__head"><span class="a4m-outline__index">27</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">LabelSupportPreservation</span></p>
+<p class="a4m-outline__module">NavierStokes.LabelSupportPreservation</p>
+<p class="a4m-outline__doc"># Preservation of the actual closed carrier of a harmonic label The support argument uses the whole native Volterra path. A pointwise zero of the source is not used as a zero of its particular solution. The Gaussian clock cutoff supplies the temporal boundary of the carrier; the source supplies its slow and transverse boundaries.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualGaussianCoverage" data-a4m-added="3" data-a4m-index="28" data-a4m-dep-index="27" data-a4m-lines="1350" data-a4m-decls="88">
+<p class="a4m-outline__head"><span class="a4m-outline__index">28</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualGaussianCoverage</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualGaussianCoverage</p>
+<p class="a4m-outline__doc"># Gaussian coverage for the actual scaled particular solves The cutoff used by the inverse is the separate Gaussian slot cutoff times the padded native-clock cutoff. The dyadic, radial, and slow source masks remain in the source and amplitude. Whole-path support, rather than a pointwise zero of the source, supplies zero germs for the actual Volterra solution.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ScaledActualParticularControl" data-a4m-added="3" data-a4m-index="29" data-a4m-dep-index="28" data-a4m-lines="680" data-a4m-decls="47">
+<p class="a4m-outline__head"><span class="a4m-outline__index">29</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ScaledActualParticularControl</span></p>
+<p class="a4m-outline__module">NavierStokes.ScaledActualParticularControl</p>
+<p class="a4m-outline__doc"># Complete controls for the scaled actual particular inverse The clock, normal, integration interval and native geometry are transported together. The forcing is the current target residual, with no source naturality assumption and no supplied modal-control record.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ActualSignedGeometry" data-a4m-added="7" data-a4m-index="30" data-a4m-dep-index="29" data-a4m-lines="1495" data-a4m-decls="129">
+<p class="a4m-outline__head"><span class="a4m-outline__index">30</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ActualSignedGeometry</span></p>
+<p class="a4m-outline__module">NavierStokes.ActualSignedGeometry</p>
+<p class="a4m-outline__doc"># Geometry of the actual prepared primary charts The native variables are `(p,(u,v))`, with `p=(R,(Z,T))`. The pulse coordinate is exactly `v/L`, and the common-cover chart uses the chosen slot basis and the actual difference of covering indices.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.CommonBaseContext" data-a4m-added="11" data-a4m-index="31" data-a4m-dep-index="30" data-a4m-lines="631" data-a4m-decls="82">
+<p class="a4m-outline__head"><span class="a4m-outline__index">31</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">CommonBaseContext</span></p>
+<p class="a4m-outline__module">NavierStokes.CommonBaseContext</p>
+<p class="a4m-outline__doc"># The actual slow base on a coarsest common integer cover The physical base, virtual stress, dyadic band and small parameter stay fixed. Only the integer cover used in the graph operators changes. The forward real-lift map is the genuine integer covering matrix, with its actual norm.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.BaseStressClasses" data-a4m-added="1" data-a4m-index="32" data-a4m-dep-index="31" data-a4m-lines="530" data-a4m-decls="28">
+<p class="a4m-outline__head"><span class="a4m-outline__index">32</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseStressClasses</span></p>
+<p class="a4m-outline__module">NavierStokes.BaseStressClasses</p>
+<p class="a4m-outline__doc"># Weighted classes of the actual base stress The flat weight is transported exactly by the physical chart. Only powers of the reciprocal edge distance are enlarged. All derivatives are actual Fréchet derivatives, and every estimate is uniform over the dyadic bands.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.BaseContextAssembly" data-a4m-added="15" data-a4m-index="33" data-a4m-dep-index="32" data-a4m-lines="905" data-a4m-decls="102">
+<p class="a4m-outline__head"><span class="a4m-outline__index">33</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseContextAssembly</span></p>
+<p class="a4m-outline__module">NavierStokes.BaseContextAssembly</p>
+<p class="a4m-outline__doc"># The correction context of the actual slow base The native slow order is `(T,Z)`. The explicit linear map `slowCoordinates` converts to the `(R,(Z,T))` order used by the physical base charts. Every field below uses one fixed final profile, coefficient family, and schedule.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.PrimaryTargetBounds" data-a4m-added="33" data-a4m-index="34" data-a4m-dep-index="33" data-a4m-lines="1036" data-a4m-decls="81">
+<p class="a4m-outline__head"><span class="a4m-outline__index">34</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PrimaryTargetBounds</span></p>
+<p class="a4m-outline__module">NavierStokes.PrimaryTargetBounds</p>
+<p class="a4m-outline__doc"># Actual primary covariance and the flat target The two columns use the two signs of the same representative and the actual Volterra primary. Target smallness at the attachment points is retained as a scalar factor throughout the finite matrix solve.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.PrimaryGeometryAssembly" data-a4m-added="1" data-a4m-index="35" data-a4m-dep-index="34" data-a4m-lines="671" data-a4m-decls="83">
+<p class="a4m-outline__head"><span class="a4m-outline__index">35</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PrimaryGeometryAssembly</span></p>
+<p class="a4m-outline__module">NavierStokes.PrimaryGeometryAssembly</p>
+<p class="a4m-outline__doc"># Primary phase geometry for the constructed slow base The representatives are chosen in the actual positive-time mask support. The phase carrier is an open two-mesh cell; the larger three-mesh cell is used for the local base estimates. Compact constants use the genuine stable inverse branch, including its regular zero-time boundary.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.FinalSlowBase" data-a4m-added="2" data-a4m-index="36" data-a4m-dep-index="35" data-a4m-lines="713" data-a4m-decls="91">
+<p class="a4m-outline__head"><span class="a4m-outline__index">36</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">FinalSlowBase</span></p>
+<p class="a4m-outline__module">NavierStokes.FinalSlowBase</p>
+<p class="a4m-outline__doc"># The slow base on the actual entrance-to-terminal annulus All fields below use the same solved finite modulation and the same aligned coefficient family. The weight exponent is the square of the actual ACT time, and its two endpoints are the endpoints of the nominal cone interval.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AlignedProfileSpectralCone" data-a4m-added="4" data-a4m-index="37" data-a4m-dep-index="36" data-a4m-lines="769" data-a4m-decls="41">
+<p class="a4m-outline__head"><span class="a4m-outline__index">37</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AlignedProfileSpectralCone</span></p>
+<p class="a4m-outline__module">NavierStokes.AlignedProfileSpectralCone</p>
+<p class="a4m-outline__doc"># The spectral cone of the actual aligned modulated base This module binds the generic profile and physical-shear identities to the same finite modulation, aligned coefficient family, and covariance target.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ProfileSpectralCone" data-a4m-added="1" data-a4m-index="38" data-a4m-dep-index="37" data-a4m-lines="517" data-a4m-decls="30">
+<p class="a4m-outline__head"><span class="a4m-outline__index">38</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ProfileSpectralCone</span></p>
+<p class="a4m-outline__module">NavierStokes.ProfileSpectralCone</p>
+<p class="a4m-outline__doc"># From the actual profile cone to the primary spectral cone The signed axial shear in the profile cone is `c = -2 X U_X / E`. Consequently the physical shear vector is `F * (-a,-c)`, while the leading stress is a positive multiple of `(p₁-a,p₂-c)`. The results below derive the primary spectral and target cones from these identities.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.BaseChartJets" data-a4m-added="46" data-a4m-index="39" data-a4m-dep-index="38" data-a4m-lines="935" data-a4m-decls="69">
+<p class="a4m-outline__head"><span class="a4m-outline__index">39</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseChartJets</span></p>
+<p class="a4m-outline__module">NavierStokes.BaseChartJets</p>
+<p class="a4m-outline__doc"># Actual summed base fields in normalized band charts All coordinate derivatives are taken at strictly positive backward time. The constants remain uniform as that time approaches zero while the normalized positive branch stays in a fixed annulus.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ConstructedSlowBase" data-a4m-added="3" data-a4m-index="40" data-a4m-dep-index="39" data-a4m-lines="968" data-a4m-decls="114">
+<p class="a4m-outline__head"><span class="a4m-outline__index">40</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ConstructedSlowBase</span></p>
+<p class="a4m-outline__module">NavierStokes.ConstructedSlowBase</p>
+<p class="a4m-outline__doc"># The actual constructed slow base The finite residual identities, regular axis descriptors, and stress support used here are derived from the same repaired coefficient sequence. No residual estimate or infinite-dimensional output certificate is an input.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.FirstOrderBaseEdge" data-a4m-added="13" data-a4m-index="41" data-a4m-dep-index="40" data-a4m-lines="949" data-a4m-decls="52">
+<p class="a4m-outline__head"><span class="a4m-outline__index">41</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">FirstOrderBaseEdge</span></p>
+<p class="a4m-outline__module">NavierStokes.FirstOrderBaseEdge</p>
+<p class="a4m-outline__doc"># The first stress coefficient on the terminal collar The first coefficient is the canonical primitive of the actual repaired residual. The order-zero moment retained below is essential: exterior agreement of velocities alone does not fix the constant of integration.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.ModulatedProfileAssembly" data-a4m-added="29" data-a4m-index="42" data-a4m-dep-index="41" data-a4m-lines="1141" data-a4m-decls="98">
+<p class="a4m-outline__head"><span class="a4m-outline__index">42</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ModulatedProfileAssembly</span></p>
+<p class="a4m-outline__module">NavierStokes.ModulatedProfileAssembly</p>
+<p class="a4m-outline__doc"># Modulation of one actual nominal profile The regular fields `f,U` are extended from the closed positive half-plane without changing them there. Consequently their actual histories from the axis, including the pressure constant, are preserved. The separate angular field used by the periodic-loop construction is clamped only away from the modulation annulus. Finally only the supported edits are transplanted back to the original nominal profile.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AssembledSlowBase" data-a4m-added="22" data-a4m-index="43" data-a4m-dep-index="42" data-a4m-lines="1761" data-a4m-decls="169">
+<p class="a4m-outline__head"><span class="a4m-outline__index">43</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AssembledSlowBase</span></p>
+<p class="a4m-outline__module">NavierStokes.AssembledSlowBase</p>
+<p class="a4m-outline__doc"># Assembling the actual global slow coefficients and their common base All coefficient extensions in this module are constructed from the coherent `GlobalSlowProfiles` sequence. One parameter window is fixed before any coefficient or derivative order is selected.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.NaturalCoefficientBridge" data-a4m-added="12" data-a4m-index="44" data-a4m-dep-index="43" data-a4m-lines="615" data-a4m-decls="40">
+<p class="a4m-outline__head"><span class="a4m-outline__index">44</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">NaturalCoefficientBridge</span></p>
+<p class="a4m-outline__module">NavierStokes.NaturalCoefficientBridge</p>
+<p class="a4m-outline__doc"># The natural core solves the actual order-zero residual equations The natural solution is the one retained by `NaturalEntrance.CoefficientProfile`. Its scalar swirl is normalized as `phi = C*f`, its pressure is unchanged, and its radial flux is `X*beta`. The two residual equations below are derived from the constructed natural equations, not assumed as slow-order hypotheses.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.SlowResidualMatching" data-a4m-added="41" data-a4m-index="45" data-a4m-dep-index="44" data-a4m-lines="1550" data-a4m-decls="117">
+<p class="a4m-outline__head"><span class="a4m-outline__index">45</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">SlowResidualMatching</span></p>
+<p class="a4m-outline__module">NavierStokes.SlowResidualMatching</p>
+<p class="a4m-outline__doc"># Finite slow residuals and their radial stress primitives The finite profiles and all derivatives below are the actual functions from `SlowExpansionResidual`. The stored radial variable in `SlowRecursion` is `beta = V / X`; its conversion to a flux includes the factor `X`. The stress operator is the two tangential radial operators in (24). It is not identified with the divergence of an unspecified symmetric tensor.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.RenormalizedHeatMoment" data-a4m-added="4" data-a4m-index="46" data-a4m-dep-index="45" data-a4m-lines="789" data-a4m-decls="71">
+<p class="a4m-outline__head"><span class="a4m-outline__index">46</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">RenormalizedHeatMoment</span></p>
+<p class="a4m-outline__module">NavierStokes.RenormalizedHeatMoment</p>
+<p class="a4m-outline__doc"># The renormalized angular moment and physical axial viscosity The nonintegrable reference power is independent of physical axial position. It is subtracted before integration. Local constancy of the exterior heat carrier supplies compact support for every axial derivative of the difference.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.HeatedOutgoing" data-a4m-added="7" data-a4m-index="47" data-a4m-dep-index="46" data-a4m-lines="899" data-a4m-decls="100">
+<p class="a4m-outline__head"><span class="a4m-outline__index">47</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">HeatedOutgoing</span></p>
+<p class="a4m-outline__module">NavierStokes.HeatedOutgoing</p>
+<p class="a4m-outline__doc"># The physical heat continuation with exact terminal compensation One normalized outgoing profile supplies the angular reset and axial amplitude. Its radial dilation is heated with diffusion `1 - eta^2`, and three additive bumps on its actual second reserved patch restore the three changed moments.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.OutgoingDilation" data-a4m-added="4" data-a4m-index="48" data-a4m-dep-index="47" data-a4m-lines="661" data-a4m-decls="112">
+<p class="a4m-outline__head"><span class="a4m-outline__index">48</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">OutgoingDilation</span></p>
+<p class="a4m-outline__module">NavierStokes.OutgoingDilation</p>
+<p class="a4m-outline__doc"># Actual radial dilation of the constructed outgoing profile The entrance radius rescales the radial variable. All moment laws below are proved by change of variables in the actual integrals. The final section locates the clean terminal switch and the second reserved compensation patch. No heat edit is applied in this module.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.OutgoingProfile" data-a4m-added="14" data-a4m-index="49" data-a4m-dep-index="48" data-a4m-lines="668" data-a4m-decls="92">
+<p class="a4m-outline__head"><span class="a4m-outline__index">49</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">OutgoingProfile</span></p>
+<p class="a4m-outline__module">NavierStokes.OutgoingProfile</p>
+<p class="a4m-outline__doc"># A single outgoing profile before the heat-tail edit The profile stores one actual scheduled angular-reset witness. Its axial amplitude is the corrected energy root associated with that same witness. All histories and pressures below are integrals of these fields.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.SchedulePressure" data-a4m-added="14" data-a4m-index="50" data-a4m-dep-index="49" data-a4m-lines="282" data-a4m-decls="37">
+<p class="a4m-outline__head"><span class="a4m-outline__index">50</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">SchedulePressure</span></p>
+<p class="a4m-outline__module">NavierStokes.SchedulePressure</p>
+<p class="a4m-outline__doc"># The pressure datum of the constructed outgoing angular schedule This module instantiates the abstract pressure integral with `finalAngular`. The pressure-neutral angular-moment correction remains a separate operation.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.NaturalProfile" data-a4m-added="4" data-a4m-index="51" data-a4m-dep-index="50" data-a4m-lines="695" data-a4m-decls="51">
+<p class="a4m-outline__head"><span class="a4m-outline__index">51</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">NaturalProfile</span></p>
+<p class="a4m-outline__module">NavierStokes.NaturalProfile</p>
+<p class="a4m-outline__doc"># Actual natural profiles in the original radial variable This module reconstructs the unscaled natural profiles from the actual smooth solutions of the coefficient-space problem. Derivative identities refer to ordinary derivatives of the reconstructed real functions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.NaturalAxisCoefficients" data-a4m-added="6" data-a4m-index="52" data-a4m-dep-index="51" data-a4m-lines="583" data-a4m-decls="64">
+<p class="a4m-outline__head"><span class="a4m-outline__index">52</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">NaturalAxisCoefficients</span></p>
+<p class="a4m-outline__module">NavierStokes.NaturalAxisCoefficients</p>
+<p class="a4m-outline__doc"># The actual fixed coefficients of the natural-axis problem The pressure comes from its proved holomorphic integral extension. A common complex neighborhood is chosen by compactness and nonvanishing of the two actual denominators. Every fixed field is then embedded in the same complete space of compatible coefficient functions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.NaturalAxisBridge" data-a4m-added="2" data-a4m-index="53" data-a4m-dep-index="52" data-a4m-lines="742" data-a4m-decls="55">
+<p class="a4m-outline__head"><span class="a4m-outline__index">53</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">NaturalAxisBridge</span></p>
+<p class="a4m-outline__module">NavierStokes.NaturalAxisBridge</p>
+<p class="a4m-outline__doc"># From the coefficient fixed point to actual natural-axis profiles This bridge uses ordinary real derivatives of the evaluated functions. The fixed input data must still be supplied as members of the coefficient space; their construction from the outgoing schedule is a separate obligation.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AxisContraction" data-a4m-added="2" data-a4m-index="54" data-a4m-dep-index="53" data-a4m-lines="786" data-a4m-decls="49">
+<p class="a4m-outline__head"><span class="a4m-outline__index">54</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AxisContraction</span></p>
+<p class="a4m-outline__module">NavierStokes.AxisContraction</p>
+<p class="a4m-outline__doc"># The nonlinear natural-axis fixed point The local bounds below are computed from bounded linear and bilinear operations. In particular, the nonlinear remainders' Lipschitz estimates are conclusions, not assumptions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AxisResolvent" data-a4m-added="1" data-a4m-index="55" data-a4m-dep-index="54" data-a4m-lines="485" data-a4m-decls="48">
+<p class="a4m-outline__head"><span class="a4m-outline__index">55</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AxisResolvent</span></p>
+<p class="a4m-outline__module">NavierStokes.AxisResolvent</p>
+<p class="a4m-outline__doc"># The natural-axis resolvent from factorial decay of radial shifts The inverse is constructed by a norm-convergent alternating series. No small-operator-norm hypothesis is used. The generic Banach-ring lemmas isolate the analytic implication of the factorial estimate from its radial proof.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AxisOperators" data-a4m-added="1" data-a4m-index="56" data-a4m-dep-index="55" data-a4m-lines="759" data-a4m-decls="79">
+<p class="a4m-outline__head"><span class="a4m-outline__index">56</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AxisOperators</span></p>
+<p class="a4m-outline__module">NavierStokes.AxisOperators</p>
+<p class="a4m-outline__doc"># Actual bounded operators on the compatible natural-axis coefficient space The numerical bounds come from `AxisWeightEstimates`. This module additionally proves compatibility of the output jets, so its operators act on actual smooth coefficient functions in the complete space, not just unrelated arrays.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AxisCoefficientSpace" data-a4m-added="1" data-a4m-index="57" data-a4m-dep-index="56" data-a4m-lines="461" data-a4m-decls="52">
+<p class="a4m-outline__head"><span class="a4m-outline__index">57</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AxisCoefficientSpace</span></p>
+<p class="a4m-outline__module">NavierStokes.AxisCoefficientSpace</p>
+<p class="a4m-outline__doc"># A complete coefficient space with compatible actual derivatives Normalized bounded continuous jets are restricted by closed, linear fundamental-theorem-of-calculus identities. Thus a point of the resulting Banach space determines genuine smooth coefficient functions, not unrelated arrays masquerading as their derivatives.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="NavierStokes.AxisWeightEstimates" data-a4m-added="1" data-a4m-index="58" data-a4m-dep-index="57" data-a4m-lines="614" data-a4m-decls="53">
+<p class="a4m-outline__head"><span class="a4m-outline__index">58</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AxisWeightEstimates</span></p>
+<p class="a4m-outline__module">NavierStokes.AxisWeightEstimates</p>
+<p class="a4m-outline__doc"># Concrete coefficient estimates for the natural-axis norm Products are actual finite coefficient convolutions with the Leibniz binomial factors. In particular, the mixed derivative estimate is proved after the radial inverse; no boundedness of either differentiation operator on its own is assumed.</p>
+</li>
+</ol>
+
+</main>
+</body>
+</html>

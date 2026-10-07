@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 · MeanPacketForcing · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.MeanPacketForcing" data-a4m-index="30" data-a4m-members="18">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="29.html" data-a4m-nav="prev">← Previous 29 · MeanPacketData</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="31.html" data-a4m-nav="next">Next 31 · MeanPacketForcingAlgebra →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">30</span>MeanPacketForcing</h1>
+<p class="a4m-station__module">Euler.MeanPacketForcing</p>
+<p class="a4m-station__doc"># Admissible raw mean forcing and its actual solved continuous paths Admissibility consists of literal smooth spatial L² slices and continuity of their L² spatial jets. All translation regularity below is derived. The solution paths are obtained by the concrete source inverse in MeanPacketData.</p>
+<section class="a4m-station__group" data-a4m-family="Packet">
+<h2 class="a4m-station__family">Packet</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketKnownGrade"><span class="a4m-station__member-name">PacketKnownGrade</span><span class="a4m-station__member-path">Euler.PacketKnownGrade</span><p class="a4m-station__member-doc">The known forcing at a recursive grade uses only previously constructed coefficients.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketPointJets"><span class="a4m-station__member-name">PacketPointJets</span><span class="a4m-station__member-path">Euler.PacketPointJets</span><p class="a4m-station__member-doc">The linear and bilinear packet operators on actual space-time value/derivative jets.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketPressureJet"><span class="a4m-station__member-name">PacketPressureJet</span><span class="a4m-station__member-path">Euler.PacketPressureJet</span><p class="a4m-station__member-doc">The pressure entry contains only actual space/angle derivatives used by the PDE.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketProfileRecursion"><span class="a4m-station__member-name">PacketProfileRecursion</span><span class="a4m-station__member-path">Euler.PacketProfileRecursion</span><p class="a4m-station__member-doc">The well-founded profile recursion in (14), on literal time/space/angle fields. Every new mean is computed before the new high coefficient. The supplied linear inverse maps are the interface to the analytic source constructions; this file proves the recursion and its dependence only on earlier grades.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketResidualGrades"><span class="a4m-station__member-name">PacketResidualGrades</span><span class="a4m-station__member-path">Euler.PacketResidualGrades</span><p class="a4m-station__member-doc">Exact grade expansion of a finite packet's momentum residual. The operators may be instantiated by the actual value/derivative jets at each space-time point; this file proves the finite algebra and does not assume an Euler solve.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketSlicedJets"><span class="a4m-station__member-name">PacketSlicedJets</span><span class="a4m-station__member-path">Euler.PacketSlicedJets</span><p class="a4m-station__member-doc">Actual PDE jets on a closed time interval. Time derivatives are within the interval, while space and angle derivatives are ordinary Fréchet derivatives. No smooth extension across a time endpoint is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketSlicedResidual"><span class="a4m-station__member-name">PacketSlicedResidual</span><span class="a4m-station__member-path">Euler.PacketSlicedResidual</span><p class="a4m-station__member-doc">Exact residual expansion with genuine derivatives within the prescribed time interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketTriangular"><span class="a4m-station__member-name">PacketTriangular</span><span class="a4m-station__member-path">Euler.PacketTriangular</span><p class="a4m-station__member-doc">The actual nonlinear packet operators have the triangular dependence claimed in (14).</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Finite">
+<h2 class="a4m-station__family">Finite</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.FiniteGradeAlgebra"><span class="a4m-station__member-name">FiniteGradeAlgebra</span><span class="a4m-station__member-path">Euler.FiniteGradeAlgebra</span><p class="a4m-station__member-doc">Exact finite graded identities for the literal packet residual.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.FiniteGradeDiagonal"><span class="a4m-station__member-name">FiniteGradeDiagonal</span><span class="a4m-station__member-path">Euler.FiniteGradeDiagonal</span><p class="a4m-station__member-doc">The finite residual convolution is exactly the source's sum over i+j=n.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.FiniteGradeSupport"><span class="a4m-station__member-name">FiniteGradeSupport</span><span class="a4m-station__member-path">Euler.FiniteGradeSupport</span><p class="a4m-station__member-doc">Degree bounds and the exact shift caused by a fast derivative.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.FiniteGradeTriangular"><span class="a4m-station__member-name">FiniteGradeTriangular</span><span class="a4m-station__member-path">Euler.FiniteGradeTriangular</span><p class="a4m-station__member-doc">Which unknown coefficients can enter the slow and fast quadratic terms.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Mean">
+<h2 class="a4m-station__family">Mean</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanClassicalSpatialTime"><span class="a4m-station__member-name">MeanClassicalSpatialTime</span><span class="a4m-station__member-path">Euler.MeanClassicalSpatialTime</span><p class="a4m-station__member-doc"># Classical spatial representatives of the actual mean time evolution The actual continuous velocity and continuous time derivative have smooth spatial translation orbits. The bounded time-integral identity commutes with those spatial derivatives, giving genuine jointly continuous spatial representatives and their pointwise classical time derivative.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPacketForcing"><span class="a4m-station__member-name">MeanPacketForcing</span><span class="a4m-station__member-path">Euler.MeanPacketForcing</span><p class="a4m-station__member-doc"># Admissible raw mean forcing and its actual solved continuous paths Admissibility consists of literal smooth spatial L² slices and continuity of their L² spatial jets. All translation regularity below is derived. The solution paths are obtained by the concrete source inverse in MeanPacketData.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPathTimeDerivative"><span class="a4m-station__member-name">MeanPathTimeDerivative</span><span class="a4m-station__member-path">Euler.MeanPathTimeDerivative</span><p class="a4m-station__member-doc"># Commuting actual spatial derivatives with the time derivative The time integral is a fixed bounded linear map on continuous L² paths. Differentiating its exact identity in the translation parameter therefore commutes every spatial jet with the time integral. The resulting finite Sobolev arrays transfer the actual time derivative to the smooth spatial representatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanSpatialTimeDerivative"><span class="a4m-station__member-name">MeanSpatialTimeDerivative</span><span class="a4m-station__member-path">Euler.MeanSpatialTimeDerivative</span><p class="a4m-station__member-doc">Genuine time derivatives pass through the reconstructed ordinary spatial representatives.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.AngleMeanZeroPrimitive"><span class="a4m-station__member-name">AngleMeanZeroPrimitive</span><span class="a4m-station__member-path">Euler.AngleMeanZeroPrimitive</span><p class="a4m-station__member-doc"># The actual mean-zero periodic angular primitive This is an explicit Bochner integral, valid also for a Hilbert-valued angle curve such as a time-L² pressure coefficient. Periodicity is proved from the zero integral of the forcing; subtracting the actual mean fixes the constant.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PeriodicDerivativeMean"><span class="a4m-station__member-name">PeriodicDerivativeMean</span><span class="a4m-station__member-path">Euler.PeriodicDerivativeMean</span><p class="a4m-station__member-doc">The mean of a genuine derivative of a periodic field is zero.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="29.html" data-a4m-nav="prev">← Previous 29 · MeanPacketData</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="31.html" data-a4m-nav="next">Next 31 · MeanPacketForcingAlgebra →</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ai4math Annotator",
+    "description": "Extract proof skeletons from the local Mathlib corpus, look up lemma meanings, and validate annotations against the spec."
+  }
+}

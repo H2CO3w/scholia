@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>46 · ActualCurrentWaveSupport · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.ActualCurrentWaveSupport" data-a4m-index="46" data-a4m-members="13">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="45.html" data-a4m-nav="prev">← Previous 45 · ActualCurrentParticularPhysical</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="47.html" data-a4m-nav="next">Next 47 · ActualValidBandWaves →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">46</span>ActualCurrentWaveSupport</h1>
+<p class="a4m-station__module">NavierStokes.ActualCurrentWaveSupport</p>
+<p class="a4m-station__doc"># Support of the actual current-band waves The refined source carrier contains the fixed profile annulus. Its strict exterior supplies zero germs of the literal current-band Volterra outputs. The physical support argument uses the continuous Cartesian radius divided by the square root of the physical similarity scale. In particular, it does not differentiate a polar chart at the axis or use an excluded dyadic face of a fixed reference formula.</p>
+<section class="a4m-station__group" data-a4m-family="Periodic">
+<h2 class="a4m-station__family">Periodic</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PeriodicIntegration"><span class="a4m-station__member-name">PeriodicIntegration</span><span class="a4m-station__member-path">NavierStokes.PeriodicIntegration</span><p class="a4m-station__member-doc"># Integration of periodic fields on the unit cube The integral is product Lebesgue measure in the usual three coordinates, pulled back along the standard continuous linear equivalence to Euclidean space. Integration by parts is derived from Mathlib's proved box divergence theorem.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PeriodicSobolev"><span class="a4m-station__member-name">PeriodicSobolev</span><span class="a4m-station__member-path">NavierStokes.PeriodicSobolev</span><p class="a4m-station__member-doc"># A concrete periodic H³ supremum bound Coordinate fundamental-theorem-of-calculus estimates are iterated over the unit cube. All derivatives below are the ordinary Frechet coordinate derivatives on `ProblemStatement.Space`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PeriodicUniqueness"><span class="a4m-station__member-name">PeriodicUniqueness</span><span class="a4m-station__member-path">NavierStokes.PeriodicUniqueness</span><p class="a4m-station__member-doc"># Classical uniqueness for periodic Navier--Stokes fields The differential operators are those of `ProblemStatement`. The energy estimate is derived from the equations and periodic integration by parts.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCurrentWaveSupport"><span class="a4m-station__member-name">ActualCurrentWaveSupport</span><span class="a4m-station__member-path">NavierStokes.ActualCurrentWaveSupport</span><p class="a4m-station__member-doc"># Support of the actual current-band waves The refined source carrier contains the fixed profile annulus. Its strict exterior supplies zero germs of the literal current-band Volterra outputs. The physical support argument uses the continuous Cartesian radius divided by the square root of the physical similarity scale. In particular, it does not differentiate a polar chart at the axis or use an excluded dyadic face of a fixed reference formula.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualPolarCoverage"><span class="a4m-station__member-name">ActualPolarCoverage</span><span class="a4m-station__member-path">NavierStokes.ActualPolarCoverage</span><p class="a4m-station__member-doc"># Actual polar graph coverage of the nominal active annulus The geometric hypotheses are the nominal closed active annulus and the strict dyadic choice q ≤ Q n &lt; 2 * q. Chart coverage is a conclusion. The native open domain allows every positive radius and retains the actual slow region; the smaller weighted strip is reached through its closure at radial endpoints.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CandidateConsequences"><span class="a4m-station__member-name">CandidateConsequences</span><span class="a4m-station__member-path">NavierStokes.CandidateConsequences</span><p class="a4m-station__member-doc"># Consequences of the actual candidate fields No candidate existence is asserted here. The first results use precisely `CandidateProperties`. Force derivatives at initial time are taken within the physical future half-space. For the actual globally smooth constructed force these are proved equal to its ordinary full derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.GermCandidateAssembly"><span class="a4m-station__member-name">GermCandidateAssembly</span><span class="a4m-station__member-path">NavierStokes.GermCandidateAssembly</span><p class="a4m-station__member-doc"># Mixed candidate assembly from primitive axis zero germs Potential increments may be arbitrary physical fields. Their local axis zero germs replace the copy-potential representation used by the original consumer. All raw estimates, finite residual estimates, shrinking support and finite endpoint-extension obligations remain unchanged. The diagonal schedule, axis blow-up, infinite residual limits and candidate consequences are derived.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.MaximalLifespan"><span class="a4m-station__member-name">MaximalLifespan</span><span class="a4m-station__member-path">NavierStokes.MaximalLifespan</span><p class="a4m-station__member-doc"># Conditional maximal classical lifespan of the candidate An actual `CandidateProperties` witness has maximal classical lifespan one. The proof uses the proved periodic uniqueness theorem and a compactness bound for a continuous periodic field across time one. It assumes no general Navier--Stokes existence theorem and never identifies pressure gauges.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.MixedCandidateWitness"><span class="a4m-station__member-name">MixedCandidateWitness</span><span class="a4m-station__member-path">NavierStokes.MixedCandidateWitness</span><p class="a4m-station__member-doc"># Retaining the actual mixed candidate and its consequences The finite-stage inputs are exactly those of `MixedCandidateAssembly.candidate_of_finite_stages`. The same selected schedule supplies the actual velocity and pressure sums, their endpoint extensions, and the force with all proved consequences.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalResidualJetBounds"><span class="a4m-station__member-name">PhysicalResidualJetBounds</span><span class="a4m-station__member-path">NavierStokes.PhysicalResidualJetBounds</span><p class="a4m-station__member-doc"># Physical jets of the actual finite-state residual The estimates are on genuine Fréchet derivatives. Harmonic coefficients, mean residuals and excluded errors are combined before the physical graph restriction. Phase regularity is needed only on coefficient support.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ResidualPolarGraph"><span class="a4m-station__member-name">ResidualPolarGraph</span><span class="a4m-station__member-path">NavierStokes.ResidualPolarGraph</span><p class="a4m-station__member-doc"># Local polar inverse of the physical residual graph The physical radius is unscaled, while the angle is read from a valid polar chart of the scaled radial projection. The resulting cylindrical point maps back to the original Cartesian point and to the exact common graph used by the physical mean estimates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ValidBandGluing"><span class="a4m-station__member-name">ValidBandGluing</span><span class="a4m-station__member-path">NavierStokes.ValidBandGluing</span><p class="a4m-station__member-doc"># A representative on the union of valid open charts Local formulas are identified only where both charts are valid. The chosen representative agrees with every valid chart on an ambient neighborhood. No regularity at the boundary of the union is asserted.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ValidDyadicBandCover"><span class="a4m-station__member-name">ValidDyadicBandCover</span><span class="a4m-station__member-path">NavierStokes.ValidDyadicBandCover</span><p class="a4m-station__member-doc"># Gluing on the actual open dyadic validity regions The band floor is fixed. A sufficiently small positive physical scale is inside an open validity region of some band above that floor. The local formulas below are supplied on those open regions, rather than by the values of a fixed reference formula on its excluded dyadic faces. This module transfers local formulas, jets, zero germs, and already proved local endpoint extensions. It does not manufacture their local smoothness or identify them with a reference formula outside its validity region.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="45.html" data-a4m-nav="prev">← Previous 45 · ActualCurrentParticularPhysical</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="47.html" data-a4m-nav="next">Next 47 · ActualValidBandWaves →</a></p>
+</main>
+</body>
+</html>

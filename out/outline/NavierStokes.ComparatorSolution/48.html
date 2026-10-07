@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>48 · GluedStageEstimates · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.GluedStageEstimates" data-a4m-index="48" data-a4m-members="15">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="47.html" data-a4m-nav="prev">← Previous 47 · ActualValidBandWaves</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="49.html" data-a4m-nav="next">Next 49 · ActualSignedWaveData →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">48</span>GluedStageEstimates</h1>
+<p class="a4m-station__module">NavierStokes.GluedStageEstimates</p>
+<p class="a4m-station__doc"># Stage estimates with the current-band particular fields The signed waves and mean increments retain their actual native inputs. The particular contribution is an independently constructed physical field, with no physical copy-family representation imposed on it.</p>
+<section class="a4m-station__group" data-a4m-family="Actual">
+<h2 class="a4m-station__family">Actual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualBaseVelocityBounds"><span class="a4m-station__member-name">ActualBaseVelocityBounds</span><span class="a4m-station__member-path">NavierStokes.ActualBaseVelocityBounds</span><p class="a4m-station__member-doc"># Fixed losses for the actual physical slow velocity The compact similarity region uses the selected Borel scales and the existing prefix estimates, including the axis. Outside the positive-order support the velocity is its actual leading angular field. In the far exterior it is the physical heat field. The final rate is on the full open-past endpoint filter.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCurrentCarrierJets"><span class="a4m-station__member-name">ActualCurrentCarrierJets</span><span class="a4m-station__member-path">NavierStokes.ActualCurrentCarrierJets</span><p class="a4m-station__member-doc"># Uniform phase jets for the actual current-chart copies The functions below are literal reindexings of the selected common phase. Positive jets have a fixed `Q^(-2h)` loss, uniformly before the label and band are selected. No bound on the unbounded phase value is asserted.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCurrentParticularBounds"><span class="a4m-station__member-name">ActualCurrentParticularBounds</span><span class="a4m-station__member-path">NavierStokes.ActualCurrentParticularBounds</span><p class="a4m-station__member-doc"># Quantitative bounds for actual current-band particular fields The estimates use the actual current coefficient and phase on their open validity domains. No reference-field smoothness or auxiliary copy-family representation is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCycleResidualBounds"><span class="a4m-station__member-name">ActualCycleResidualBounds</span><span class="a4m-station__member-path">NavierStokes.ActualCycleResidualBounds</span><p class="a4m-station__member-doc"># Residual estimates from the actual correction-cycle invariant The primary family, common chart, weighted strip and carrier sets below are the actual selected objects. Finite harmonic bounds are read from `sourceBand`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualPhysicalStageBounds"><span class="a4m-station__member-name">ActualPhysicalStageBounds</span><span class="a4m-station__member-path">NavierStokes.ActualPhysicalStageBounds</span><p class="a4m-station__member-doc"># Physical stage estimates from the actual native mean region Mean families are supplied on the original normalized region `(1/2,2)`. Only native smoothness, support, and class estimates are input. The physical stage bounds and the initialized velocity estimate are derived.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualStageEstimates"><span class="a4m-station__member-name">ActualStageEstimates</span><span class="a4m-station__member-path">NavierStokes.ActualStageEstimates</span><p class="a4m-station__member-doc"># Stage estimates for the fixed actual iteration The native step data and the actual physical field representations are assembled into the finite-stage obligations of the mixed diagonal theorem. No estimate of the output physical residual is an input.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Current">
+<h2 class="a4m-station__family">Current</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CurrentModeGeometry"><span class="a4m-station__member-name">CurrentModeGeometry</span><span class="a4m-station__member-path">NavierStokes.CurrentModeGeometry</span><p class="a4m-station__member-doc"># Geometry of the actual current-mode evaluation point The physical validity band and the closed nominal radial interval place the normalized Cartesian coordinates in a fixed compact annulus. The same current common-cover chart has the actual native slow domain and exactly the physical profile radius.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CurrentParticularLabelBounds"><span class="a4m-station__member-name">CurrentParticularLabelBounds</span><span class="a4m-station__member-path">NavierStokes.CurrentParticularLabelBounds</span><p class="a4m-station__member-doc"># Physical jet bounds for the actual current particular label sum The closed label windows bound the number of contributing spatial labels. The two column choices are retained by the signed-label map and are already included in the 2250-color palette. The finite harmonic sum remains explicit.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CurrentPhysicalChartJets"><span class="a4m-station__member-name">CurrentPhysicalChartJets</span><span class="a4m-station__member-path">NavierStokes.CurrentPhysicalChartJets</span><p class="a4m-station__member-doc"># Uniform jets of the actual current physical chart Only the transverse normalized coordinates are restricted to a fixed annulus. The slow, angular, and free auxiliary coordinates need no bound for the positive jets of the chart map. Native coefficients need smoothness only on a neighborhood of the evaluation point.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CurrentPhysicalModeGerms"><span class="a4m-station__member-name">CurrentPhysicalModeGerms</span><span class="a4m-station__member-path">NavierStokes.CurrentPhysicalModeGerms</span><p class="a4m-station__member-doc"># Normalized polar germs of the actual current particular modes The native point below uses the actual common-cover index. The ambient germs retain the current solve, its chosen phase, and its Cartesian rotation.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.GluedStageEstimates"><span class="a4m-station__member-name">GluedStageEstimates</span><span class="a4m-station__member-path">NavierStokes.GluedStageEstimates</span><p class="a4m-station__member-doc"># Stage estimates with the current-band particular fields The signed waves and mean increments retain their actual native inputs. The particular contribution is an independently constructed physical field, with no physical copy-family representation imposed on it.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.InitialNativeRegularity"><span class="a4m-station__member-name">InitialNativeRegularity</span><span class="a4m-station__member-path">NavierStokes.InitialNativeRegularity</span><p class="a4m-station__member-doc"># Full-chart regularity of the initial native copy coefficients The copied fields use the actual flat radial attachment. Their regularity holds across its boundary, rather than only inside the native estimate domain. The stripped coefficients are independent of the angular variable.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.InitialPhysicalData"><span class="a4m-station__member-name">InitialPhysicalData</span><span class="a4m-station__member-path">NavierStokes.InitialPhysicalData</span><p class="a4m-station__member-doc"># The actual initial primary potential and its physical copies Every field below uses the fixed `ActualPrimary.choice B N0`. The normal-potential operator is applied to the actual cutoff amplitude; its estimates are obtained from the existing support-local primitive controls. The lattice index is retained through Cartesian realization.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.InitializedPhysicalBackground"><span class="a4m-station__member-name">InitializedPhysicalBackground</span><span class="a4m-station__member-path">NavierStokes.InitializedPhysicalBackground</span><p class="a4m-station__member-doc"># Initial physical velocity bounds from the actual base and native data The base potential is the anchored `TailGaugePotential.finalPotential`. Its curl is the constructed `FinalSlowBase.velocity`. Only the finite initialization potential pays the derivative used by the curl estimate; no growth estimate on the base potential or its gauge is required.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.MixedFiniteBackground"><span class="a4m-station__member-name">MixedFiniteBackground</span><span class="a4m-station__member-path">NavierStokes.MixedFiniteBackground</span><p class="a4m-station__member-doc"># Finite background bounds from the raw increments The raw-stage interface starts at index one. A bound for the actual initialized stage is therefore kept explicit. Together with the raw increment bounds it controls every finite prefix with one derivative-loss function, independent of the number of correction stages.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="47.html" data-a4m-nav="prev">← Previous 47 · ActualValidBandWaves</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="49.html" data-a4m-nav="next">Next 49 · ActualSignedWaveData →</a></p>
+</main>
+</body>
+</html>

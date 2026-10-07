@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>47 · ActualValidBandWaves · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.ActualValidBandWaves" data-a4m-index="47" data-a4m-members="10">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="46.html" data-a4m-nav="prev">← Previous 46 · ActualCurrentWaveSupport</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="48.html" data-a4m-nav="next">Next 48 · GluedStageEstimates →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">47</span>ActualValidBandWaves</h1>
+<p class="a4m-station__module">NavierStokes.ActualValidBandWaves</p>
+<p class="a4m-station__doc"># The actual particular waves on valid physical charts The physical representative uses only the literal current-band solve. Its compatibility is obtained from the corresponding current-source transport laws. No value of a reference solve on an excluded face is used to define the physical representative.</p>
+<section class="a4m-station__group" data-a4m-family="Actual">
+<h2 class="a4m-station__family">Actual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualCyclePreservation"><span class="a4m-station__member-name">ActualCyclePreservation</span><span class="a4m-station__member-path">NavierStokes.ActualCyclePreservation</span><p class="a4m-station__member-doc"># Preservation by the actual correction cycle The fixed parameters, current residual, signed request, and comparison primary are those of the existing initialization. The concrete wave constructions supply the inputs to the generic analytic step.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualIntermediateDebtBounds"><span class="a4m-station__member-name">ActualIntermediateDebtBounds</span><span class="a4m-station__member-path">NavierStokes.ActualIntermediateDebtBounds</span><p class="a4m-station__member-doc"># Measured debt before the actual rank correction The first-wave debt, the signed covariance change, and the temporal mean change are evaluated on the literal intermediate states. No estimate of the post-temporal debt is supplied as a premise.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualIterationLedger"><span class="a4m-station__member-name">ActualIterationLedger</span><span class="a4m-station__member-path">NavierStokes.ActualIterationLedger</span><p class="a4m-station__member-doc"># The arithmetic ledger for actual correction stages The input of cycle `n` has accuracy `sigma n`. Its physical increment has index `n+1`, while a finite prefix after `J` cycles has accuracy `sigma J`. The gain and all physical offsets below are fixed before the stage index. This module does not assert the existence of correction cycles or their native class estimates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualParticularPotentialCoherence"><span class="a4m-station__member-name">ActualParticularPotentialCoherence</span><span class="a4m-station__member-path">NavierStokes.ActualParticularPotentialCoherence</span><p class="a4m-station__member-doc"># Coherence of the actual current-band particular potential The common copy coefficient is retained, including its cutoffs. Its vector potential is transported before taking the physical curl. The derivative identity uses an invertible linear chart and does not require an additional smoothness assumption on the phase.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedCommonDynamics"><span class="a4m-station__member-name">ActualSignedCommonDynamics</span><span class="a4m-station__member-path">NavierStokes.ActualSignedCommonDynamics</span><p class="a4m-station__member-doc"># Actual common signed-wave equations The native closed-cell equations are joined through the literal common copy construction. The complement is handled by actual input zero germs.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedGaussian"><span class="a4m-station__member-name">ActualSignedGaussian</span><span class="a4m-station__member-path">NavierStokes.ActualSignedGaussian</span><p class="a4m-station__member-doc"># Gaussian cutoff errors of the actual signed correction The transverse cutoff and the Gaussian cutoff remain in the literal native cutoff. The transverse factor has zero fast derivative. Thus the actual error vanishes on the central Gaussian plateau and retains the exact square-root edge weight at every decay exponent.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedMeanBinding"><span class="a4m-station__member-name">ActualSignedMeanBinding</span><span class="a4m-station__member-path">NavierStokes.ActualSignedMeanBinding</span><p class="a4m-station__member-doc"># The actual signed mean cross and its physical scale The fixed comparison primary is the actual tangent block, and every signed coefficient uses the same selected matrix, pulse and once-applied cutoff. The physical partition scale is `Q n * q_normalized`; finite low bands retain their partition factor.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedOutputBounds"><span class="a4m-station__member-name">ActualSignedOutputBounds</span><span class="a4m-station__member-path">NavierStokes.ActualSignedOutputBounds</span><p class="a4m-station__member-doc"># Actual signed outputs from native support estimates The background is the same chosen primary background. Its local controls are restricted to the signed phase cells before applying the native-copy localization and periodization estimates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualValidBandWaves"><span class="a4m-station__member-name">ActualValidBandWaves</span><span class="a4m-station__member-path">NavierStokes.ActualValidBandWaves</span><p class="a4m-station__member-doc"># The actual particular waves on valid physical charts The physical representative uses only the literal current-band solve. Its compatibility is obtained from the corresponding current-source transport laws. No value of a reference solve on an excluded face is used to define the physical representative.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Current">
+<h2 class="a4m-station__family">Current</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CurrentParticularPhysicalCoherence"><span class="a4m-station__member-name">CurrentParticularPhysicalCoherence</span><span class="a4m-station__member-path">NavierStokes.CurrentParticularPhysicalCoherence</span><p class="a4m-station__member-doc"># Removing the native scales from the current particular modes The native potential and pressure transformation laws imply equality of their actual physical modes. The angle and Cartesian rotation are the same at both bands, so the native scale cancels before applying either map.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="46.html" data-a4m-nav="prev">← Previous 46 · ActualCurrentWaveSupport</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="48.html" data-a4m-nav="next">Next 48 · GluedStageEstimates →</a></p>
+</main>
+</body>
+</html>

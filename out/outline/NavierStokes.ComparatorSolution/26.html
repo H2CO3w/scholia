@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>26 · BaseContextAssembly · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.BaseContextAssembly" data-a4m-index="26" data-a4m-members="15">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="25.html" data-a4m-nav="prev">← Previous 25 · PrimaryTargetBounds</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="27.html" data-a4m-nav="next">Next 27 · BaseStressClasses →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">26</span>BaseContextAssembly</h1>
+<p class="a4m-station__module">NavierStokes.BaseContextAssembly</p>
+<p class="a4m-station__doc"># The correction context of the actual slow base The native slow order is `(T,Z)`. The explicit linear map `slowCoordinates` converts to the `(R,(Z,T))` order used by the physical base charts. Every field below uses one fixed final profile, coefficient family, and schedule.</p>
+<section class="a4m-station__group" data-a4m-family="Physical">
+<h2 class="a4m-station__family">Physical</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalResidualBridge"><span class="a4m-station__member-name">PhysicalResidualBridge</span><span class="a4m-station__member-path">NavierStokes.PhysicalResidualBridge</span><p class="a4m-station__member-doc"># The physical residual of a scaled graph pullback This file keeps the cylindrical angle separate from the lifted slow and fast variables. Every differential operator is an actual Frechet derivative.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalResidualTZ"><span class="a4m-station__member-name">PhysicalResidualTZ</span><span class="a4m-station__member-path">NavierStokes.PhysicalResidualTZ</span><p class="a4m-station__member-doc"># Physical residuals in the slow-coordinate order `(T,Z)` `PhysicalResidualBridge` uses slow coordinates `(Z,T)`. The correction-state pipeline uses `(T,Z)`. The map below swaps those two input coordinates and leaves radius, fast variables, angle, and vector components unchanged.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalWaveSum"><span class="a4m-station__member-name">PhysicalWaveSum</span><span class="a4m-station__member-path">NavierStokes.PhysicalWaveSum</span><p class="a4m-station__member-doc"># Physical waves on common covers and locally finite label sums Cover changes are the actual powers of `J_g`. Bounds use actual Fréchet derivatives and the constructed dyadic and spatial masks.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.AllBandBaseJets"><span class="a4m-station__member-name">AllBandBaseJets</span><span class="a4m-station__member-path">NavierStokes.AllBandBaseJets</span><p class="a4m-station__member-doc"># Base-field jet bounds on every dyadic band The positive-order Borel stages vanish when their physical scale is at least one. Their error jets therefore vanish on the open region above one. This extends the normalized bounds to every positive physical scale and removes the auxiliary restriction `Q * qhi ≤ 1` from the chart estimates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BaseContextAssembly"><span class="a4m-station__member-name">BaseContextAssembly</span><span class="a4m-station__member-path">NavierStokes.BaseContextAssembly</span><p class="a4m-station__member-doc"># The correction context of the actual slow base The native slow order is `(T,Z)`. The explicit linear map `slowCoordinates` converts to the `(R,(Z,T))` order used by the physical base charts. Every field below uses one fixed final profile, coefficient family, and schedule.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BaseRadialJets"><span class="a4m-station__member-name">BaseRadialJets</span><span class="a4m-station__member-path">NavierStokes.BaseRadialJets</span><p class="a4m-station__member-doc"># The actual normalized radial base component The radial coefficient is obtained from the same summed curl base and the same admissible schedule as the angular and axial coefficients. Its small factor is `Q^h`. The exact stream formula includes the factor `1/2` in `AxisymmetricFields.velocity_zero`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.DefectIncrementBounds"><span class="a4m-station__member-name">DefectIncrementBounds</span><span class="a4m-station__member-path">NavierStokes.DefectIncrementBounds</span><p class="a4m-station__member-doc"># Actual defect changes under the slow rank update The pressure, angular flux, and axial flux defects are actual torus/radial moments. Their linear changes are precisely the last three rows of (35). The remaining terms include the complete radial-source remainder of (32).</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.HarmonicCovariance"><span class="a4m-station__member-name">HarmonicCovariance</span><span class="a4m-station__member-path">NavierStokes.HarmonicCovariance</span><p class="a4m-station__member-doc"># Covariance of actual finite real harmonic fields Angular integration is evaluated exactly before applying the weighted product estimates. Real projection includes both conjugate harmonics. The constants are uniform over a fixed bound on the harmonic index.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.LabelSumBounds"><span class="a4m-station__member-name">LabelSumBounds</span><span class="a4m-station__member-path">NavierStokes.LabelSumBounds</span><p class="a4m-station__member-doc"># Uniform weighted bounds for actual label sums The constants in `UniformClass` are chosen before the label. The spatial sum estimates use the actual closed label windows and the existing finite coloring, rather than the total number of labels in an active finite set.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.LiftedMeanResidual"><span class="a4m-station__member-name">LiftedMeanResidual</span><span class="a4m-station__member-path">NavierStokes.LiftedMeanResidual</span><p class="a4m-station__member-doc"># Exact angular averages of the lifted correction residual Angular integration is over the actual circle variable. All differentiation uses Fréchet derivatives on an open lifted strip; the graph operators are instantiated from `CorrectionState.Context.operators`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.LocalRankDefect"><span class="a4m-station__member-name">LocalRankDefect</span><span class="a4m-station__member-path">NavierStokes.LocalRankDefect</span><p class="a4m-station__member-doc"># Rank correction on the actual open slow domain The stream uses the variable similarity gauge. Its zero weighted mass makes it equal to the same zero-axis primitive in every containing gauge. All moment estimates below use the local physical domain, not global slow data.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PrimaryMaterialDefect"><span class="a4m-station__member-name">PrimaryMaterialDefect</span><span class="a4m-station__member-path">NavierStokes.PrimaryMaterialDefect</span><p class="a4m-station__member-doc"># The actual primary material-phase defect The large axial term in the phase is cancelled by its actual material derivative before estimating any jets. Only the slow coordinate map and slot coordinate require polynomial bounds; the angular coordinate and the unstripped phase itself need no such bound.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PrimaryResidualClass"><span class="a4m-station__member-name">PrimaryResidualClass</span><span class="a4m-station__member-path">NavierStokes.PrimaryResidualClass</span><p class="a4m-station__member-doc"># Initial primary residual classes The primary coefficient and its Gaussian error are the actual cutoff/curl construction. The improved nonlinear bound uses the exact divergence of that curl, before projecting the literal residual into its finite harmonics.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.UniformPrimaryWeights"><span class="a4m-station__member-name">UniformPrimaryWeights</span><span class="a4m-station__member-path">NavierStokes.UniformPrimaryWeights</span><p class="a4m-station__member-doc"># Uniform primary weights and curl estimates A single enumeration of the joint band/label index transfers the existing weighted analysis without losing any inverse-edge factors. The reindexed strip retains the same domain, edge distance, and vanishing weight. Every constant is chosen before both the original band and the label.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.VariableGaugeMean"><span class="a4m-station__member-name">VariableGaugeMean</span><span class="a4m-station__member-path">NavierStokes.VariableGaugeMean</span><p class="a4m-station__member-doc"># The actual similarity-dependent mean gauge The endpoints are multiplied by the actual `sqrt(q)`. The cutoff and normalized density are defined explicitly, and the primitive is the existing integral operator evaluated with those endpoints on each slow fiber. The estimates use the moving profile `R / sqrt(q)` and the full ordinary Fréchet derivatives. Their constants are uniform in the source family and the radial transport frequency. The exact cutoff alias is retained. The final State theorems derive pressure, pressure-change and temporal increment classes from the actual input fields on the valid slow domain. The common torus index and its bounded gap from the native index remain explicit. This module does not assert arbitrary-power alias decay.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="25.html" data-a4m-nav="prev">← Previous 25 · PrimaryTargetBounds</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="27.html" data-a4m-nav="next">Next 27 · BaseStressClasses →</a></p>
+</main>
+</body>
+</html>

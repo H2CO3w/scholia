@@ -1,0 +1,9 @@
+# dsh-scholia bundle patch：把插件行插入 profile 的插件名册（ARCHITECTURE §3.2）。
+# 绝对路径只写在补丁层，不写进代码（SPEC §7.2）——用户的 patch 层跨升级存活。
+- insert:
+    - id: dsh-scholia
+      name: 'dsh-scholia'
+      config:
+        corpusPath: /home/shiro/文档/deepseek-harness/default-workspace/ai4math/data/lsv2.jsonl
+        cacheDir:   /home/shiro/文档/deepseek-harness/default-workspace/ai4math/cache
+        outputDir:  /home/shiro/文档/deepseek-harness/default-workspace/ai4math/out

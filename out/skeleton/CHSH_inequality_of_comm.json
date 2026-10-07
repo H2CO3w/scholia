@@ -1,0 +1,103 @@
+{
+  "theorem": "CHSH_inequality_of_comm",
+  "root": "n0",
+  "nodes": {
+    "n0": {
+      "id": "n0",
+      "decl": "CHSH_inequality_of_comm",
+      "kind": "theorem",
+      "signature": "[CommRing R] [PartialOrder R] [StarRing R] [StarOrderedRing R] [Algebra ℝ R] [IsOrderedModule ℝ R] (A₀ A₁ B₀ B₁ : R)\n  (T : IsCHSHTuple A₀ A₁ B₀ B₁) : A₀ * B₀ + A₀ * B₁ + A₁ * B₀ - A₁ * B₁ ≤ 2",
+      "type_fingerprint": "sha256:8d066271fe211e4c",
+      "hypotheses": [
+        "A₀",
+        "A₁",
+        "B₀",
+        "B₁",
+        "T",
+        "R"
+      ],
+      "parent": null,
+      "lemma_refs": [
+        "Algebra.smul_def"
+      ],
+      "source": "lsv2",
+      "truncated": true
+    },
+    "n1": {
+      "id": "n1",
+      "decl": null,
+      "kind": "have",
+      "signature": "0 ≤ P",
+      "type_fingerprint": "sha256:bfe440843644c7ec",
+      "hypotheses": [],
+      "parent": "n0",
+      "lemma_refs": [
+        "Algebra.smul_def"
+      ],
+      "source": "lsv2",
+      "truncated": true
+    },
+    "n2": {
+      "id": "n2",
+      "decl": null,
+      "kind": "have",
+      "signature": "P * P = 4 * P",
+      "type_fingerprint": "sha256:98ce0742fe7ab673",
+      "hypotheses": [],
+      "parent": "n1",
+      "lemma_refs": [],
+      "source": "lsv2",
+      "truncated": true
+    },
+    "n3": {
+      "id": "n3",
+      "decl": null,
+      "kind": "have",
+      "signature": "P = (1 / 4 : ℝ) • (P * P)",
+      "type_fingerprint": "sha256:3ce84c4fcd57499a",
+      "hypotheses": [],
+      "parent": "n1",
+      "lemma_refs": [
+        "Algebra.smul_def"
+      ],
+      "source": "lsv2",
+      "truncated": true
+    },
+    "n4": {
+      "id": "n4",
+      "decl": null,
+      "kind": "have",
+      "signature": "4 * P = (4 : ℝ) • P",
+      "type_fingerprint": "sha256:a3108ce9f9ee8eea",
+      "hypotheses": [],
+      "parent": "n3",
+      "lemma_refs": [
+        "Algebra.smul_def"
+      ],
+      "source": "lsv2",
+      "truncated": true
+    },
+    "n5": {
+      "id": "n5",
+      "decl": null,
+      "kind": "have",
+      "signature": "star P = P",
+      "type_fingerprint": "sha256:ebd819d97761f702",
+      "hypotheses": [],
+      "parent": "n1",
+      "lemma_refs": [],
+      "source": "lsv2",
+      "truncated": true
+    }
+  },
+  "coverage": {
+    "mode": "tactic-multiline",
+    "have_count": 5,
+    "node_count": 6,
+    "truncated": true,
+    "degraded": false,
+    "degrade_reason": null,
+    "truncate_reason": "证明体被数据集截断（长度 500，或结尾省略号），have 子目标可能不完整；已解析出的 5 个步骤照常做步骤级注解，但不要声称覆盖完整"
+  },
+  "spec_version": "1.1.0"
+}

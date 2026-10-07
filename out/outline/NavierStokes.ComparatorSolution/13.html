@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 · RenormalizedHeatMoment · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.RenormalizedHeatMoment" data-a4m-index="13" data-a4m-members="4">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="12.html" data-a4m-nav="prev">← Previous 12 · HeatedOutgoing</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="14.html" data-a4m-nav="next">Next 14 · SlowResidualMatching →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">13</span>RenormalizedHeatMoment</h1>
+<p class="a4m-station__module">NavierStokes.RenormalizedHeatMoment</p>
+<p class="a4m-station__doc"># The renormalized angular moment and physical axial viscosity The nonintegrable reference power is independent of physical axial position. It is subtracted before integration. Local constancy of the exterior heat carrier supplies compact support for every axial derivative of the difference.</p>
+<section class="a4m-station__group" data-a4m-family="Similarity">
+<h2 class="a4m-station__family">Similarity</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SimilarityCoordinates"><span class="a4m-station__member-name">SimilarityCoordinates</span><span class="a4m-station__member-path">NavierStokes.SimilarityCoordinates</span><p class="a4m-station__member-doc"># Analytic existence of the similarity coordinates Here `a = 2h`. We construct the unique positive solution of `τ = q - z² q^a` for `0 &lt; a &lt; 1` and `τ &gt; 0`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SimilarityProfile"><span class="a4m-station__member-name">SimilarityProfile</span><span class="a4m-station__member-path">NavierStokes.SimilarityProfile</span><p class="a4m-station__member-doc"># Actual derivatives of reconstructed similarity profiles The physical variables are `(t,s,z)`, with `s = r²/2`. Inner profiles use `(X,η)`. All partial derivatives below are genuine Fréchet derivatives.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Coordinate">
+<h2 class="a4m-station__family">Coordinate</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CoordinateAlgebra"><span class="a4m-station__member-name">CoordinateAlgebra</span><span class="a4m-station__member-path">NavierStokes.CoordinateAlgebra</span><p class="a4m-station__member-doc"># Algebra of the manuscript coordinates This module checks the algebra in equations (3)--(5). It does not construct a smooth inverse coordinate chart, a Navier--Stokes solution, or a singularity. `q ^ b` below denotes the real power, while `η ^ 2` is a natural power.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Renormalized">
+<h2 class="a4m-station__family">Renormalized</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.RenormalizedHeatMoment"><span class="a4m-station__member-name">RenormalizedHeatMoment</span><span class="a4m-station__member-path">NavierStokes.RenormalizedHeatMoment</span><p class="a4m-station__member-doc"># The renormalized angular moment and physical axial viscosity The nonintegrable reference power is independent of physical axial position. It is subtracted before integration. Local constancy of the exterior heat carrier supplies compact support for every axial derivative of the difference.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="12.html" data-a4m-nav="prev">← Previous 12 · HeatedOutgoing</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="14.html" data-a4m-nav="next">Next 14 · SlowResidualMatching →</a></p>
+</main>
+</body>
+</html>

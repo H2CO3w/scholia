@@ -1,0 +1,149 @@
+/*! a4m.css — dsh-scholia 静态渲染样式（论文式版面，零装饰）
+ *  命名：SPEC §1.4（a4m- 前缀 + BEM；节点 id a4m-n-…、注解 id a4m-a-…、data-a4m-… 属性）
+ *  过滤：V6 直觉层用属性选择器实现，页面不含任何脚本。
+ *  视觉手段只有：字号 / 字重 / 斜体 / 小型大写 / 居中缩进 / 留白。
+ */
+:root {
+  --a4m-fg: #000;
+  --a4m-muted: #555;
+  --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif;
+}
+
+body {
+  margin: 0;
+  color: var(--a4m-fg);
+  font-family: var(--a4m-serif);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ── 论文容器：单栏 72ch 居中 ───────────────────────────────────── */
+
+.a4m-paper { max-width: 88ch; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+/* ── 标题区 ─────────────────────────────────────────────────────── */
+
+.a4m-paper__head { margin-bottom: 1.6rem; }
+.a4m-paper__title {
+  margin: 0 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.a4m-paper__subtitle { margin: 0; text-align: center; font-variant: small-caps; font-size: .95rem; color: var(--a4m-muted); }
+
+/* 数据质量说明：一行素净斜体（退化 / 截断必须可见，但不能是色块） */
+.a4m-coverage { margin: .6rem 0 0; font-size: .82rem; font-style: italic; color: var(--a4m-muted); text-align: justify; }
+.a4m-coverage--step { font-size: .78rem; }
+
+/* 直觉层开关（V6 的无脚本入口；素色小字，不是按钮） */
+.a4m-layer-toggle { display: block; margin-top: .6rem; text-align: center; font-size: .78rem; color: var(--a4m-muted); cursor: pointer; }
+.a4m-layer-toggle__input { margin: 0 .4em 0 0; }
+.a4m-layer-toggle__label { color: var(--a4m-muted); }
+
+/* ── 摘要（两侧缩进的 abstract）─────────────────────────────────── */
+
+.a4m-abstract { margin: 1.8rem 2.5em 0; }
+.a4m-abstract .a4m-anno__seg { text-align: justify; text-indent: 1.5em; }
+
+/* ── 目录 ───────────────────────────────────────────────────────── */
+
+.a4m-contents { margin: 2.4rem auto; max-width: 34rem; }
+.a4m-contents__title { margin: 0 0 .8rem; text-align: center; font-variant: small-caps; letter-spacing: .25em; font-size: .95rem; font-weight: 700; }
+.a4m-contents__list { list-style: none; margin: 0; padding: 0; }
+.a4m-contents__link { display: flex; gap: .6em; align-items: baseline; color: inherit; text-decoration: none; font-size: .88rem; line-height: 1.7; }
+.a4m-contents__page { margin-left: auto; color: var(--a4m-muted); font-size: .8rem; white-space: nowrap; }
+.a4m-contents__item { }
+.a4m-contents__label { }
+.a4m-contents__item--sub .a4m-contents__link { padding-left: 2em; font-size: .82rem; color: var(--a4m-muted); }
+
+/* ── 章标题（居中、小型大写、带编号）────────────────────────────── */
+
+.a4m-section { margin-top: 2.6rem; }
+.a4m-section__title { margin: 0 0 1.1rem; text-align: center; font-variant: small-caps; letter-spacing: .08em; font-size: 1.05rem; font-weight: 700; }
+.a4m-section__ref { color: inherit; text-decoration: none; }
+
+/* ── 定理块 ─────────────────────────────────────────────────────── */
+
+.a4m-theorem { margin: 0 0 1.2rem; }
+.a4m-theorem__head { margin: 0; font-size: .95rem; font-weight: 700; }
+.a4m-theorem__decl { margin-left: .6em; font-family: var(--a4m-mono); font-size: .74rem; font-weight: 400; color: var(--a4m-muted); }
+.a4m-theorem__label { }
+.a4m-theorem__refs { margin: .25rem 0 0; font-size: .8rem; font-style: italic; color: var(--a4m-muted); }
+.a4m-theorem__ref { color: inherit; }
+
+/* LEAN 源：默认折叠（原生 details，零 JS），小号小型大写、无边框底色 */
+.a4m-lean { margin: .3rem 0 0; }
+.a4m-lean__summary { font-size: .72rem; color: var(--a4m-muted); cursor: pointer; }
+/* 字距在最后一个字后面也留一份空隙，用负边距抵消：标签与全角括号之间不该有空格 */
+.a4m-lean__label { font-variant: small-caps; text-transform: uppercase; letter-spacing: .1em; margin-right: -.1em; }
+.a4m-lean__pre { margin: .45rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 编号公式：居中公式 + 右对齐编号 ────────────────────────────── */
+
+/* 公式块比正文宽一档：公式重的页面里，给公式更多横向空间比把正文拉成超长行、
+   或把公式缩成脚注都更合适。窄屏不外扩，同时把公式字号降一档，
+   使 (栏宽+外扩)×0.95 与 栏宽×0.86 的每行容量一致——同一套折行预算在两种宽度下都成立。 */
+.a4m-equation { position: relative; margin: 1.1rem 0; text-align: center; }
+@media (min-width: 62rem) { .a4m-equation { margin-inline: -4ch; } }
+/* 字号挂在我们自己的容器上（KaTeX 的 katex-display 类不属于 a4m- 命名，不直接选它）：
+   公式内部一律用 em，缩放容器即可整体缩放，行内公式不受影响（那是 .a4m-math）。 */
+.a4m-equation--wide .a4m-equation__body { font-size: 0.9em; }
+@media (max-width: 62rem) { .a4m-equation__body { font-size: 0.86em; } }
+/* 折行优先：公式在顶层关系符处折成 aligned（见 html.mjs），这里不做横向裁切。
+   只有实在没有断点的超宽公式才允许滚动，且渲染层会给一行可见提示。 */
+.a4m-equation__body { display: inline-block; max-width: 100%; font-size: 0.95em; }
+.a4m-equation--wide .a4m-equation__body { overflow-x: auto; }
+.a4m-equation__no { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: .85rem; white-space: nowrap; }
+.a4m-equation__ref { color: inherit; text-decoration: none; }
+.a4m-step { margin: 0 0 .8rem; }
+
+/* ── 证明环境（斜体引导词 + 右对齐的证毕符号）───────────────────── */
+
+.a4m-proof-lead { margin: 1rem 0 .2rem; font-style: italic; }
+.a4m-qed { margin: 1.2rem 0 0; text-align: right; }
+.a4m-note { margin: .5rem 0; font-size: .85rem; font-style: italic; color: var(--a4m-muted); }
+
+/* ── 注解 = 论文的 remark：粗体 run-in 引出词 + 正文（无框、无底色、无缩进块）── */
+
+.a4m-anno { margin: .55rem 0 0; }
+.a4m-anno__seg { margin: 0 0 .3rem; font-size: .93em; text-align: justify; text-indent: 1.5em; }
+.a4m-anno__seg--concept { }
+.a4m-anno__seg--reasoning { }
+.a4m-anno__lex { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lex--missing { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lead { font-weight: 700; color: inherit; text-decoration: none; }
+.a4m-anno--orphan .a4m-anno__lead { font-style: italic; }
+
+/* ── 陈述未知（v1.3 的 signatureUnknown）：说明一行 + 原文块 ─────────
+ * 原文块与 Lean 源块同款式（等宽小字），但独立命名——改 Lean 块不会误伤它。 */
+
+.a4m-unknown { }
+.a4m-unknown__raw { margin: .4rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 数学：KaTeX 服务端渲染 + 等宽回退 ──────────────────────────── */
+
+.a4m-math { }
+.a4m-math--display { display: block; margin: .4rem 0; text-align: center; }
+.a4m-math-fallback { font-family: var(--a4m-mono); font-size: .88em; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 页脚：一行出处 ─────────────────────────────────────────────── */
+
+.a4m-paper__foot { margin-top: 3rem; font-size: .75rem; color: var(--a4m-muted); }
+.a4m-paper__prov { margin: 0; font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-paper__note { margin: .3rem 0 0; font-size: .75rem; }
+
+/* ── V6：直觉层过滤（属性选择器，不写脚本）───────────────────────
+ * 二期只需给容器加 data-a4m-layer="intuition" 即可复用同一套规则；
+ * 一期用下面的 :has() + checkbox 提供等价的无脚本开关。 */
+
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }

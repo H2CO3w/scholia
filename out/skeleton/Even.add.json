@@ -1,0 +1,32 @@
+{
+  "theorem": "Even.add",
+  "root": "n0",
+  "nodes": {
+    "n0": {
+      "id": "n0",
+      "decl": "Even.add",
+      "kind": "theorem",
+      "signature": "∀ {α : Type u_2} [inst : AddCommSemigroup α] {a b : α}, Even a → Even b → Even (a + b)",
+      "type_fingerprint": "sha256:103f0587e72aae98",
+      "hypotheses": [
+        "α",
+        "a",
+        "b",
+        "AddCommSemigroup"
+      ],
+      "parent": null,
+      "lemma_refs": [],
+      "source": "lsv2",
+      "truncated": false
+    }
+  },
+  "coverage": {
+    "mode": "failed",
+    "have_count": 0,
+    "node_count": 1,
+    "truncated": false,
+    "degraded": true,
+    "degrade_reason": "证明体为空，无法建树（definition / inductive 等记录通常没有 value）；请改用能提供证明体的定理记录",
+    "truncate_reason": null
+  }
+}

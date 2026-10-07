@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>24 · MeanContinuousAcceleration · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.MeanContinuousAcceleration" data-a4m-index="24" data-a4m-members="10">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="23.html" data-a4m-nav="prev">← Previous 23 · MeanCoordinatePath</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="25.html" data-a4m-nav="next">Next 25 · MeanContinuousSobolev →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">24</span>MeanContinuousAcceleration</h1>
+<p class="a4m-station__module">Euler.MeanContinuousAcceleration</p>
+<p class="a4m-station__doc"># Actual spatial orbits of continuous mean acceleration The ordinary solenoidal Gram inverse commutes with simultaneous translation of its data. This identifies the parameterized continuous solve with the genuine spatial orbit of the acceleration, including endpoint times.</p>
+<section class="a4m-station__group" data-a4m-family="Continuous">
+<h2 class="a4m-station__family">Continuous</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousAccelerationForcing"><span class="a4m-station__member-name">ContinuousAccelerationForcing</span><span class="a4m-station__member-path">Euler.ContinuousAccelerationForcing</span><p class="a4m-station__member-doc"># Actual continuous-time acceleration forcing The expression `Q*(f-2 Q₁v)` is a genuine continuous path. Its smoothness and factorial bound are proved in the uniform time norm and are shared by the mean and transverse strong equations.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousAccelerationGevrey"><span class="a4m-station__member-name">ContinuousAccelerationGevrey</span><span class="a4m-station__member-path">Euler.ContinuousAccelerationGevrey</span><p class="a4m-station__member-doc"># Uniform-time regularity of actual acceleration The continuous acceleration is the already constructed Gram inverse applied to its literal forcing. Smoothness and factorial estimates therefore apply to the actual continuous path, including its endpoint values.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousGramGevrey"><span class="a4m-station__member-name">ContinuousGramGevrey</span><span class="a4m-station__member-path">Euler.ContinuousGramGevrey</span><p class="a4m-station__member-doc"># Uniform-time factorial bounds for the actual Gram inverse The inverse is a genuinely smooth continuous operator path. Applying the frozen-coefficient recurrence in the uniform norm gives actual inverse-path and solution estimates, without a Hilbert structure on the path space.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousGramPath"><span class="a4m-station__member-name">ContinuousGramPath</span><span class="a4m-station__member-path">Euler.ContinuousGramPath</span><p class="a4m-station__member-doc"># Genuine inverse Gram calculus in the uniform time norm The previously constructed continuous Gram inverse is an actual inverse in the Banach algebra of continuous operator paths. Its external-parameter smoothness follows from inversion at units of that algebra. No smoothness of a pre-existing inverse is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousPathCalculus"><span class="a4m-station__member-name">ContinuousPathCalculus</span><span class="a4m-station__member-path">Euler.ContinuousPathCalculus</span><p class="a4m-station__member-doc"># Genuine coefficient calculus on continuous path spaces Pointwise multiplication by an operator-valued continuous path depends bounded-linearly on that path. Its operator norm, actual parameter derivatives, and factorial estimates therefore come directly from the coefficient, with no loss in the coefficient amplitude.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousPathComposition"><span class="a4m-station__member-name">ContinuousPathComposition</span><span class="a4m-station__member-path">Euler.ContinuousPathComposition</span><p class="a4m-station__member-doc"># Actual composition and adjoint calculus on continuous paths The pointwise operator operations are built from bounded maps in the uniform norm. Their regularity and factorial bounds are consequently genuine derivative statements in that norm.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ContinuousTimeIntegral"><span class="a4m-station__member-name">ContinuousTimeIntegral</span><span class="a4m-station__member-path">Euler.ContinuousTimeIntegral</span><p class="a4m-station__member-doc"># Bounded operators on continuous time paths The multiplier and initial integral are actual continuous linear maps. The primitive has the prescribed derivative, including the one-sided endpoint statements, and the uniform bound is exactly the interval length.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.BoundedInverseGevrey"><span class="a4m-station__member-name">BoundedInverseGevrey</span><span class="a4m-station__member-path">Euler.BoundedInverseGevrey</span><p class="a4m-station__member-doc"># Genuine derivative estimates for bounded inverses on normed spaces The triangular derivative estimate only needs an actual bounded left inverse of the frozen operator. This form applies to continuous path spaces as well as Hilbert spaces, without assigning a Hilbert structure to a uniform norm.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanContinuousAcceleration"><span class="a4m-station__member-name">MeanContinuousAcceleration</span><span class="a4m-station__member-path">Euler.MeanContinuousAcceleration</span><p class="a4m-station__member-doc"># Actual spatial orbits of continuous mean acceleration The ordinary solenoidal Gram inverse commutes with simultaneous translation of its data. This identifies the parameterized continuous solve with the genuine spatial orbit of the acceleration, including endpoint times.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.MeanPointwiseGramTranslation"><span class="a4m-station__member-name">MeanPointwiseGramTranslation</span><span class="a4m-station__member-path">Euler.MeanPointwiseGramTranslation</span><p class="a4m-station__member-doc"># Ordinary spatial covariance of the mean Gram inverse These identities act at one actual time slice in ordinary solenoidal L². They identify the continuous acceleration family with translation of the original acceleration, including endpoint time values.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="23.html" data-a4m-nav="prev">← Previous 23 · MeanCoordinatePath</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="25.html" data-a4m-nav="next">Next 25 · MeanContinuousSobolev →</a></p>
+</main>
+</body>
+</html>

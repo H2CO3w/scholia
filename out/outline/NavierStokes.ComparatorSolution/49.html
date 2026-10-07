@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>49 · ActualSignedWaveData · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.ActualSignedWaveData" data-a4m-index="49" data-a4m-members="16">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="48.html" data-a4m-nav="prev">← Previous 48 · GluedStageEstimates</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="50.html" data-a4m-nav="next">Next 50 · ActualCandidateAssembly →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">49</span>ActualSignedWaveData</h1>
+<p class="a4m-station__module">NavierStokes.ActualSignedWaveData</p>
+<p class="a4m-station__doc"># Physical wave data for the actual signed cycle fields The native family is the family in `ActualSignedExterior`. Geometry, profiles and native source bounds are assembled before any physical estimate is applied.</p>
+<section class="a4m-station__group" data-a4m-family="Actual">
+<h2 class="a4m-station__family">Actual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedExterior"><span class="a4m-station__member-name">ActualSignedExterior</span><span class="a4m-station__member-path">NavierStokes.ActualSignedExterior</span><p class="a4m-station__member-doc"># Exact exterior support of the actual signed physical fields The original spatial mask and leading target force every signed copy to vanish outside the fixed nominal active annulus. The argument retains the normalized radial coordinate exactly and is independent of the request.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedFamilySupport"><span class="a4m-station__member-name">ActualSignedFamilySupport</span><span class="a4m-station__member-path">NavierStokes.ActualSignedFamilySupport</span><p class="a4m-station__member-doc"># Support and local smoothness of the actual signed copy family The aggregate retains the original singleton at each active label and is zero at omitted labels. Positive lift-time gating commutes with this assembly. The source-domain statements concern the original, ungated amplitudes on positive lift time.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedNativeBounds"><span class="a4m-station__member-name">ActualSignedNativeBounds</span><span class="a4m-station__member-path">NavierStokes.ActualSignedNativeBounds</span><p class="a4m-station__member-doc"># Joint native bounds for the actual signed physical sources The sources are the literal masked sources of the canonical dependent family. Bounds are uniform before selecting an outer label, a harmonic, a band, or a lattice copy. No physical derivative estimate is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedNativeProfiles"><span class="a4m-station__member-name">ActualSignedNativeProfiles</span><span class="a4m-station__member-path">NavierStokes.ActualSignedNativeProfiles</span><p class="a4m-station__member-doc"># The actual signed carrier profiles on their Prepared regions The family keeps each label's genuine Prepared phase domain. The closed one-mesh mask support lies strictly inside the open two-mesh domain at positive time. This proves the physical closure-coverage condition without extending the profile functions across a native domain boundary.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedNativeRegularity"><span class="a4m-station__member-name">ActualSignedNativeRegularity</span><span class="a4m-station__member-path">NavierStokes.ActualSignedNativeRegularity</span><p class="a4m-station__member-doc"># Native regularity of the actual signed cut sources The dyadic factor is retained literally. The estimates below first turn the actual radial flat-weight classes into bounded jets, including at the radial edges; no smooth continuation of the unmasked request at a dyadic face is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedPhysicalBinding"><span class="a4m-station__member-name">ActualSignedPhysicalBinding</span><span class="a4m-station__member-path">NavierStokes.ActualSignedPhysicalBinding</span><p class="a4m-station__member-doc"># The actual signed family at its native reference bands Each primary label retains its own prepared slow domain. The otherwise irrelevant band index in a physical reference is frozen at that label's reference band. In particular, no global ordering of a fixed native cover above all common covers is asserted. The request uses the actual common-reference state and its torus average. Only the wave geometry is put in native coordinates: inverse-cover pullback of the entire state would in general have only subcover periodicity.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedReferenceGeometry"><span class="a4m-station__member-name">ActualSignedReferenceGeometry</span><span class="a4m-station__member-path">NavierStokes.ActualSignedReferenceGeometry</span><p class="a4m-station__member-doc"># Reference geometry of the actual signed family Every singleton retains the original primary label, phase, native view, and current-state request. Reindexing its dependent payload changes only the proof of the reference-band equality. The seven reference-geometry fields below come from these primitive identities; no equality of output physical fields or native regularity is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedUnmaskedBinding"><span class="a4m-station__member-name">ActualSignedUnmaskedBinding</span><span class="a4m-station__member-path">NavierStokes.ActualSignedUnmaskedBinding</span><p class="a4m-station__member-doc"># Exact native-source factorization for the actual signed family The primitive state, primary choice, request, and lattice copy are unchanged. The identities retain the one Gaussian already present in the native cutoff. They hold on the whole native coordinate space, before any smoothness claim or own-band/harmonic gate is applied.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedUnmaskedBounds"><span class="a4m-station__member-name">ActualSignedUnmaskedBounds</span><span class="a4m-station__member-path">NavierStokes.ActualSignedUnmaskedBounds</span><p class="a4m-station__member-doc"># The actual signed coefficients with only the dyadic factor removed The matrix, target, current request, normalized pulse and pressure operator are unchanged. The spatial mask is replaced by its actual native grid factor. All estimates are on the original native control cells.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualSignedWaveData"><span class="a4m-station__member-name">ActualSignedWaveData</span><span class="a4m-station__member-path">NavierStokes.ActualSignedWaveData</span><p class="a4m-station__member-doc"># Physical wave data for the actual signed cycle fields The native family is the family in `ActualSignedExterior`. Geometry, profiles and native source bounds are assembled before any physical estimate is applied.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Positive">
+<h2 class="a4m-station__family">Positive</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PositiveTimeCopyFamily"><span class="a4m-station__member-name">PositiveTimeCopyFamily</span><span class="a4m-station__member-path">NavierStokes.PositiveTimeCopyFamily</span><p class="a4m-station__member-doc"># Positive lift-time localization of actual copy amplitudes The gate changes only the amplitude outside positive lift time. The physical common lift has positive time exactly before terminal time, so all physical copy fields and their ambient jets agree there with the original fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PositiveTimeSignedData"><span class="a4m-station__member-name">PositiveTimeSignedData</span><span class="a4m-station__member-path">NavierStokes.PositiveTimeSignedData</span><p class="a4m-station__member-doc"># Signed physical data from positive native time The native signed sources are used only at positive native time. Their totalized formula need not vanish in the past of that domain. This module uses an explicit zero extension of the physical copy amplitudes outside positive native time, while retaining the original masks, sources, and carrier profiles on their genuine domains.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PositiveTimeSignedLocalization"><span class="a4m-station__member-name">PositiveTimeSignedLocalization</span><span class="a4m-station__member-path">NavierStokes.PositiveTimeSignedLocalization</span><p class="a4m-station__member-doc"># Localization of the actual signed inputs at positive native time The fixed primary's mask and target localize its native point. Positive native time is an explicit premise; no support assertion is made for the totalized formulas outside that domain.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.DependentSignedPhysicalFamily"><span class="a4m-station__member-name">DependentSignedPhysicalFamily</span><span class="a4m-station__member-path">NavierStokes.DependentSignedPhysicalFamily</span><p class="a4m-station__member-doc"># Signed physical families with label-dependent phase domains Each active primary label retains its own phase domain, primary data, views, and state. Homogeneous singleton views permit reuse of the existing per-label constructors. Physical copies are then assembled before the locally finite sum is estimated; no maximum over infinitely many per-label constants occurs.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FlatDyadicExtension"><span class="a4m-station__member-name">FlatDyadicExtension</span><span class="a4m-station__member-path">NavierStokes.FlatDyadicExtension</span><p class="a4m-station__member-doc"># Literal flat dyadic products from locally bounded interior jets The unmasked factor is smooth only in the open dyadic band. Its actual interior jets are locally bounded at each face. Flatness of the fixed cutoff then proves smoothness and vanishing of all jets of the literal product, without assigning new values to the unmasked factor outside the band.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.TorusMeanRequestRebase"><span class="a4m-station__member-name">TorusMeanRequestRebase</span><span class="a4m-station__member-path">NavierStokes.TorusMeanRequestRebase</span><p class="a4m-station__member-doc"># A common-torus signed request with native wave geometry The torus-averaged signed request is independent of the free fast coordinate and angle at which it is evaluated. The common state can therefore be kept on its original torus while the primary wave uses native fast coordinates. Freezing the band index preserves every actual derivative and average.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="48.html" data-a4m-nav="prev">← Previous 48 · GluedStageEstimates</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="50.html" data-a4m-nav="next">Next 50 · ActualCandidateAssembly →</a></p>
+</main>
+</body>
+</html>

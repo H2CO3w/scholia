@@ -1,0 +1,107 @@
+{
+  "spec_version": "1.0.0",
+  "mathlib_baseline": "v4.28.0-rc1",
+  "theorem": "Even.add",
+  "skeleton": {
+    "theorem": "Even.add",
+    "root": "n0",
+    "nodes": {
+      "n0": {
+        "id": "n0",
+        "decl": "Even.add",
+        "kind": "theorem",
+        "signature": "∀ {α : Type u_2} [inst : AddCommSemigroup α] {a b : α}, Even a → Even b → Even (a + b)",
+        "type_fingerprint": "sha256:103f0587e72aae98",
+        "hypotheses": [
+          "α",
+          "a",
+          "b",
+          "AddCommSemigroup"
+        ],
+        "parent": null,
+        "lemma_refs": [],
+        "source": "lsv2",
+        "truncated": false
+      }
+    },
+    "coverage": {
+      "mode": "failed",
+      "have_count": 0,
+      "node_count": 1,
+      "degraded": true,
+      "degrade_reason": "证明体为空，无法建树（definition / inductive 等记录通常没有 value）；请改用能提供证明体的定理记录"
+    }
+  },
+  "annotations": [
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "unfolding",
+      "height": "bird",
+      "id": "a1",
+      "node": "n0",
+      "presentation": "exact",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "m3-acceptance",
+        "ts": "2026-10-07T23:05:00+08:00"
+      },
+      "refs": [],
+      "role": "core_idea",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "偶性是一个可加的谓词：它把整除结构翻译成加法封闭性。"
+        }
+      ],
+      "significance": "main",
+      "value_type": null
+    },
+    {
+      "anchors": [
+        {
+          "kind": "decl",
+          "target": "Even.add"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "literature",
+      "height": "bird",
+      "id": "a2",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "m3-acceptance",
+        "ts": "2026-10-07T23:05:00+08:00"
+      },
+      "refs": [
+        "a1"
+      ],
+      "role": "commentary",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "这条定律把「偶数」从一条算术观察抬成一个可推理的代数谓词，因而能在任意加法交换半群中复用。"
+        }
+      ],
+      "significance": "supporting"
+    }
+  ],
+  "metrics": {
+    "node_count": 1,
+    "annotated_node_count": 1,
+    "main_coverage": 1,
+    "anchor_precision": 1,
+    "concept_coverage": null
+  },
+  "provenance": {
+    "run": "m3-acceptance",
+    "created": "2026-10-07T14:56:50.508Z"
+  }
+}

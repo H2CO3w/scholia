@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18 · FirstOrderBaseEdge · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.FirstOrderBaseEdge" data-a4m-index="18" data-a4m-members="13">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="17.html" data-a4m-nav="prev">← Previous 17 · ModulatedProfileAssembly</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="19.html" data-a4m-nav="next">Next 19 · ConstructedSlowBase →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">18</span>FirstOrderBaseEdge</h1>
+<p class="a4m-station__module">NavierStokes.FirstOrderBaseEdge</p>
+<p class="a4m-station__doc"># The first stress coefficient on the terminal collar The first coefficient is the canonical primitive of the actual repaired residual. The order-zero moment retained below is essential: exterior agreement of velocities alone does not fix the constant of integration.</p>
+<section class="a4m-station__group" data-a4m-family="Residual">
+<h2 class="a4m-station__family">Residual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ResidualCalculus"><span class="a4m-station__member-name">ResidualCalculus</span><span class="a4m-station__member-path">NavierStokes.ResidualCalculus</span><p class="a4m-station__member-doc"># Calculus of the physical Navier--Stokes residual These identities concern the ordinary Frechet derivatives used by the actual PDE target in `ProblemStatement`. The velocity hypotheses give two continuous spatial derivatives on the time slice and a differentiable time slice at the point in question. No abstract differential operators are assumed linear.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ResidualRegularity"><span class="a4m-station__member-name">ResidualRegularity</span><span class="a4m-station__member-path">NavierStokes.ResidualRegularity</span><p class="a4m-station__member-doc"># Regularity and locality of the concrete Navier--Stokes residual All operators below are the ordinary derivatives in `ProblemStatement`. The main regularity theorem is on an open spacetime domain; it does not differentiate an unspecified extension through a time boundary.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ResidualStability"><span class="a4m-station__member-name">ResidualStability</span><span class="a4m-station__member-path">NavierStokes.ResidualStability</span><p class="a4m-station__member-doc"># Stability of the actual Navier--Stokes residual under flat perturbations Flatness and power growth below are bounds on norms of actual iterated Fréchet derivatives. The differential and bilinear closure lemmas are proved from the derivative identities and Leibniz estimates, not assumed.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActiveAnnulusWeight"><span class="a4m-station__member-name">ActiveAnnulusWeight</span><span class="a4m-station__member-path">NavierStokes.ActiveAnnulusWeight</span><p class="a4m-station__member-doc"># One flat weight on the active annulus The logarithmic edge distances carry their actual exponential coefficients. The global estimates are obtained from smooth edge factors and compactness.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.AxisTailRegularity"><span class="a4m-station__member-name">AxisTailRegularity</span><span class="a4m-station__member-path">NavierStokes.AxisTailRegularity</span><p class="a4m-station__member-doc"># Regular finite tail coefficients at the symmetry axis The radial flux is `V_n = X * beta_n`. This module uses that identity in the actual finite tails. The resulting coefficient functions contain no division by `X`; their finite indices and powers of `q` are unchanged.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BaseResidual"><span class="a4m-station__member-name">BaseResidual</span><span class="a4m-station__member-path">NavierStokes.BaseResidual</span><p class="a4m-station__member-doc"># Residual and axis values of the asymptotically summed slow base The series used here is the actual locally finite series in `SlowBorelBase`. The radial streams are summed before taking their Cartesian curl.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BlowupImplication"><span class="a4m-station__member-name">BlowupImplication</span><span class="a4m-station__member-path">NavierStokes.BlowupImplication</span><p class="a4m-station__member-doc"># Conditional blow-up and obstruction to continuous extension The terminal inference of Proposition 11.7, independently of the claimed Navier--Stokes construction. Positive scales approaching zero and a nonzero limiting profile force divergent velocity norm under a negative real power. The resulting field cannot be bounded near, or continuously extended to, the endpoint. No existence theorem for the manuscript's profiles is assumed here.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.DiagonalResidual"><span class="a4m-station__member-name">DiagonalResidual</span><span class="a4m-station__member-path">NavierStokes.DiagonalResidual</span><p class="a4m-station__member-doc"># Residual flatness from quantitative finite-stage data The finite approximation used in the proof depends on the requested jet order and decay power. Stage constants and neighborhoods may depend on that stage; the loss of powers in the background estimates must not. All jet estimates refer to actual iterated Fréchet derivatives of the displayed fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FirstOrderBaseEdge"><span class="a4m-station__member-name">FirstOrderBaseEdge</span><span class="a4m-station__member-path">NavierStokes.FirstOrderBaseEdge</span><p class="a4m-station__member-doc"># The first stress coefficient on the terminal collar The first coefficient is the canonical primitive of the actual repaired residual. The order-zero moment retained below is essential: exterior agreement of velocities alone does not fix the constant of integration.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.Flatness"><span class="a4m-station__member-name">Flatness</span><span class="a4m-station__member-path">NavierStokes.Flatness</span><p class="a4m-station__member-doc"># Scalar flatness and fixed power losses This file isolates the scalar asymptotic argument used in Lemmas 11.2--11.5 of the candidate manuscript. It proves neither the asserted bounds for physical jets nor the existence, compatibility, or smooth extension of those jets. All powers here have natural exponents. Constants and neighborhoods may depend on the requested power, as they do in a flatness statement.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.GlobalStressSupport"><span class="a4m-station__member-name">GlobalStressSupport</span><span class="a4m-station__member-path">NavierStokes.GlobalStressSupport</span><p class="a4m-station__member-doc"># Stress confinement for the coherent repaired slow sequence The five rows constructed by `GlobalSlowProfiles` imply the two actual conservative residual integrals vanish. Their negative radial primitives therefore vanish past the same outer radius, uniformly over positive orders `n ≥ 2`. The preceding angular coefficient then has an ordinary repaired moment; no renormalized order-zero moment is used in this module.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.NaturalCore"><span class="a4m-station__member-name">NaturalCore</span><span class="a4m-station__member-path">NavierStokes.NaturalCore</span><p class="a4m-station__member-doc"># The physical natural core The core is the actual Cartesian curl of meridional and swirl potentials obtained from the natural profiles. All regularity assertions are on the explicit open physical domain where those profiles have been constructed. No assertion about the regularity of the final Navier--Stokes force is made.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SlowFirstOrderEdge"><span class="a4m-station__member-name">SlowFirstOrderEdge</span><span class="a4m-station__member-path">NavierStokes.SlowFirstOrderEdge</span><p class="a4m-station__member-doc"># The first slow-order stress at the terminal edge The source is the angular axial-viscosity term. Its primitive is the actual backward integral with weight `R²`. The coefficient chart is `(η,δ)`, including both endpoints `η=±1`; its heat carrier uses the genuine smooth heat extension.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="17.html" data-a4m-nav="prev">← Previous 17 · ModulatedProfileAssembly</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="19.html" data-a4m-nav="next">Next 19 · ConstructedSlowBase →</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathlib.Algebra.Group.Even.add · ai4math 注解账本</title>
+<link rel="stylesheet" href="assets/katex.min.css">
+<link rel="stylesheet" href="assets/a4m.css">
+<!-- 内联我们自己的样式（不含外部字体引用）：单文件打开也可读；
+     KaTeX 的样式必须走外链——它按相对路径 url(fonts/…) 引字体，内联会找错目录 -->
+<style>
+/*! a4m.css — dsh-scholia 静态渲染样式（单栏论文式版面）
+ *  命名：SPEC §1.4（a4m- 前缀 + BEM；id a4m-n-<id> / a4m-a-<id>；data-a4m-<字段>）
+ *  过滤：V6 直觉层用属性选择器实现，页面不含任何脚本。
+ *  字体：正文衬线（中文落到宋体/思源宋体），Lean 陈述等宽。
+ */
+:root {
+  --a4m-fg: #1a1a1a;
+  --a4m-fg-muted: #5c5c56;
+  --a4m-bg: #fffefb;
+  --a4m-surface: #f7f6f2;
+  --a4m-border: #e0ded6;
+  --a4m-rule: #c3c0b6;
+  --a4m-accent: #7a2e2e;
+  --a4m-accent-soft: #f3e9e9;
+  --a4m-warn: #8a6100;
+  --a4m-warn-bg: #fff8c5;
+  --a4m-radius: 4px;
+  --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif;
+  --a4m-indent: 1.6rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--a4m-bg);
+  color: var(--a4m-fg);
+  font-family: var(--a4m-serif);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 论文容器：单栏，约 72ch 居中 ───────────────────────────────── */
+
+.a4m-paper { max-width: 72ch; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
+.a4m-paper__head { margin-bottom: 1.6rem; }
+.a4m-paper__title { font-size: 1.55rem; line-height: 1.35; margin: 0 0 .4rem; font-weight: 600; }
+.a4m-paper__subtitle { margin: 0 0 .2rem; color: var(--a4m-fg-muted); font-size: .86rem; font-family: var(--a4m-mono); }
+.a4m-paper__meta { margin: 0; color: var(--a4m-fg-muted); font-size: .78rem; font-family: var(--a4m-mono); }
+.a4m-paper__foot { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--a4m-border); }
+.a4m-paper__prov { margin: .6rem 0 0; color: var(--a4m-fg-muted); font-size: .76rem; font-family: var(--a4m-mono); }
+.a4m-paper__note { margin: .35rem 0 0; color: var(--a4m-fg-muted); font-size: .76rem; }
+
+/* ── 覆盖率（coverage 是一等公民；退化与截断必须分开可见，H5 / task-5）── */
+
+.a4m-coverage {
+  display: flex; flex-wrap: wrap; gap: .4rem .75rem; align-items: baseline;
+  margin: 1rem 0 .8rem; padding: .5rem .7rem;
+  border: 1px solid var(--a4m-border); border-radius: var(--a4m-radius);
+  background: var(--a4m-surface); font-size: .78rem; font-family: var(--a4m-mono);
+}
+.a4m-coverage--degraded { border-color: var(--a4m-warn); background: var(--a4m-warn-bg); color: var(--a4m-warn); }
+.a4m-coverage--truncated { border-style: dashed; }
+.a4m-coverage__label { font-weight: 600; }
+.a4m-coverage__detail { font-family: var(--a4m-mono); }
+.a4m-coverage__reason { flex-basis: 100%; }
+
+/* ── 直觉层开关（纯 CSS，无脚本）───────────────────────────────── */
+
+.a4m-layer-toggle { display: inline-flex; gap: .45rem; align-items: center; font-size: .78rem; color: var(--a4m-fg-muted); cursor: pointer; }
+.a4m-layer-toggle__input { margin: 0; }
+.a4m-layer-toggle__label { color: var(--a4m-fg-muted); }
+
+/* ── 摘要（视觉上独立，像 abstract）────────────────────────────── */
+
+.a4m-abstract { margin: 1.8rem 0 0; padding: 1rem 1.15rem; background: var(--a4m-surface); border-radius: var(--a4m-radius); }
+.a4m-abstract__title { font-size: .82rem; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .6rem; color: var(--a4m-fg-muted); font-weight: 600; }
+
+/* ── 小节 ───────────────────────────────────────────────────────── */
+
+.a4m-section { margin-top: 2.4rem; }
+.a4m-section__title { font-size: 1.08rem; margin: 0 0 .8rem; font-weight: 600; }
+.a4m-section__no { margin-right: .6rem; font-family: var(--a4m-mono); font-size: .92rem; color: var(--a4m-accent); }
+.a4m-section--unknown .a4m-section__title { color: var(--a4m-warn); }
+
+/* ── 定理陈述 ───────────────────────────────────────────────────── */
+
+.a4m-theorem { margin: 0 0 1.8rem; }
+.a4m-theorem__head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; margin: 0 0 .45rem; font-size: .86rem; font-weight: 600; }
+.a4m-theorem__label { letter-spacing: .1em; }
+.a4m-theorem__decl { font-family: var(--a4m-mono); font-size: .78rem; font-weight: 400; color: var(--a4m-fg-muted); }
+.a4m-theorem__stmt {
+  margin: .2rem 0 .4rem; padding: .55rem .2rem;
+  font-size: 1rem; text-align: center; overflow-x: auto;
+}
+.a4m-theorem__hyps { margin: .4rem 0 0; font-size: .8rem; color: var(--a4m-fg-muted); }
+.a4m-theorem__hyp { font-family: var(--a4m-mono); }
+
+/* ── 证明步骤（层级缩进靠 --a4m-depth）──────────────────────────── */
+
+.a4m-step { margin: 0 0 1.2rem calc((var(--a4m-depth, 1) - 1) * var(--a4m-indent)); }
+.a4m-step--orphan { border-left: 3px solid var(--a4m-warn); padding-left: .7rem; }
+.a4m-step__head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; margin: 0 0 .35rem; font-size: .86rem; font-weight: 600; }
+.a4m-step__no { font-family: var(--a4m-mono); font-size: .82rem; color: var(--a4m-accent); text-decoration: none; border-bottom: 1px dotted transparent; }
+.a4m-step__no:hover { border-bottom-color: var(--a4m-accent); }
+.a4m-step__kind { font-size: .82rem; font-weight: 400; color: var(--a4m-fg-muted); }
+.a4m-step__stmt { margin: 0 0 .15rem; font-size: .97rem; overflow-x: auto; }
+.a4m-step__hyps { margin: .3rem 0 0; font-size: .78rem; color: var(--a4m-fg-muted); }
+.a4m-step__hyp { font-family: var(--a4m-mono); }
+.a4m-step__annos { margin-top: .45rem; }
+
+/* ── 节点上的上标入口（节点 → 注解，不打扰阅读）────────────────── */
+
+.a4m-node__marks { font-size: .72rem; font-weight: 400; }
+.a4m-node__mark { color: var(--a4m-accent); text-decoration: none; margin-left: .3rem; }
+.a4m-node__mark:hover { text-decoration: underline; }
+.a4m-node__flag { font-size: .74rem; font-weight: 400; color: var(--a4m-warn); }
+
+/* ── 注解：像书里的 Remark（缩进 + 左侧竖线 + 字号略小 + 颜色次要）── */
+
+.a4m-anno { margin: 0 0 .9rem; }
+.a4m-anno--inline {
+  margin-left: 1.3rem; padding-left: .85rem;
+  border-left: 2.5px solid var(--a4m-rule);
+  font-size: .92em; color: var(--a4m-fg-muted);
+}
+.a4m-anno--orphan { border-left-color: var(--a4m-warn); }
+.a4m-anno__segs { margin: 0; }
+.a4m-anno__seg { margin: 0 0 .35rem; }
+.a4m-anno__seg--concept { }
+.a4m-anno__seg--reasoning { }
+.a4m-anno__seg--unknown { color: var(--a4m-warn); }
+.a4m-anno__seg-text { white-space: pre-wrap; }
+.a4m-anno__lex { font-family: var(--a4m-mono); font-size: .78em; color: var(--a4m-accent); border-bottom: 1px dotted var(--a4m-accent); margin-left: .3rem; }
+.a4m-anno__lex--missing { color: var(--a4m-warn); border-bottom-color: var(--a4m-warn); }
+.a4m-anno__foot { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; margin-top: .3rem; font-size: .8em; }
+.a4m-anno__tags { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.a4m-anno__tag { border: 1px solid var(--a4m-border); border-radius: 999px; padding: 0 .45rem; font-size: .92em; color: var(--a4m-fg-muted); background: var(--a4m-bg); }
+.a4m-anno__tag--value-type { color: var(--a4m-accent); border-color: var(--a4m-accent); }
+.a4m-anno__tag--evidence { color: var(--a4m-warn); border-color: var(--a4m-warn); background: var(--a4m-warn-bg); }
+.a4m-anno__tag--significance { }
+.a4m-anno__tag--culture { }
+.a4m-anno__tag--presentation { }
+.a4m-anno__tag--audience { }
+.a4m-anno__tag--height { }
+.a4m-anno__back { margin-left: auto; color: var(--a4m-fg-muted); text-decoration: none; font-family: var(--a4m-mono); }
+.a4m-anno__back:hover { color: var(--a4m-accent); }
+.a4m-anno__jump { color: var(--a4m-fg-muted); text-decoration: none; font-family: var(--a4m-mono); font-size: .95em; }
+.a4m-anno__jump:hover { color: var(--a4m-accent); }
+.a4m-anno__jump--orphan { color: var(--a4m-warn); }
+
+/* ── 数学（KaTeX 服务端渲染）与回退 ────────────────────────────── */
+
+.a4m-math { white-space: normal; }
+.a4m-math--display { display: block; margin: .4rem 0; text-align: center; }
+/* 回退：宁可露出等宽原文，也不要显示渲染错误的公式 */
+.a4m-math-fallback {
+  font-family: var(--a4m-mono); font-size: .9em;
+  background: var(--a4m-surface); border-bottom: 1px dotted var(--a4m-warn);
+  padding: 0 .2rem; white-space: pre-wrap; word-break: break-word;
+}
+
+/* ── Lean 源（原生 <details>，默认折叠，零 JS）───────────────────── */
+
+.a4m-lean { margin: .2rem 0 .4rem; }
+.a4m-lean__summary { font-size: .78rem; color: var(--a4m-fg-muted); cursor: pointer; font-family: var(--a4m-mono); }
+.a4m-lean__pre {
+  margin: .35rem 0 0; padding: .5rem .7rem;
+  font-family: var(--a4m-mono); font-size: .76rem; line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+  background: var(--a4m-surface); border-left: 3px solid var(--a4m-rule);
+  border-radius: 0 var(--a4m-radius) var(--a4m-radius) 0;
+}
+
+/* ── 证明环境（照 amsthm：斜体引导词 + 右对齐 ∎）─────────────────── */
+
+.a4m-proof-lead { margin: 1.1rem 0 .5rem; font-style: italic; }
+
+/* ── 旁注 / 证毕符号 ────────────────────────────────────────────── */
+
+.a4m-note { margin: .6rem 0; color: var(--a4m-fg-muted); font-size: .9em; font-style: italic; }
+.a4m-qed { margin: 1.4rem 0 0; text-align: right; color: var(--a4m-fg-muted); }
+
+/* ── 指标（null = 未计算，0 = 算出来是零，H2）──────────────────── */
+
+.a4m-metrics { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: 0; padding: 0; }
+.a4m-metrics__item { display: flex; gap: .4rem; align-items: baseline; }
+.a4m-metrics__key { color: var(--a4m-fg-muted); font-size: .78rem; }
+.a4m-metrics__val { font-family: var(--a4m-mono); font-size: .8rem; margin: 0; }
+.a4m-metrics__val--null { color: var(--a4m-fg-muted); font-style: italic; }
+
+.a4m-step--theorem { /* 类型修饰位 */ }
+.a4m-theorem--theorem { /* 类型修饰位 */ }
+.a4m-step--lemma { /* 类型修饰位 */ }
+.a4m-theorem--lemma { /* 类型修饰位 */ }
+.a4m-step--definition { /* 类型修饰位 */ }
+.a4m-theorem--definition { /* 类型修饰位 */ }
+.a4m-step--instance { /* 类型修饰位 */ }
+.a4m-theorem--instance { /* 类型修饰位 */ }
+.a4m-step--have { /* 类型修饰位 */ }
+.a4m-theorem--have { /* 类型修饰位 */ }
+.a4m-step--let { /* 类型修饰位 */ }
+.a4m-theorem--let { /* 类型修饰位 */ }
+.a4m-step--goal { /* 类型修饰位 */ }
+.a4m-theorem--goal { /* 类型修饰位 */ }
+.a4m-step--inductive { /* 类型修饰位 */ }
+.a4m-theorem--inductive { /* 类型修饰位 */ }
+.a4m-step--abbrev { /* 类型修饰位 */ }
+.a4m-theorem--abbrev { /* 类型修饰位 */ }
+.a4m-step--opaque { /* 类型修饰位 */ }
+.a4m-theorem--opaque { /* 类型修饰位 */ }
+.a4m-step--class_inductive { /* 类型修饰位 */ }
+.a4m-theorem--class_inductive { /* 类型修饰位 */ }
+.a4m-step--constructor { /* 类型修饰位 */ }
+.a4m-theorem--constructor { /* 类型修饰位 */ }
+.a4m-step--recursor { /* 类型修饰位 */ }
+.a4m-theorem--recursor { /* 类型修饰位 */ }
+
+/* ── V6：直觉层过滤（属性选择器，不写脚本）───────────────────────
+ * 二期只需给容器加 data-a4m-layer="intuition" 即可复用同一套规则；
+ * 一期用下面的 :has() + checkbox 提供等价的无脚本开关。 */
+
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+</style>
+</head>
+<body data-a4m-layer="proof" data-a4m-name="Mathlib.Algebra.Group.Even.add" data-a4m-spec-version="1.1.0">
+<article class="a4m-paper">
+<header class="a4m-paper__head">
+<h1 class="a4m-paper__title">Mathlib.Algebra.Group.Even.add</h1>
+<p class="a4m-paper__subtitle">module Mathlib.Algebra.Group.Even · 定理 · Mathlib v4.28.0-rc1</p>
+<p class="a4m-paper__meta">spec_version=1.1.0 · run=pilot-01 · created=2026-10-07T22:10:00+08:00</p>
+<div class="a4m-coverage a4m-coverage--truncated" data-a4m-degraded="false" data-a4m-truncated="true" data-a4m-mode="tactic-multiline" data-a4m-have-count="1" data-a4m-node-count="2">
+<span class="a4m-coverage__label">骨架覆盖率（记录截断）</span>
+<span class="a4m-coverage__detail">mode=tactic-multiline · have=1 · nodes=2</span>
+<span class="a4m-coverage__reason">记录被数据集截断：已解析出的步骤照常可用，但不得声称覆盖完整。数据集 500 字符上限</span>
+</div>
+<label class="a4m-layer-toggle" for="a4m-layer-intuition">
+<input class="a4m-layer-toggle__input" type="checkbox" id="a4m-layer-intuition">
+<span class="a4m-layer-toggle__label">直觉层视图：隐藏 formal / literature / unfolding 三种精确凭证的注解（V6，纯 CSS）</span>
+</label>
+</header>
+<section class="a4m-abstract" data-a4m-section="core_idea">
+<h2 class="a4m-abstract__title">摘要</h2>
+<article class="a4m-anno a4m-anno--inline" id="a4m-a-1" data-a4m-anno="a1" data-a4m-role="core_idea" data-a4m-evidence="intuition" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<div class="a4m-anno__segs">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><span class="a4m-anno__seg-text">偶数对加法封闭——这一步没有新东西，只是把封闭性摆出来。</span></p>
+</div>
+<footer class="a4m-anno__foot">
+<span class="a4m-anno__tags"><span class="a4m-anno__tag a4m-anno__tag--evidence" data-a4m-tag="evidence">直觉</span></span>
+
+<a class="a4m-anno__back" href="#a4m-n-0" data-a4m-target="n0">↩</a>
+</footer>
+</article>
+</section>
+<section class="a4m-section" data-a4m-section="step">
+<h2 class="a4m-section__title"><span class="a4m-section__no">1</span>定理与证明</h2>
+<section class="a4m-theorem a4m-theorem--theorem" id="a4m-n-0" data-a4m-node="n0" data-a4m-kind="theorem">
+<h3 class="a4m-theorem__head"><span class="a4m-theorem__label">定理 1.1.</span>
+<code class="a4m-theorem__decl">Mathlib.Algebra.Group.Even.add</code><sup class="a4m-node__marks"><a class="a4m-node__mark" href="#a4m-a-1" data-a4m-target="a1">摘要</a><a class="a4m-node__mark" href="#a4m-a-7" data-a4m-target="a7">注</a></sup></h3>
+<div class="a4m-theorem__stmt"><span class="a4m-math a4m-math--display" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>a</mi><mo>→</mo><mi>E</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>b</mi><mo>→</mo><mi>E</mi><mi>v</mi><mi>e</mi><mi>n</mi><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Even a \to Even b \to Even (a + b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">nb</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span></span></span></div>
+<details class="a4m-lean"><summary class="a4m-lean__summary">Lean 源</summary><pre class="a4m-lean__pre">Even a → Even b → Even (a + b)</pre></details>
+<p class="a4m-theorem__hyps">前提：<span class="a4m-theorem__hyp">ha : Even a、hb : Even b</span></p>
+</section>
+<p class="a4m-proof-lead">证明.</p>
+<section class="a4m-step a4m-step--have" id="a4m-n-1" data-a4m-node="n1" data-a4m-kind="have" data-a4m-depth="1" style="--a4m-depth:1">
+<h4 class="a4m-step__head"><a class="a4m-step__no" href="#a4m-n-1" data-a4m-target="n1">第 1 步.</a>
+<span class="a4m-step__kind">have</span>
+<span class="a4m-node__flag">记录截断（H3）</span>
+<sup class="a4m-node__marks"><a class="a4m-node__mark" href="#a4m-a-7" data-a4m-target="a7">注</a></sup></h4>
+<div class="a4m-step__stmt"><span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>:</mo><mi>E</mi><mi>v</mi><mi>e</mi><mi>n</mi><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mi>E</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi mathvariant="normal">.</mi><mi>a</mi><mi>d</mi><mi>d</mi><mi>h</mi><mi>a</mi><mi>h</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">h : Even (a + b) := Even.add ha hb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">.</span><span class="mord mathnormal">a</span><span class="mord mathnormal">dd</span><span class="mord mathnormal">hahb</span></span></span></span></span></div>
+
+<div class="a4m-step__annos"><article class="a4m-anno a4m-anno--inline" id="a4m-a-7" data-a4m-anno="a7" data-a4m-role="step" data-a4m-evidence="formal" data-a4m-value-type="technique" data-a4m-height="frog" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math" data-a4m-culture="problem">
+<div class="a4m-anno__segs">
+<p class="a4m-anno__seg a4m-anno__seg--concept" data-a4m-seg-kind="concept" data-a4m-lexicon="Even.add"><span class="a4m-anno__seg-text">Even.add 就是「偶 + 偶 = 偶」这条现成引理。</span><span class="a4m-anno__lex">词典：Even.add</span></p>
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><span class="a4m-anno__seg-text">纯技术操作：把两个假设喂给引理，结论直接到手。</span></p>
+</div>
+<footer class="a4m-anno__foot">
+<span class="a4m-anno__tags"><span class="a4m-anno__tag a4m-anno__tag--value-type" data-a4m-tag="value-type">技巧</span></span>
+<a class="a4m-anno__jump" href="#a4m-n-0" data-a4m-target="n0">↩ n0</a>
+<a class="a4m-anno__back" href="#a4m-n-1" data-a4m-target="n1">↩</a>
+</footer>
+</article></div>
+</section>
+<p class="a4m-qed">∎</p>
+</section>
+<footer class="a4m-paper__foot">
+<dl class="a4m-metrics">
+<div class="a4m-metrics__item"><dt class="a4m-metrics__key">节点数</dt><dd class="a4m-metrics__val">2</dd></div>
+<div class="a4m-metrics__item"><dt class="a4m-metrics__key">有注解节点数</dt><dd class="a4m-metrics__val">2</dd></div>
+<div class="a4m-metrics__item"><dt class="a4m-metrics__key">main 覆盖率 C_skel</dt><dd class="a4m-metrics__val">100.0%</dd></div>
+<div class="a4m-metrics__item"><dt class="a4m-metrics__key">锚点有效率 P_skel</dt><dd class="a4m-metrics__val">100.0%</dd></div>
+<div class="a4m-metrics__item"><dt class="a4m-metrics__key">概念覆盖率 C_concept</dt><dd class="a4m-metrics__val a4m-metrics__val--null">未计算</dd></div>
+</dl>
+<p class="a4m-paper__prov">run=pilot-01 · created=2026-10-07T22:10:00+08:00 · spec_version=1.1.0</p>
+<p class="a4m-paper__note">本页由 out/ledger/Mathlib.Algebra.Group.Even.add.json 静态渲染（SPEC §1.4 命名，二期 React 复用同一套类名与 data 属性）。</p>
+<p class="a4m-paper__note">诚实性提示（H4）：页面中的注解为模型生成，<strong>未做真人校准</strong>；引理语义仅以 concept 段的词典条目为准。</p>
+</footer>
+</article>
+</body>
+</html>

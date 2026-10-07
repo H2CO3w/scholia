@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ai4math 注解器",
+    "description": "从本地 Mathlib 语料提取证明骨架、查询引理语义，并按规范逐条校验注解。"
+  }
+}

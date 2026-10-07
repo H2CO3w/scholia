@@ -1,0 +1,416 @@
+{
+  "spec_version": "1.1.0",
+  "mathlib_baseline": "v4.28.0-rc1",
+  "theorem": "CHSH_inequality_of_comm",
+  "skeleton": {
+    "theorem": "CHSH_inequality_of_comm",
+    "root": "n0",
+    "nodes": {
+      "n0": {
+        "id": "n0",
+        "decl": "CHSH_inequality_of_comm",
+        "kind": "theorem",
+        "signature": "[CommRing R] [PartialOrder R] [StarRing R] [StarOrderedRing R] [Algebra ℝ R] [IsOrderedModule ℝ R] (A₀ A₁ B₀ B₁ : R)\n  (T : IsCHSHTuple A₀ A₁ B₀ B₁) : A₀ * B₀ + A₀ * B₁ + A₁ * B₀ - A₁ * B₁ ≤ 2",
+        "type_fingerprint": "sha256:8d066271fe211e4c",
+        "hypotheses": [
+          "A₀",
+          "A₁",
+          "B₀",
+          "B₁",
+          "T",
+          "R"
+        ],
+        "parent": null,
+        "lemma_refs": [
+          "Algebra.smul_def"
+        ],
+        "source": "lsv2",
+        "truncated": true
+      },
+      "n1": {
+        "id": "n1",
+        "decl": null,
+        "kind": "have",
+        "signature": "0 ≤ P",
+        "type_fingerprint": "sha256:bfe440843644c7ec",
+        "hypotheses": [],
+        "parent": "n0",
+        "lemma_refs": [
+          "Algebra.smul_def"
+        ],
+        "source": "lsv2",
+        "truncated": true
+      },
+      "n2": {
+        "id": "n2",
+        "decl": null,
+        "kind": "have",
+        "signature": "P * P = 4 * P",
+        "type_fingerprint": "sha256:98ce0742fe7ab673",
+        "hypotheses": [],
+        "parent": "n1",
+        "lemma_refs": [],
+        "source": "lsv2",
+        "truncated": true
+      },
+      "n3": {
+        "id": "n3",
+        "decl": null,
+        "kind": "have",
+        "signature": "P = (1 / 4 : ℝ) • (P * P)",
+        "type_fingerprint": "sha256:3ce84c4fcd57499a",
+        "hypotheses": [],
+        "parent": "n1",
+        "lemma_refs": [
+          "Algebra.smul_def"
+        ],
+        "source": "lsv2",
+        "truncated": true
+      },
+      "n4": {
+        "id": "n4",
+        "decl": null,
+        "kind": "have",
+        "signature": "4 * P = (4 : ℝ) • P",
+        "type_fingerprint": "sha256:a3108ce9f9ee8eea",
+        "hypotheses": [],
+        "parent": "n3",
+        "lemma_refs": [
+          "Algebra.smul_def"
+        ],
+        "source": "lsv2",
+        "truncated": true
+      },
+      "n5": {
+        "id": "n5",
+        "decl": null,
+        "kind": "have",
+        "signature": "star P = P",
+        "type_fingerprint": "sha256:ebd819d97761f702",
+        "hypotheses": [],
+        "parent": "n1",
+        "lemma_refs": [],
+        "source": "lsv2",
+        "truncated": true
+      }
+    },
+    "coverage": {
+      "mode": "tactic-multiline",
+      "have_count": 5,
+      "node_count": 6,
+      "truncated": true,
+      "degraded": false,
+      "degrade_reason": null,
+      "truncate_reason": "证明体被数据集截断（长度 500，或结尾省略号），have 子目标可能不完整；已解析出的 5 个步骤照常做步骤级注解，但不要声称覆盖完整"
+    },
+    "spec_version": "1.1.0"
+  },
+  "annotations": [
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "unfolding",
+      "height": "bird",
+      "id": "c1",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:15:00+08:00"
+      },
+      "refs": [],
+      "role": "core_idea",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "整个不等式只关于一个元素：P² = 4P 让 P/4 成为投影，而投影必落在 [0,1]。"
+        }
+      ],
+      "significance": "main"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "literature",
+      "height": "bird",
+      "id": "c3",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:15:00+08:00"
+      },
+      "refs": [],
+      "role": "birdview",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "CHSH 是贝尔不等式里最常被引用的一条，通常写在概率与测量的语言里。这里它被抬到任意含星序环上，与量子力学脱钩，只剩代数内容：幂等元被 [0,1] 夹住。它在版图上的位置是——把一条物理不等式还原成一条序环里的投影性质。"
+        }
+      ],
+      "significance": "main"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "intuition",
+      "height": "bird",
+      "id": "c5",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:15:00+08:00"
+      },
+      "refs": [],
+      "role": "negative_space",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "形式化看不到的一层：它为什么值得单独命名。这条不等式原本是「局域隐变量理论给出的上界」，实验上被违反才成为量子力学的证据。Lean 只看到序环里的投影性质，看不到「如果它也成立，世界就必须是局部的」这层含义——而这正是它被反复引用的原因。另外 star 在这里扮取共轭的角色，n5 的自伴性在物理语言里叫「观测量」。"
+        }
+      ],
+      "significance": "context"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n1"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "formal",
+      "height": "frog",
+      "id": "s1",
+      "node": "n1",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:18:00+08:00"
+      },
+      "refs": [],
+      "role": "step",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "先给出非负这半边。它自己不推进，但少了它，后面的二次方程只能说明 P 是幂等元的四倍，说明不了上界。"
+        }
+      ],
+      "significance": "supporting",
+      "value_type": "structural"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n2"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "unfolding",
+      "height": "frog",
+      "id": "s2",
+      "node": "n2",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:18:00+08:00"
+      },
+      "refs": [
+        "c1"
+      ],
+      "role": "step",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "全定理的支点：四个观测量之间的关系被压成一个元素的二次方程，于是 P/4 成了幂等元。至此问题不再关于 CHSH，而关于「投影必落在 [0,1]」。"
+        }
+      ],
+      "significance": "main",
+      "value_type": "concept"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n3"
+        }
+      ],
+      "audience": "grad-math",
+      "culture": "theory",
+      "evidence": "formal",
+      "height": "frog",
+      "id": "s3",
+      "node": "n3",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:18:00+08:00"
+      },
+      "refs": [],
+      "role": "step",
+      "segments": [
+        {
+          "kind": "concept",
+          "text": "标量乘法不是新运算，它就等于代数映射之后的乘法。",
+          "lexicon_ref": "Algebra.smul_def"
+        },
+        {
+          "kind": "reasoning",
+          "text": "本步只是把 n2 的等式按这个定义重写，无新信息。"
+        }
+      ],
+      "significance": "supporting",
+      "value_type": "technical"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n4"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "formal",
+      "height": "frog",
+      "id": "s4",
+      "node": "n4",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:18:00+08:00"
+      },
+      "refs": [],
+      "role": "step",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "自然数倍与实标量倍的记法换算，纯记号，可跳过。"
+        }
+      ],
+      "significance": "context",
+      "value_type": "technical"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n5"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "formal",
+      "height": "frog",
+      "id": "s5",
+      "node": "n5",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:18:00+08:00"
+      },
+      "refs": [],
+      "role": "step",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "P 自伴——物理语言里叫「观测量」。本步只为让后面的序论证合法，不含想法。"
+        }
+      ],
+      "significance": "context",
+      "value_type": "none"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "unfolding",
+      "height": "bird",
+      "id": "c4",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:15:00+08:00"
+      },
+      "refs": [
+        "c1"
+      ],
+      "role": "commentary",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "证明的骨架极短：造出 $P$，验证 $0 ≤ P$ 与 $P * P = 4 * P$，剩下就是把 $P ≤ 4$ 从这两条里读出来。吃重的是交换性假设——它让 $P$ 的平方塌回 $4P$；同一个组合在量子情形下可以到 $2√2$。所以 of_comm 不是技术修饰，而是全部内容：它指出经典与量子的分界线恰好落在「$P/4$ 是不是幂等元」上。"
+        }
+      ],
+      "significance": "main"
+    },
+    {
+      "anchors": [
+        {
+          "kind": "goal",
+          "target": "n0"
+        }
+      ],
+      "audience": "grad-math",
+      "evidence": "literature",
+      "height": "bird",
+      "id": "c2",
+      "node": "n0",
+      "presentation": "paraphrase",
+      "provenance": {
+        "model": "deepseek-flash",
+        "run": "demo-chsh",
+        "ts": "2026-10-07T23:55:00+08:00"
+      },
+      "refs": [],
+      "role": "question",
+      "segments": [
+        {
+          "kind": "reasoning",
+          "text": "四个可观测量的组合最大能是多少？交换（经典）设定下是 2，量子设定允许到 $2\\sqrt{2}$ —— 这个缺口正是贝尔不等式的可实验内容。本条问的是经典一侧的界，以及它为什么恰好是 2。"
+        }
+      ],
+      "significance": "main"
+    }
+  ],
+  "metrics": {
+    "node_count": 6,
+    "annotated_node_count": 2,
+    "main_coverage": 0.3333333333333333,
+    "anchor_precision": 1,
+    "concept_coverage": null
+  },
+  "provenance": {
+    "run": "demo-chsh",
+    "created": "2026-10-07T15:11:52.483Z"
+  }
+}

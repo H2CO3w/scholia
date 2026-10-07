@@ -1,0 +1,16 @@
+# 大件数据与缓存（不可入库）
+data/
+cache/
+.probe-nse/
+
+# 依赖
+node_modules/
+
+# 临时脚手架与归档
+out/archive/
+out/verify/
+.tmp*
+
+# 编辑器 / 系统
+.DS_Store
+*.swp

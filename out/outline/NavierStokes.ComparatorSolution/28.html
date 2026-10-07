@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>28 · CommonBaseContext · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.CommonBaseContext" data-a4m-index="28" data-a4m-members="11">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="27.html" data-a4m-nav="prev">← Previous 27 · BaseStressClasses</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="29.html" data-a4m-nav="next">Next 29 · ActualSignedGeometry →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">28</span>CommonBaseContext</h1>
+<p class="a4m-station__module">NavierStokes.CommonBaseContext</p>
+<p class="a4m-station__doc"># The actual slow base on a coarsest common integer cover The physical base, virtual stress, dyadic band and small parameter stay fixed. Only the integer cover used in the graph operators changes. The forward real-lift map is the genuine integer covering matrix, with its actual norm.</p>
+<section class="a4m-station__group" data-a4m-family="Physical">
+<h2 class="a4m-station__family">Physical</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalCurlCovariance"><span class="a4m-station__member-name">PhysicalCurlCovariance</span><span class="a4m-station__member-path">NavierStokes.PhysicalCurlCovariance</span><p class="a4m-station__member-doc"># Physical covariance of the actual wave curl The potential is differentiated before any cutoff or carrier is removed. All operators below are actual Frechet derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalParticularWave"><span class="a4m-station__member-name">PhysicalParticularWave</span><span class="a4m-station__member-path">NavierStokes.PhysicalParticularWave</span><p class="a4m-station__member-doc"># Actual reference particular waves in physical coordinates The input is the constructed reference Volterra solve. Curl identities are conclusions, not compatibility assumptions on solved velocities.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalResidualNaturality"><span class="a4m-station__member-name">PhysicalResidualNaturality</span><span class="a4m-station__member-path">NavierStokes.PhysicalResidualNaturality</span><p class="a4m-station__member-doc"># Naturality of the actual lifted residual coefficients The hypotheses in this file concern the full free auxiliary-variable lift. Equality only on the physical graph is deliberately insufficient. The source is always the literal `HarmonicResidual.residualBlock`, including its real projection and its Gaussian and alias subtractions.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CommonBaseContext"><span class="a4m-station__member-name">CommonBaseContext</span><span class="a4m-station__member-path">NavierStokes.CommonBaseContext</span><p class="a4m-station__member-doc"># The actual slow base on a coarsest common integer cover The physical base, virtual stress, dyadic band and small parameter stay fixed. Only the integer cover used in the graph operators changes. The forward real-lift map is the genuine integer covering matrix, with its actual norm.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.HarmonicSourceSupport"><span class="a4m-station__member-name">HarmonicSourceSupport</span><span class="a4m-station__member-path">NavierStokes.HarmonicSourceSupport</span><p class="a4m-station__member-doc"># Support of the actual harmonic residual supplied to a copy solve The support conclusions below are derived from the literal harmonic derivatives, convolutions, real projection, and removal of the zero mode. Only nonzero input harmonics need be localized: a spatially global zero mode, such as an axisymmetric pressure alias, does not create a new slot.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.NormalScaling"><span class="a4m-station__member-name">NormalScaling</span><span class="a4m-station__member-path">NavierStokes.NormalScaling</span><p class="a4m-station__member-doc"># Normal, clock and amplitude rescaling in the tangent equation The normal scales by `s`, its clock derivative by `s * rate`, and the velocity amplitude by `amp`. The projected equation then scales by `rate * amp`, whereas the scalar pressure coefficient scales by `rate * amp / s`. These are identities of the actual operators, including the totalized zero-normal case.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParticularWaveAssembly"><span class="a4m-station__member-name">ParticularWaveAssembly</span><span class="a4m-station__member-path">NavierStokes.ParticularWaveAssembly</span><p class="a4m-station__member-doc"># Actual particular-wave assembly The residual source is the coefficient of `HarmonicResidual.residualBlock`. All signed nonzero harmonics are retained inside their original spatial label. A fixed reference solve supplies the compatible band views.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PeriodizedWaveBounds"><span class="a4m-station__member-name">PeriodizedWaveBounds</span><span class="a4m-station__member-path">NavierStokes.PeriodizedWaveBounds</span><p class="a4m-station__member-doc"># Whole-lift bounds from the actual native copies The copy meeting a point is allowed to depend on both the band and the point. Closed, locally finite support cells give a genuine zero germ on their complement, including all derivatives. Constants in the native estimates are chosen before the band, copy, and evaluation point. The Gaussian error is assembled as the sum of cutoff-derivative terms plus one uncovered-source term. In particular, the source is never summed once for every inactive copy.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ScaledTangentTransport"><span class="a4m-station__member-name">ScaledTangentTransport</span><span class="a4m-station__member-path">NavierStokes.ScaledTangentTransport</span><p class="a4m-station__member-doc"># Normal and clock transport of the actual tangent inverse The native clock, its zero-entry anchor, the normal and the source are transported together. Velocity and pressure below are outputs of the actual copy-path Volterra inverse, with no output compatibility hypothesis.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.StateReindex"><span class="a4m-station__member-name">StateReindex</span><span class="a4m-station__member-path">NavierStokes.StateReindex</span><p class="a4m-station__member-doc"># Isometric reindexing of the actual correction state Pullback along `e : D ≃ₗᵢ[ℝ] E` sends fields on `E` to fields on `D`. Vector directions are transported by `e.symm`. The final specialization is the existing associator from `PressureStream.Lift S` to `((ℝ × S) × Plane)`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.WaveEnvelopeTransport"><span class="a4m-station__member-name">WaveEnvelopeTransport</span><span class="a4m-station__member-path">NavierStokes.WaveEnvelopeTransport</span><p class="a4m-station__member-doc"># Source envelopes along an entire common-cover slot path The common-cover envelope is an actual sum over native copies. Injectivity of the padded native rectangle identifies the one copy met by a slot path. The source itself is not assumed periodic on the native torus.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="27.html" data-a4m-nav="prev">← Previous 27 · BaseStressClasses</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="29.html" data-a4m-nav="next">Next 29 · ActualSignedGeometry →</a></p>
+</main>
+</body>
+</html>

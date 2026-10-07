@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>56 · ParentPacketExactEuler · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.ParentPacketExactEuler" data-a4m-index="56" data-a4m-members="22">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="55.html" data-a4m-nav="prev">← Previous 55 · ParentNormalizedEuler</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="57.html" data-a4m-nav="next">Next 57 · ParentPacketExactPressure →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">56</span>ParentPacketExactEuler</h1>
+<p class="a4m-station__module">Euler.ParentPacketExactEuler</p>
+<p class="a4m-station__doc">The actual source packet is Euler in the physical parent coordinates. The normalized frame and inverse identities are supplied by the parent construction, and the final physical scaling is explicit.</p>
+<section class="a4m-station__group" data-a4m-family="Packet">
+<h2 class="a4m-station__family">Packet</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketContinuousInverse"><span class="a4m-station__member-name">PacketContinuousInverse</span><span class="a4m-station__member-path">Euler.PacketContinuousInverse</span><p class="a4m-station__member-doc">The actual inverse parent flow needs only continuity as an input. Its differentiability, smooth spatial slices, and jointly continuous spatial jets follow from the prescribed Jacobian and inverse identities.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketEulerianRegularity"><span class="a4m-station__member-name">PacketEulerianRegularity</span><span class="a4m-station__member-path">Euler.PacketEulerianRegularity</span><p class="a4m-station__member-doc">Actual Eulerian reconstructions have every spatial derivative in L², continuously in time. Sobolev embedding also supplies bounded smooth coefficient paths for the velocity and pressure force.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketExactEulerianField"><span class="a4m-station__member-name">PacketExactEulerianField</span><span class="a4m-station__member-path">Euler.PacketExactEulerianField</span><p class="a4m-station__member-doc">Literal agreement between the exact physical Euler fields and their constructed smooth L² representatives, including the scalar pressure.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketExactPhysicalDivergence"><span class="a4m-station__member-name">PacketExactPhysicalDivergence</span><span class="a4m-station__member-path">Euler.PacketExactPhysicalDivergence</span><p class="a4m-station__member-doc">The actual exact packet remains incompressible after the genuine unit-Jacobian parent-flow coordinate change.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketExactPhysicalEuler"><span class="a4m-station__member-name">PacketExactPhysicalEuler</span><span class="a4m-station__member-path">Euler.PacketExactPhysicalEuler</span><p class="a4m-station__member-doc">The actual parent velocity plus the constructed exact packet satisfies both classical Euler equations in physical coordinates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketExactPhysicalMomentum"><span class="a4m-station__member-name">PacketExactPhysicalMomentum</span><span class="a4m-station__member-path">Euler.PacketExactPhysicalMomentum</span><p class="a4m-station__member-doc">The constructed exact lifted packet gives the actual momentum equation after the genuine parent-flow change of coordinates. The scalar pressure is the normalized radial potential of the constructed pressure tower.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketExactSourceEquation"><span class="a4m-station__member-name">PacketExactSourceEquation</span><span class="a4m-station__member-path">Euler.PacketExactSourceEquation</span><p class="a4m-station__member-doc">The actual pointwise equation of the exact packet, expressed with the prescribed deformation and its genuine time and spatial derivatives.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInverseFlowContinuity"><span class="a4m-station__member-name">PacketInverseFlowContinuity</span><span class="a4m-station__member-path">Euler.PacketInverseFlowContinuity</span><p class="a4m-station__member-doc"># Joint spatial-jet continuity for the prescribed inverse parent flow The smooth bounded coefficient paths already carry genuine continuous spatial jets. Their evaluation, together with the actual inverse identity, supplies all inverse-flow continuity hypotheses used by Sobolev transport.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInverseFlowGevrey"><span class="a4m-station__member-name">PacketInverseFlowGevrey</span><span class="a4m-station__member-path">Euler.PacketInverseFlowGevrey</span><p class="a4m-station__member-doc"># The actual inverse parent flow preserves source Gevrey regularity The inverse derivative bounds are derived from the prescribed deformation and its determinant-one cofactor identity. Neither inverse-flow jets nor inverse-deformation jets are independent assumptions.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketInverseFlowSobolevBound"><span class="a4m-station__member-name">PacketInverseFlowSobolevBound</span><span class="a4m-station__member-path">Euler.PacketInverseFlowSobolevBound</span><p class="a4m-station__member-doc">A finite-order Sobolev composition constant obtained from the actual parent deformation. No inverse-flow derivative budget is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketPhysicalFieldTower"><span class="a4m-station__member-name">PacketPhysicalFieldTower</span><span class="a4m-station__member-path">Euler.PacketPhysicalFieldTower</span><p class="a4m-station__member-doc">Reconstruction W=κFz is a genuine all-order field tower. Its graph restriction and its actual inverse-flow pullback are continuous spatial L² paths, with no independent integrability assumption on the perturbation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketSourceSmoothField"><span class="a4m-station__member-name">PacketSourceSmoothField</span><span class="a4m-station__member-path">Euler.PacketSourceSmoothField</span><p class="a4m-station__member-doc">The actual source-flow pullback is a smooth spatial L² field at every time. Its tensor paths also give a bounded smooth coefficient path, with continuity in the uniform norm at every spatial order.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketSourceVolumeSobolev"><span class="a4m-station__member-name">PacketSourceVolumeSobolev</span><span class="a4m-station__member-path">Euler.PacketSourceVolumeSobolev</span><p class="a4m-station__member-doc">Spatial Sobolev paths for the actual inverse parent flow. Its measure preservation, smoothness, derivative bounds and jet continuity are all derived from the source deformation and inverse identities.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.ExactLiftedGraphPressure"><span class="a4m-station__member-name">ExactLiftedGraphPressure</span><span class="a4m-station__member-path">Euler.ExactLiftedGraphPressure</span><p class="a4m-station__member-doc">The actual total pressure of an exact lifted packet has a canonically normalized scalar pressure on the oscillating graph.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.FieldTowerVolumeSobolev"><span class="a4m-station__member-name">FieldTowerVolumeSobolev</span><span class="a4m-station__member-path">Euler.FieldTowerVolumeSobolev</span><p class="a4m-station__member-doc">Actual all-order field towers retain their spatial Sobolev regularity after a smooth volume-preserving change of coordinates.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.GevreyInverseMap"><span class="a4m-station__member-name">GevreyInverseMap</span><span class="a4m-station__member-path">Euler.GevreyInverseMap</span><p class="a4m-station__member-doc"># Gevrey bounds from the actual inverse-map differential identity If `DY = A ∘ Y` and `A` has Gevrey-two derivatives, the positive derivatives of `Y` have the stronger bound `C * L^n * n!²` at order `n+1`, where `L = 1 + 2*C*R`. The proof uses the shifted Faà di Bruno weights and a strong induction, rather than iterating the general composition radius.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.GevreyInversePartitions"><span class="a4m-station__member-name">GevreyInversePartitions</span><span class="a4m-station__member-path">Euler.GevreyInversePartitions</span><p class="a4m-station__member-doc"># A shifted partition estimate for a differential equation For the relation `DY = A ∘ Y`, the useful induction controls the order-`j` derivative of `Y` by `(j-1)!²`. With those inner weights the normalized Faà di Bruno partition sum stays bounded at every positive order, provided its scalar argument is at most one half.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.GraphDivergence"><span class="a4m-station__member-name">GraphDivergence</span><span class="a4m-station__member-path">Euler.GraphDivergence</span><p class="a4m-station__member-doc">Genuine lifted divergence-free fields remain divergence-free on the oscillating graph.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.InverseMapJetContinuity"><span class="a4m-station__member-name">InverseMapJetContinuity</span><span class="a4m-station__member-path">Euler.InverseMapJetContinuity</span><p class="a4m-station__member-doc"># Joint continuity of the spatial jets of an inverse map The parameter may range over an arbitrary topological space. Joint continuity of the map itself and of the prescribed coefficient jets, plus the actual equation `DY = A ∘ Y`, determines joint continuity of every spatial derivative of `Y`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.LpPointwiseMultiplier"><span class="a4m-station__member-name">LpPointwiseMultiplier</span><span class="a4m-station__member-path">Euler.LpPointwiseMultiplier</span><p class="a4m-station__member-doc">Bounded pointwise operator fields act on actual L² classes. Joint continuity of the coefficients, with a uniform bound, gives strong continuity even when uniform convergence of coefficients is unavailable.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentPacketExactEuler"><span class="a4m-station__member-name">ParentPacketExactEuler</span><span class="a4m-station__member-path">Euler.ParentPacketExactEuler</span><p class="a4m-station__member-doc">The actual source packet is Euler in the physical parent coordinates. The normalized frame and inverse identities are supplied by the parent construction, and the final physical scaling is explicit.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.VolumeSobolevPath"><span class="a4m-station__member-name">VolumeSobolevPath</span><span class="a4m-station__member-path">Euler.VolumeSobolevPath</span><p class="a4m-station__member-doc">Strong Sobolev continuity under genuine varying volume-preserving maps. Faà di Bruno gives actual derivative tensors, and dominated convergence handles the bounded, pointwise continuous coefficients.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="55.html" data-a4m-nav="prev">← Previous 55 · ParentNormalizedEuler</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="57.html" data-a4m-nav="next">Next 57 · ParentPacketExactPressure →</a></p>
+</main>
+</body>
+</html>

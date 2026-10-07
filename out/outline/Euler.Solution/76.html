@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>76 · EulerC1Breakdown · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.EulerC1Breakdown" data-a4m-index="76" data-a4m-members="18">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="75.html" data-a4m-nav="prev">← Previous 75 · EulerFiniteLifespan</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="77.html" data-a4m-nav="next">Next 77 · EulerC1Limsup →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">76</span>EulerC1Breakdown</h1>
+<p class="a4m-station__module">Euler.EulerC1Breakdown</p>
+<p class="a4m-station__doc">C¹ breakdown for the concrete compactly supported datum. The infinite-limsup statement is expressed directly: after every time below the maximal time, the actual gradient supremum exceeds every real bound. The norms are bounded-continuous-function norms at individual times, not totalized real L∞ seminorms of unverified measurable fields.</p>
+<section class="a4m-station__group" data-a4m-family="Ordinary">
+<h2 class="a4m-station__family">Ordinary</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerConcatenation"><span class="a4m-station__member-name">OrdinaryEulerConcatenation</span><span class="a4m-station__member-path">Euler.OrdinaryEulerConcatenation</span><p class="a4m-station__member-doc">Two actual ordinary Euler solutions with matching endpoint data concatenate to an actual solution. The projected equation identifies their time derivatives at the seam; the scalar pressure is canonical.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerContinuation"><span class="a4m-station__member-name">OrdinaryEulerContinuation</span><span class="a4m-station__member-path">Euler.OrdinaryEulerContinuation</span><p class="a4m-station__member-doc">Genuine continuation of every closed smooth Euler evolution, and the resulting gradient blowup criterion at a finite maximal horizon.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerLocalExistence"><span class="a4m-station__member-name">OrdinaryEulerLocalExistence</span><span class="a4m-station__member-path">Euler.OrdinaryEulerLocalExistence</span><p class="a4m-station__member-doc">General smooth local Euler existence in ordinary R³. The datum has all actual spatial L² derivatives; no Gevrey radius is assumed. The solution is the strong Sobolev limit of genuine symmetric regularized Euler evolutions on one common positive interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryEulerMaximal"><span class="a4m-station__member-name">OrdinaryEulerMaximal</span><span class="a4m-station__member-path">Euler.OrdinaryEulerMaximal</span><p class="a4m-station__member-doc">One actual Euler field on the half-open maximal interval. Values are chosen on intermediate horizons, and genuine Euler uniqueness removes the dependence on that choice. No continuation criterion is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryMollifier"><span class="a4m-station__member-name">OrdinaryMollifier</span><span class="a4m-station__member-path">Euler.OrdinaryMollifier</span><p class="a4m-station__member-doc">Symmetric compact smooth approximate identities on ordinary spatial L².</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryPerturbedEnergy"><span class="a4m-station__member-name">OrdinaryPerturbedEnergy</span><span class="a4m-station__member-path">Euler.OrdinaryPerturbedEnergy</span><p class="a4m-station__member-doc">Actual L² stability of projected Euler with a small additive defect. The reference gradient is the only solution coefficient.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryQuadraticControl"><span class="a4m-station__member-name">OrdinaryQuadraticControl</span><span class="a4m-station__member-path">Euler.OrdinaryQuadraticControl</span><p class="a4m-station__member-doc">A uniform short-time bound for a nonnegative genuine energy with a quadratic differential upper bound.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizationError"><span class="a4m-station__member-name">OrdinaryRegularizationError</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizationError</span><p class="a4m-station__member-doc">The actual regularized Euler right-hand side converges to the projected Euler right-hand side, uniformly on bounded H⁴ sets.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizedCauchy"><span class="a4m-station__member-name">OrdinaryRegularizedCauchy</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizedCauchy</span><p class="a4m-station__member-doc">The true smooth regularized Euler flows are Cauchy in continuous L² on the common energy-controlled interval.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizedEnergy"><span class="a4m-station__member-name">OrdinaryRegularizedEnergy</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizedEnergy</span><p class="a4m-station__member-doc">Uniform energy bounds for the actual regularized flows. Symmetry and translation commutation transfer the exact energy production to the smoothed velocity, where the checked Euler cancellations apply.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizedEquation"><span class="a4m-station__member-name">OrdinaryRegularizedEquation</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizedEquation</span><p class="a4m-station__member-doc">A genuine global L² solution of the symmetric regularized Euler equation. The vector field is a bounded bilinear map and its actual L² energy vanishes by noncompact transport cancellation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizedFlow"><span class="a4m-station__member-name">OrdinaryRegularizedFlow</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizedFlow</span><p class="a4m-station__member-doc">The regularized L² flow has genuine smooth spatial representatives, continuous jets of every order, and its true time derivative.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinaryRegularizer"><span class="a4m-station__member-name">OrdinaryRegularizer</span><span class="a4m-station__member-path">Euler.OrdinaryRegularizer</span><p class="a4m-station__member-doc">Actual symmetric, solenoidal smoothing operators. They converge to Helmholtz projection, with an explicit H¹ approximation error.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.OrdinarySmoothingOperator"><span class="a4m-station__member-name">OrdinarySmoothingOperator</span><span class="a4m-station__member-path">Euler.OrdinarySmoothingOperator</span><p class="a4m-station__member-doc">Actual smooth regularizers of ordinary solenoidal L². Their maps into every complete Sobolev space are bounded by the closed graph theorem, rather than by an assumed derivative estimate.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.EulerC1Breakdown"><span class="a4m-station__member-name">EulerC1Breakdown</span><span class="a4m-station__member-path">Euler.EulerC1Breakdown</span><p class="a4m-station__member-doc">C¹ breakdown for the concrete compactly supported datum. The infinite-limsup statement is expressed directly: after every time below the maximal time, the actual gradient supremum exceeds every real bound. The norms are bounded-continuous-function norms at individual times, not totalized real L∞ seminorms of unverified measurable fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.HilbertQuadraticFlow"><span class="a4m-station__member-name">HilbertQuadraticFlow</span><span class="a4m-station__member-path">Euler.HilbertQuadraticFlow</span><p class="a4m-station__member-doc">A bounded quadratic vector field whose radial energy vanishes has a genuine global flow on a real Hilbert space. Radial normalization first gives a globally Lipschitz equation; its conserved norm then removes the normalization by a constant rescaling of time.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.IntervalPathConcatenation"><span class="a4m-station__member-name">IntervalPathConcatenation</span><span class="a4m-station__member-path">Euler.IntervalPathConcatenation</span><p class="a4m-station__member-doc">Concatenation of two paths on closed time intervals. Matching endpoint values and derivatives give a genuine derivative at the seam.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.IsometricActionDerivativeBound"><span class="a4m-station__member-name">IsometricActionDerivativeBound</span><span class="a4m-station__member-path">Euler.IsometricActionDerivativeBound</span><p class="a4m-station__member-doc">A true orbit derivative gives a global increment bound for a linear isometric action.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="75.html" data-a4m-nav="prev">← Previous 75 · EulerFiniteLifespan</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="77.html" data-a4m-nav="next">Next 77 · EulerC1Limsup →</a></p>
+</main>
+</body>
+</html>

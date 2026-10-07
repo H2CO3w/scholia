@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 · OutgoingProfile · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.OutgoingProfile" data-a4m-index="10" data-a4m-members="14">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="09.html" data-a4m-nav="prev">← Previous 9 · SchedulePressure</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="11.html" data-a4m-nav="next">Next 11 · OutgoingDilation →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">10</span>OutgoingProfile</h1>
+<p class="a4m-station__module">NavierStokes.OutgoingProfile</p>
+<p class="a4m-station__doc"># A single outgoing profile before the heat-tail edit The profile stores one actual scheduled angular-reset witness. Its axial amplitude is the corrected energy root associated with that same witness. All histories and pressures below are integrals of these fields.</p>
+<section class="a4m-station__group" data-a4m-family="Flat">
+<h2 class="a4m-station__family">Flat</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FlatKernelBounds"><span class="a4m-station__member-name">FlatKernelBounds</span><span class="a4m-station__member-path">NavierStokes.FlatKernelBounds</span><p class="a4m-station__member-doc"># Derivative bounds for the normalized flat primitive kernel The expression algebra below is closed under actual differentiation in `x`. It bounds all derivatives of the concrete square-root kernel from finitely many derivatives of its smooth profile and proves continuity in the integral parameter. Exponential-majorant integrability is supplied separately.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FlatPrimitiveFactor"><span class="a4m-station__member-name">FlatPrimitiveFactor</span><span class="a4m-station__member-path">NavierStokes.FlatPrimitiveFactor</span><p class="a4m-station__member-doc"># The transformed integral for a terminal flat primitive The change of variables is `u = x / sqrt (1 + x² t)` for `x &gt; 0`. Natural powers of the square root encode the real power `(j - 3) / 2` without truncating subtraction in the natural numbers.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Outgoing">
+<h2 class="a4m-station__family">Outgoing</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.OutgoingProfile"><span class="a4m-station__member-name">OutgoingProfile</span><span class="a4m-station__member-path">NavierStokes.OutgoingProfile</span><p class="a4m-station__member-doc"># A single outgoing profile before the heat-tail edit The profile stores one actual scheduled angular-reset witness. Its axial amplitude is the corrected energy root associated with that same witness. All histories and pressures below are integrals of these fields.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.OutgoingPulseBounds"><span class="a4m-station__member-name">OutgoingPulseBounds</span><span class="a4m-station__member-path">NavierStokes.OutgoingPulseBounds</span><p class="a4m-station__member-doc"># Quantitative bounds for the constructed outgoing pulse All profiles and moments in this file are those of `OutgoingSchedule` and `LocalizedMomentRepair`. In particular the correction bumps are not an additional choice. Their log-coordinate translates are identified below.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Parametric">
+<h2 class="a4m-station__family">Parametric</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParametricFlatFactor"><span class="a4m-station__member-name">ParametricFlatFactor</span><span class="a4m-station__member-path">NavierStokes.ParametricFlatFactor</span><p class="a4m-station__member-doc"># Joint dependence of terminal flat primitive factors The coefficient depends on a finite-dimensional auxiliary parameter and the edge coordinate. The factor is the actual transformed improper integral.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParametricKernelBounds"><span class="a4m-station__member-name">ParametricKernelBounds</span><span class="a4m-station__member-path">NavierStokes.ParametricKernelBounds</span><p class="a4m-station__member-doc"># Joint parameter derivatives of the normalized flat kernel The estimates use actual total Fréchet derivatives and finite profile-jet bounds. The parameter space need not be finite-dimensional for these bounds.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Angular">
+<h2 class="a4m-station__family">Angular</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.AngularMomentReset"><span class="a4m-station__member-name">AngularMomentReset</span><span class="a4m-station__member-path">NavierStokes.AngularMomentReset</span><p class="a4m-station__member-doc"># A pressure-neutral angular-moment reset Two identical translated smooth relative bumps repair the angular moment while preserving the pressure integral exactly. The actual two-row derivative matrix is proved nonsingular, and the small smooth nonlinear branch is constructed.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Corrected">
+<h2 class="a4m-station__family">Corrected</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CorrectedPulseAmplitude"><span class="a4m-station__member-name">CorrectedPulseAmplitude</span><span class="a4m-station__member-path">NavierStokes.CorrectedPulseAmplitude</span><p class="a4m-station__member-doc"># Pulse amplitude after the actual angular-moment reset The scalar energy equation here uses `UniformAngularReset.correctedAngular`. Its signed reset energy is retained in the constant coefficient, and the reset witness and amplitude are constructed together for small `lam`.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Pulse">
+<h2 class="a4m-station__family">Pulse</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PulseAmplitude"><span class="a4m-station__member-name">PulseAmplitude</span><span class="a4m-station__member-path">NavierStokes.PulseAmplitude</span><p class="a4m-station__member-doc"># Actual pulse energy and its scalar amplitude The pulse constant is the integral of the constructed smooth pulse from `OutgoingSchedule`, rather than an abstract coefficient satisfying assumed bounds. All energy coefficients below refer to the actual outgoing profiles.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Radial">
+<h2 class="a4m-station__family">Radial</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.RadialSchedule"><span class="a4m-station__member-name">RadialSchedule</span><span class="a4m-station__member-path">NavierStokes.RadialSchedule</span><p class="a4m-station__member-doc"># Scalar identities for the outgoing radial schedule This file verifies the ideal-prefix source and its lower bound, the exponential weights of the axial moment rows, their two-column algebraic reset, the negative energy term in equation (13), and the constant-coefficient lag equation. These finite-dimensional calculations do not establish existence of the full smooth schedule, estimates on the correction bumps, or the stress-cone bounds.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Release">
+<h2 class="a4m-station__family">Release</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ReleaseMoments"><span class="a4m-station__member-name">ReleaseMoments</span><span class="a4m-station__member-path">NavierStokes.ReleaseMoments</span><p class="a4m-station__member-doc"># Actual angular history through the release and terminal tail The corrected angular field has the exact initial moment required by the release controller. Matching derivatives and initial values identifies its actual integral with each constructed lag solution. The terminal identity then gives the vanishing renormalized angular moment.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Reset">
+<h2 class="a4m-station__family">Reset</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ResetEnergyBounds"><span class="a4m-station__member-name">ResetEnergyBounds</span><span class="a4m-station__member-path">NavierStokes.ResetEnergyBounds</span><p class="a4m-station__member-doc"># Actual energy cost of the scheduled angular reset Pressure neutrality has no extra factor `exp y`. This file instead integrates the actual energy difference, proves its parameter regularity, and uses the constructed reset's small coefficients to bound that difference.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Smooth">
+<h2 class="a4m-station__family">Smooth</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SmoothMomentRepair"><span class="a4m-station__member-name">SmoothMomentRepair</span><span class="a4m-station__member-path">NavierStokes.SmoothMomentRepair</span><p class="a4m-station__member-doc"># Smooth dependence of quadratic moment repair The coefficients of a quadratic moment map are included among the variables of a universal polynomial map. Its derivative at zero correction is a proved product equivalence. The smooth inverse-function theorem constructs a local solver; no solution branch or its regularity is assumed.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Uniform">
+<h2 class="a4m-station__family">Uniform</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.UniformAngularReset"><span class="a4m-station__member-name">UniformAngularReset</span><span class="a4m-station__member-path">NavierStokes.UniformAngularReset</span><p class="a4m-station__member-doc"># Uniform applicability of the angular reset The actual two-bump moment system is uniformly invertible down to `lam = 0`. The outgoing uniform wait damps the angular-history discrepancy and its parameter derivatives before this nonlinear repair is applied.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="09.html" data-a4m-nav="prev">← Previous 9 · SchedulePressure</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="11.html" data-a4m-nav="next">Next 11 · OutgoingDilation →</a></p>
+</main>
+</body>
+</html>

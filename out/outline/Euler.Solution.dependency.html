@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Euler.Solution — main-line outline (dependency order) · ai4math main line</title>
+<style>
+/* main-line outline: single column. Serif + paper palette (same source as the graph view); no dark theme. */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-outline { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-outline__title { margin: 0 0 .35rem; font-size: 1.15rem; text-align: center; }
+.a4m-outline__list { list-style: none; margin: 0; padding: 0; }
+.a4m-outline__row { margin: 0 0 1.05rem; }
+.a4m-outline__head { margin: 0; display: flex; align-items: baseline; gap: .5em; font-size: .95rem; }
+.a4m-outline__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .78rem; min-width: 2.2em; text-align: right; }
+.a4m-outline__sep { color: var(--a4m-muted); }
+.a4m-outline__name { font-weight: 700; }
+.a4m-outline__link { color: var(--a4m-fg); text-decoration: none; }
+.a4m-outline__link:hover { text-decoration: underline; }
+/* in-page expansion: native <details> does the work without any script; JS only adds expand-all/collapse-all and remembers the state */
+.a4m-outline__details { margin: .3rem 0 0 3.2em; }
+.a4m-outline__summary { cursor: pointer; color: var(--a4m-muted); font-size: .78rem; }
+.a4m-outline__station { margin: .8rem 0 0; }
+.a4m-outline__station-head { margin: 0; font-size: .9rem; }
+.a4m-outline__station-path { margin: .05rem 0 0; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-outline__station-doc { margin: .15rem 0 0; font-size: .85rem; text-align: justify; }
+.a4m-outline__enhance { margin: 0 0 1.25rem; display: flex; gap: 1em; font-size: .78rem; }
+.a4m-outline__enhance button { font: inherit; cursor: pointer; }
+.a4m-outline__module { margin: .1rem 0 0 3.2em; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-outline__doc { margin: .25rem 0 0 3.2em; font-size: .87rem; text-align: justify; }
+/* multi-section file: container + namespace sub-items (indented, no border or fill) */
+.a4m-outline__sub { list-style: none; margin: .35rem 0 0 3.2em; padding: 0; }
+.a4m-outline__sub-item--rest { font-style: italic; }
+.a4m-outline__sub-item { font-size: .82rem; padding: .05rem 0; color: var(--a4m-muted); }
+</style>
+</head>
+<body>
+<main class="a4m-outline" data-a4m-outline="mainline" data-a4m-order="dependency" data-a4m-total="1829" data-a4m-covered="1829" data-a4m-merged-below="0">
+<h1 class="a4m-outline__title">Euler.Solution — main-line outline (dependency order)</h1>
+<ol class="a4m-outline__list">
+<li class="a4m-outline__row" data-a4m-station="Euler.Solution" data-a4m-added="54" data-a4m-index="1" data-a4m-dep-index="0" data-a4m-lines="76" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">1</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">Solution</span></p>
+<p class="a4m-outline__module">Euler.Solution</p>
+<p class="a4m-outline__doc">The independent solution to the unforced Euler Comparator challenge. Its definitions come from `SolutionDefinitions`, never from the reference module or its placeholder theorem.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ComparatorMaximalSolution" data-a4m-added="2" data-a4m-index="2" data-a4m-dep-index="1" data-a4m-lines="114" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">2</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ComparatorMaximalSolution</span></p>
+<p class="a4m-outline__module">Euler.ComparatorMaximalSolution</p>
+<p class="a4m-outline__doc">The canonical maximal solution in the reference's ordinary-function Sobolev class. All regularity is inherited from its existing shorter evolutions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ComparatorMaximalFields" data-a4m-added="1" data-a4m-index="3" data-a4m-dep-index="2" data-a4m-lines="129" data-a4m-decls="17">
+<p class="a4m-outline__head"><span class="a4m-outline__index">3</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ComparatorMaximalFields</span></p>
+<p class="a4m-outline__module">Euler.ComparatorMaximalFields</p>
+<p class="a4m-outline__doc">The canonical maximal fields in the challenge's position-first, real-time convention. Extension by zero outside the lifespan has no role in the equation.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ComparatorSingularityNorms" data-a4m-added="2" data-a4m-index="4" data-a4m-dep-index="3" data-a4m-lines="47" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">4</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ComparatorSingularityNorms</span></p>
+<p class="a4m-outline__module">Euler.ComparatorSingularityNorms</p>
+<p class="a4m-outline__doc">The extended spatial suprema in the independent challenge agree with the ordinary development's bounded-function norms on every smooth Sobolev slice.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.EulerSingularity" data-a4m-added="26" data-a4m-index="5" data-a4m-dep-index="4" data-a4m-lines="154" data-a4m-decls="17">
+<p class="a4m-outline__head"><span class="a4m-outline__index">5</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">EulerSingularity</span></p>
+<p class="a4m-outline__module">Euler.EulerSingularity</p>
+<p class="a4m-outline__doc">The final statement for the concrete packet construction. The initial velocity is an ordinary compactly supported smooth field on Euclidean three-space. Its maximal solution has a positive finite lifespan, a divergent C¹ upper limit, and an infinite integral of the actual curl supremum. All packet, scale, local existence, continuation, and logarithmic estimate inputs have been constructed in the imported proofs. `Evolution.sobolevSolutionClass` supplies one continuous strong time derivative in every spatial Sobolev order for every shorter restriction. The norm specification theorems below identify the quantities in the statement with the pointwise suprema of the actual velocity, derivative, and curl.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.EulerC1Limsup" data-a4m-added="1" data-a4m-index="6" data-a4m-dep-index="5" data-a4m-lines="93" data-a4m-decls="12">
+<p class="a4m-outline__head"><span class="a4m-outline__index">6</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">EulerC1Limsup</span></p>
+<p class="a4m-outline__module">Euler.EulerC1Limsup</p>
+<p class="a4m-outline__doc">Exact infinite upper limits at the maximal time. The endpoint filter is the pullback of the ordinary left-neighborhood filter, so its meaning does not depend on a chosen sequence of sampling times.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.EulerC1Breakdown" data-a4m-added="18" data-a4m-index="7" data-a4m-dep-index="6" data-a4m-lines="153" data-a4m-decls="34">
+<p class="a4m-outline__head"><span class="a4m-outline__index">7</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">EulerC1Breakdown</span></p>
+<p class="a4m-outline__module">Euler.EulerC1Breakdown</p>
+<p class="a4m-outline__doc">C¹ breakdown for the concrete compactly supported datum. The infinite-limsup statement is expressed directly: after every time below the maximal time, the actual gradient supremum exceeds every real bound. The norms are bounded-continuous-function norms at individual times, not totalized real L∞ seminorms of unverified measurable fields.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.EulerFiniteLifespan" data-a4m-added="5" data-a4m-index="8" data-a4m-dep-index="7" data-a4m-lines="53" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">8</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">EulerFiniteLifespan</span></p>
+<p class="a4m-outline__module">Euler.EulerFiniteLifespan</p>
+<p class="a4m-outline__doc">A compactly supported, smooth, divergence-free initial velocity whose ordinary smooth Euler solutions have a finite maximal horizon. The separate continuation and vorticity criteria are not asserted here.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketFiniteLifespan" data-a4m-added="26" data-a4m-index="9" data-a4m-dep-index="8" data-a4m-lines="61" data-a4m-decls="9">
+<p class="a4m-outline__head"><span class="a4m-outline__index">9</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketFiniteLifespan</span></p>
+<p class="a4m-outline__module">Euler.PacketFiniteLifespan</p>
+<p class="a4m-outline__doc">The limiting initial datum of the actual recursive packet family. Its genuine Euler solutions have a positive, finite maximal horizon.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInfiniteConstruction" data-a4m-added="5" data-a4m-index="10" data-a4m-dep-index="9" data-a4m-lines="78" data-a4m-decls="12">
+<p class="a4m-outline__head"><span class="a4m-outline__index">10</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInfiniteConstruction</span></p>
+<p class="a4m-outline__module">Euler.PacketInfiniteConstruction</p>
+<p class="a4m-outline__doc">The actual infinite packet family, from the concrete first stage and the two genuine successor constructions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketJoinedSuccessor" data-a4m-added="45" data-a4m-index="11" data-a4m-dep-index="10" data-a4m-lines="196" data-a4m-decls="13">
+<p class="a4m-outline__head"><span class="a4m-outline__index">11</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketJoinedSuccessor</span></p>
+<p class="a4m-outline__module">Euler.PacketJoinedSuccessor</p>
+<p class="a4m-outline__doc">The positive-history normal step. One actual correction constructs the next Euler state, localized low bounds, renewed frame and exact initial increment, without any premise about a future stage.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketStageInputs" data-a4m-added="16" data-a4m-index="12" data-a4m-dep-index="11" data-a4m-lines="170" data-a4m-decls="24">
+<p class="a4m-outline__head"><span class="a4m-outline__index">12</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketStageInputs</span></p>
+<p class="a4m-outline__module">Euler.PacketStageInputs</p>
+<p class="a4m-outline__doc">Actual packet inputs at every finite stage, together with the source-only parameter cap and the chosen frequency guard.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketStageGuards" data-a4m-added="1" data-a4m-index="13" data-a4m-dep-index="12" data-a4m-lines="155" data-a4m-decls="20">
+<p class="a4m-outline__head"><span class="a4m-outline__index">13</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketStageGuards</span></p>
+<p class="a4m-outline__module">Euler.PacketStageGuards</p>
+<p class="a4m-outline__doc">Literal forward and joined source guards for the next packet of an actual finite stage. The radius is one, the spike and target shear are the prescribed source scales, and the physical target is nextTime.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketStageGeometry" data-a4m-added="5" data-a4m-index="14" data-a4m-dep-index="13" data-a4m-lines="207" data-a4m-decls="38">
+<p class="a4m-outline__head"><span class="a4m-outline__index">14</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketStageGeometry</span></p>
+<p class="a4m-outline__module">Euler.PacketStageGeometry</p>
+<p class="a4m-outline__doc">The actual next packet geometry is constructed from the current finite stage. Source normals, history bounds and the neighboring-label guards are derived from its state and the one fixed scale choice.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketStageRestriction" data-a4m-added="1" data-a4m-index="15" data-a4m-dep-index="14" data-a4m-lines="136" data-a4m-decls="40">
+<p class="a4m-outline__head"><span class="a4m-outline__index">15</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketStageRestriction</span></p>
+<p class="a4m-outline__module">Euler.PacketStageRestriction</p>
+<p class="a4m-outline__doc">The next literal activation and horizon are constructed from the current actual frame. Restriction preserves the actual Euler state, low bounds and frame before the next packet is added.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInductionStage" data-a4m-added="45" data-a4m-index="16" data-a4m-dep-index="15" data-a4m-lines="146" data-a4m-decls="19">
+<p class="a4m-outline__head"><span class="a4m-outline__index">16</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInductionStage</span></p>
+<p class="a4m-outline__module">Euler.PacketInductionStage</p>
+<p class="a4m-outline__doc">The invariant for a finite, actually constructed packet stage. All fields refer to its genuine Euler state, source guards and frame. The cumulative bounds use only earlier indices.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.BaseFirstPacketFrame" data-a4m-added="1" data-a4m-index="17" data-a4m-dep-index="16" data-a4m-lines="51" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">17</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseFirstPacketFrame</span></p>
+<p class="a4m-outline__module">Euler.BaseFirstPacketFrame</p>
+<p class="a4m-outline__doc">The first actual packet has the precise initial frame parameters a=1, sigma=sqrt(beta), and the prescribed polynomial shear.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.BaseFirstPacketEvolution" data-a4m-added="7" data-a4m-index="18" data-a4m-dep-index="17" data-a4m-lines="127" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">18</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseFirstPacketEvolution</span></p>
+<p class="a4m-outline__module">Euler.BaseFirstPacketEvolution</p>
+<p class="a4m-outline__doc">The first constructed packet supplies the physical low bounds and the actual center expansion needed by the first normal stage.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.BaseFirstPacketChoice" data-a4m-added="42" data-a4m-index="19" data-a4m-dep-index="18" data-a4m-lines="110" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">19</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseFirstPacketChoice</span></p>
+<p class="a4m-outline__module">Euler.BaseFirstPacketChoice</p>
+<p class="a4m-outline__doc">One actual first-packet correction, its physical flow, labels and source errors. The uniform scalar frequency guard constructs the record.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.BaseFirstPacket" data-a4m-added="69" data-a4m-index="20" data-a4m-dep-index="19" data-a4m-lines="79" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">20</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BaseFirstPacket</span></p>
+<p class="a4m-outline__module">Euler.BaseFirstPacket</p>
+<p class="a4m-outline__doc">The first packet over the concrete base solution produces an actual smooth Euler state and its localized source bounds. All analytic input comes from the same initialized correction, graph flow, and error bounds.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.BasePacketLowBounds" data-a4m-added="84" data-a4m-index="21" data-a4m-dep-index="20" data-a4m-lines="70" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">21</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">BasePacketLowBounds</span></p>
+<p class="a4m-outline__module">Euler.BasePacketLowBounds</p>
+<p class="a4m-outline__doc">The first packet's size and sign hypotheses are proved for the concrete base solution on its actual restricted horizon.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ParentHomogeneousPacketLowBounds" data-a4m-added="5" data-a4m-index="22" data-a4m-dep-index="21" data-a4m-lines="110" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">22</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParentHomogeneousPacketLowBounds</span></p>
+<p class="a4m-outline__module">Euler.ParentHomogeneousPacketLowBounds</p>
+<p class="a4m-outline__doc">Exact low-order propagation for the first homogeneous packet, whose amplitude is delta times the desired initial shear.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketForwardChildLowBounds" data-a4m-added="10" data-a4m-index="23" data-a4m-dep-index="22" data-a4m-lines="197" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">23</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketForwardChildLowBounds</span></p>
+<p class="a4m-outline__module">Euler.PacketForwardChildLowBounds</p>
+<p class="a4m-outline__doc">The time-zero amplification stage preserves the actual sharp physical derivative and upper pressure bounds. The early interval keeps its exponential gain, and the good interval retains the extra delta in the upper pressure estimate.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketChildLowBounds" data-a4m-added="75" data-a4m-index="24" data-a4m-dep-index="23" data-a4m-lines="239" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">24</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketChildLowBounds</span></p>
+<p class="a4m-outline__module">Euler.PacketChildLowBounds</p>
+<p class="a4m-outline__doc">Sharp whole-horizon low-order propagation for the actual child fields. On good times only the negative part of f' can increase the upper pressure bound; history and early times use the exponentially small target ratio. No child low bound is assumed.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketChildFieldMatch" data-a4m-added="53" data-a4m-index="25" data-a4m-dep-index="24" data-a4m-lines="209" data-a4m-decls="15">
+<p class="a4m-outline__head"><span class="a4m-outline__index">25</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketChildFieldMatch</span></p>
+<p class="a4m-outline__module">Euler.PacketChildFieldMatch</p>
+<p class="a4m-outline__doc">Literal rescaling and field identities for a child packet. The physical velocity gradient and scalar-pressure Hessian retain the normalized packet's size: neither receives a negative power of ell.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ParentPacketExactPressure" data-a4m-added="1" data-a4m-index="26" data-a4m-dep-index="25" data-a4m-lines="129" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">26</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParentPacketExactPressure</span></p>
+<p class="a4m-outline__module">Euler.ParentPacketExactPressure</p>
+<p class="a4m-outline__doc">The actual scalar pressure of the corrected source packet has the constructed continuous physical pressure force, at every time.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ParentPacketExactEuler" data-a4m-added="22" data-a4m-index="27" data-a4m-dep-index="26" data-a4m-lines="158" data-a4m-decls="14">
+<p class="a4m-outline__head"><span class="a4m-outline__index">27</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParentPacketExactEuler</span></p>
+<p class="a4m-outline__module">Euler.ParentPacketExactEuler</p>
+<p class="a4m-outline__doc">The actual source packet is Euler in the physical parent coordinates. The normalized frame and inverse identities are supplied by the parent construction, and the final physical scaling is explicit.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ParentNormalizedEuler" data-a4m-added="2" data-a4m-index="28" data-a4m-dep-index="27" data-a4m-lines="84" data-a4m-decls="10">
+<p class="a4m-outline__head"><span class="a4m-outline__index">28</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParentNormalizedEuler</span></p>
+<p class="a4m-outline__module">Euler.ParentNormalizedEuler</p>
+<p class="a4m-outline__doc">Normalizing the actual parent Euler velocity and pressure preserves Euler and supplies the true time law of the normalized particle map.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ParentNormalizedGeometry" data-a4m-added="3" data-a4m-index="29" data-a4m-dep-index="28" data-a4m-lines="200" data-a4m-decls="20">
+<p class="a4m-outline__head"><span class="a4m-outline__index">29</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ParentNormalizedGeometry</span></p>
+<p class="a4m-outline__module">Euler.ParentNormalizedGeometry</p>
+<p class="a4m-outline__doc">The actual normalized parent coordinates used by the packet. Joint regularity, the frame, and inverse regularity are derived from the parent time laws and the literal inverse map.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PhysicalChildPacketMatch" data-a4m-added="98" data-a4m-index="30" data-a4m-dep-index="29" data-a4m-lines="82" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">30</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PhysicalChildPacketMatch</span></p>
+<p class="a4m-outline__module">Euler.PhysicalChildPacketMatch</p>
+<p class="a4m-outline__doc">The child particle velocity matches the physical reconstruction of the actual common correction, including the source spatial scaling.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketLiftedCoefficient" data-a4m-added="30" data-a4m-index="31" data-a4m-dep-index="30" data-a4m-lines="94" data-a4m-decls="10">
+<p class="a4m-outline__head"><span class="a4m-outline__index">31</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketLiftedCoefficient</span></p>
+<p class="a4m-outline__module">Euler.PacketLiftedCoefficient</p>
+<p class="a4m-outline__doc">Actual smooth four-dimensional coefficients of the corrected packet. The lifted field equals the constructed exact velocity, has the genuine time derivative, is periodic, and has zero divergence.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.AllOrderDriftFieldDecomposition" data-a4m-added="13" data-a4m-index="32" data-a4m-dep-index="31" data-a4m-lines="50" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">32</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">AllOrderDriftFieldDecomposition</span></p>
+<p class="a4m-outline__module">Euler.AllOrderDriftFieldDecomposition</p>
+<p class="a4m-outline__doc">Pointwise decomposition of the actual corrected velocity and pressure. The identities concern the constructed exact packet, not an arbitrary pair satisfying an energy bound.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInitializedExactLifted" data-a4m-added="37" data-a4m-index="33" data-a4m-dep-index="32" data-a4m-lines="130" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">33</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInitializedExactLifted</span></p>
+<p class="a4m-outline__module">Euler.PacketInitializedExactLifted</p>
+<p class="a4m-outline__doc">Source budgets and the actual initialized residual construct exact corrected lifted packets at every sufficiently large frequency.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInitializedResidualEquation" data-a4m-added="55" data-a4m-index="34" data-a4m-dep-index="33" data-a4m-lines="137" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">34</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInitializedResidualEquation</span></p>
+<p class="a4m-outline__module">Euler.PacketInitializedResidualEquation</p>
+<p class="a4m-outline__doc">The literal initialized packet supplies the all-order approximation residual identity, including its actual pressure gradient. Its velocity, time derivative and residual are the fields already constructed from the source profiles, not additional approximation hypotheses.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInitializedCorrectionData" data-a4m-added="224" data-a4m-index="35" data-a4m-dep-index="34" data-a4m-lines="82" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">35</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInitializedCorrectionData</span></p>
+<p class="a4m-outline__module">Euler.PacketInitializedCorrectionData</p>
+<p class="a4m-outline__doc">The fully initialized finite packet supplies the actual all-order data of the correction equation, with its derived word estimates.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInitializedBounds" data-a4m-added="49" data-a4m-index="36" data-a4m-dep-index="35" data-a4m-lines="101" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">36</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInitializedBounds</span></p>
+<p class="a4m-outline__module">Euler.PacketInitializedBounds</p>
+<p class="a4m-outline__doc">The literal terminal wave yields the actual finite packet, its small normal drift, and its exponentially small residual. Primary bounds and the primary equation are supplied by the construction itself.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketInitializedProfiles" data-a4m-added="59" data-a4m-index="37" data-a4m-dep-index="36" data-a4m-lines="54" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">37</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketInitializedProfiles</span></p>
+<p class="a4m-outline__module">Euler.PacketInitializedProfiles</p>
+<p class="a4m-outline__doc">Uniform recursive packet bounds with the literal primary initialization discharged.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketTerminalPrimaryBudget" data-a4m-added="11" data-a4m-index="38" data-a4m-dep-index="37" data-a4m-lines="39" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">38</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketTerminalPrimaryBudget</span></p>
+<p class="a4m-outline__module">Euler.PacketTerminalPrimaryBudget</p>
+<p class="a4m-outline__doc">The literal compact terminal wave initializes the mean-time packet budget.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketPrimaryGradeBounds" data-a4m-added="78" data-a4m-index="39" data-a4m-dep-index="38" data-a4m-lines="159" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">39</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketPrimaryGradeBounds</span></p>
+<p class="a4m-outline__module">Euler.PacketPrimaryGradeBounds</p>
+<p class="a4m-outline__doc">The actual primary closes the first packet grade. Its terminal scalar amplitude is canceled against the actual time profile, and only fixed source costs are absorbed into the radius.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketPrimarySourceRegularity" data-a4m-added="82" data-a4m-index="40" data-a4m-dep-index="39" data-a4m-lines="48" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">40</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketPrimarySourceRegularity</span></p>
+<p class="a4m-outline__module">Euler.PacketPrimarySourceRegularity</p>
+<p class="a4m-outline__doc">The actual terminal-data primary supplies the grade-one profile and all regularity/locality data required by the recursive packet construction.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketPrimaryRegularity" data-a4m-added="43" data-a4m-index="41" data-a4m-dep-index="40" data-a4m-lines="68" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">41</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketPrimaryRegularity</span></p>
+<p class="a4m-outline__module">Euler.PacketPrimaryRegularity</p>
+<p class="a4m-outline__doc">The genuine homogeneous high-mode solution supplies the primary profile's regularity.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketProfileRegularity" data-a4m-added="3" data-a4m-index="42" data-a4m-dep-index="41" data-a4m-lines="90" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">42</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketProfileRegularity</span></p>
+<p class="a4m-outline__module">Euler.PacketProfileRegularity</p>
+<p class="a4m-outline__doc">Genuine regularity and locality data carried by each recursively constructed profile.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketCylinderRecursiveAdmissibility" data-a4m-added="16" data-a4m-index="43" data-a4m-dep-index="42" data-a4m-lines="55" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">43</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketCylinderRecursiveAdmissibility</span></p>
+<p class="a4m-outline__module">Euler.PacketCylinderRecursiveAdmissibility</p>
+<p class="a4m-outline__doc">The literal recursive high forcing is admissible for the constructed transverse inverse.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketCylinderHighForcing" data-a4m-added="80" data-a4m-index="44" data-a4m-dep-index="43" data-a4m-lines="40" data-a4m-decls="2">
+<p class="a4m-outline__head"><span class="a4m-outline__index">44</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketCylinderHighForcing</span></p>
+<p class="a4m-outline__module">Euler.PacketCylinderHighForcing</p>
+<p class="a4m-outline__doc">Supported, zero-mean raw cylinder witnesses feed the actual high-mode solver.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketCylinderHighMean" data-a4m-added="2" data-a4m-index="45" data-a4m-dep-index="44" data-a4m-lines="63" data-a4m-decls="2">
+<p class="a4m-outline__head"><span class="a4m-outline__index">45</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketCylinderHighMean</span></p>
+<p class="a4m-outline__module">Euler.PacketCylinderHighMean</p>
+<p class="a4m-outline__doc">The literal recursively constructed high forcing has zero angular mean.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketCylinderKnownForce" data-a4m-added="46" data-a4m-index="46" data-a4m-dep-index="45" data-a4m-lines="71" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">46</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketCylinderKnownForce</span></p>
+<p class="a4m-outline__module">Euler.PacketCylinderKnownForce</p>
+<p class="a4m-outline__doc"># Literal recursive forcing is an actual smooth cylinder L² path Only the already constructed prefix fields, the true time derivative of the previous corrector, its scalar-pressure gradient, and the actual coefficient paths enter. No equation or cancellation for the new profile is assumed.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.PacketCylinderFieldAverage" data-a4m-added="5" data-a4m-index="47" data-a4m-dep-index="46" data-a4m-lines="53" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">47</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">PacketCylinderFieldAverage</span></p>
+<p class="a4m-outline__module">Euler.PacketCylinderFieldAverage</p>
+<p class="a4m-outline__doc">Literal angular averaging preserves actual raw cylinder-path admissibility.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketAngularForcing" data-a4m-added="29" data-a4m-index="48" data-a4m-dep-index="47" data-a4m-lines="56" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">48</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketAngularForcing</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketAngularForcing</p>
+<p class="a4m-outline__doc"># Literal angular averages are admissible mean forcing The cylinder-to-space mean is the actual normalized angular integral. Its proved ordinary translation regularity is converted into literal spatial L² jets, so the mean packet provider receives an actual admissible input.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketOrbitForcing" data-a4m-added="3" data-a4m-index="49" data-a4m-dep-index="48" data-a4m-lines="67" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">49</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketOrbitForcing</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketOrbitForcing</p>
+<p class="a4m-outline__doc"># Solved mean fields are actual admissible forcing fields The genuine continuous L² solution path and its solved spatial translation orbit produce the literal smooth L² slices required by the forcing interface. The same construction applies to its actual time derivative and pressure force.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketNonlinearForcing" data-a4m-added="4" data-a4m-index="50" data-a4m-dep-index="49" data-a4m-lines="52" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">50</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketNonlinearForcing</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketNonlinearForcing</p>
+<p class="a4m-outline__doc"># Nonlinear closure of actual admissible mean forcing Sobolev evaluation supplies bounded coefficients from one actual smooth L² factor. Consequently finite-dimensional bilinear products preserve the literal spatial L² jets and their time continuity without an extra product regularity assumption.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketForcingProduct" data-a4m-added="7" data-a4m-index="51" data-a4m-dep-index="50" data-a4m-lines="27" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">51</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketForcingProduct</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketForcingProduct</p>
+<p class="a4m-outline__doc">Actual multiplication closure for admissible mean forcing.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketForcingAlgebra" data-a4m-added="2" data-a4m-index="52" data-a4m-dep-index="51" data-a4m-lines="81" data-a4m-decls="8">
+<p class="a4m-outline__head"><span class="a4m-outline__index">52</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketForcingAlgebra</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketForcingAlgebra</p>
+<p class="a4m-outline__doc"># Genuine algebraic closure of admissible mean forcing Admissibility is preserved by finite sums, bounded linear maps, and actual spatial directional derivatives. Every witness consists of literal smooth fields and their continuous L² jets; no inverse or equation is assumed.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketForcing" data-a4m-added="18" data-a4m-index="53" data-a4m-dep-index="52" data-a4m-lines="120" data-a4m-decls="21">
+<p class="a4m-outline__head"><span class="a4m-outline__index">53</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketForcing</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketForcing</p>
+<p class="a4m-outline__doc"># Admissible raw mean forcing and its actual solved continuous paths Admissibility consists of literal smooth spatial L² slices and continuity of their L² spatial jets. All translation regularity below is derived. The solution paths are obtained by the concrete source inverse in MeanPacketData.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPacketData" data-a4m-added="63" data-a4m-index="54" data-a4m-dep-index="53" data-a4m-lines="140" data-a4m-decls="21">
+<p class="a4m-outline__head"><span class="a4m-outline__index">54</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPacketData</span></p>
+<p class="a4m-outline__module">Euler.MeanPacketData</p>
+<p class="a4m-outline__doc"># Concrete source data for the mean packet provider This record contains only the given matrix coefficients and the manuscript's pointwise inequalities and time identities. Its solver and strong evolution are the previously constructed actual variational inverse, not input fields.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanPressureRepresentative" data-a4m-added="39" data-a4m-index="55" data-a4m-dep-index="54" data-a4m-lines="159" data-a4m-decls="12">
+<p class="a4m-outline__head"><span class="a4m-outline__index">55</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanPressureRepresentative</span></p>
+<p class="a4m-outline__module">Euler.MeanPressureRepresentative</p>
+<p class="a4m-outline__doc"># A normalized scalar pressure for the actual mean solution The radial integral is applied to the real F-adjoint pressure force, whose closed-gradient-space membership was proved from the actual Gram equation. The resulting scalar is spatially smooth, normalized at zero, and gives the pointwise physical equation. No scalar potential or pressure time derivative is assumed.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanContinuousPressure" data-a4m-added="1" data-a4m-index="56" data-a4m-dep-index="55" data-a4m-lines="142" data-a4m-decls="6">
+<p class="a4m-outline__head"><span class="a4m-outline__index">56</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanContinuousPressure</span></p>
+<p class="a4m-outline__module">Euler.MeanContinuousPressure</p>
+<p class="a4m-outline__doc"># The actual continuous mean pressure residual The residual is constructed from the genuine continuous Gram acceleration. Its F-adjoint lies in the ordinary closed gradient space at every time. The true physical equation and fixed-Sobolev estimates hold in the same continuous path space, including the interval endpoints.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanTimeSobolev" data-a4m-added="4" data-a4m-index="57" data-a4m-dep-index="56" data-a4m-lines="146" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">57</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanTimeSobolev</span></p>
+<p class="a4m-outline__module">Euler.MeanTimeSobolev</p>
+<p class="a4m-outline__doc"># Genuine mean time traces and physical fields in fixed Sobolev word blocks The fixed time reconstruction and actual frame products preserve the input radius. No conversion of forcing or solution tensors is used.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanContinuousSobolev" data-a4m-added="21" data-a4m-index="58" data-a4m-dep-index="57" data-a4m-lines="74" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">58</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanContinuousSobolev</span></p>
+<p class="a4m-outline__module">Euler.MeanContinuousSobolev</p>
+<p class="a4m-outline__doc"># Actual spatial orbits of continuous mean acceleration The ordinary solenoidal Gram inverse commutes with simultaneous translation of its data. This identifies the parameterized continuous solve with the genuine spatial orbit of the acceleration, including endpoint times.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanContinuousAcceleration" data-a4m-added="10" data-a4m-index="59" data-a4m-dep-index="58" data-a4m-lines="110" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">59</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanContinuousAcceleration</span></p>
+<p class="a4m-outline__module">Euler.MeanContinuousAcceleration</p>
+<p class="a4m-outline__doc"># Actual spatial orbits of continuous mean acceleration The ordinary solenoidal Gram inverse commutes with simultaneous translation of its data. This identifies the parameterized continuous solve with the genuine spatial orbit of the acceleration, including endpoint times.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanCoordinatePath" data-a4m-added="4" data-a4m-index="60" data-a4m-dep-index="59" data-a4m-lines="93" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">60</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanCoordinatePath</span></p>
+<p class="a4m-outline__module">Euler.MeanCoordinatePath</p>
+<p class="a4m-outline__doc"># Actual continuous coordinate-velocity spatial orbits The coordinate velocity is reconstructed from its genuine L² value and acceleration. Consequently its uniform-time spatial derivatives have the same fixed H¹ trace bound as the physical velocity.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanStrongGevrey" data-a4m-added="6" data-a4m-index="61" data-a4m-dep-index="60" data-a4m-lines="132" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">61</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanStrongGevrey</span></p>
+<p class="a4m-outline__module">Euler.MeanStrongGevrey</p>
+<p class="a4m-outline__doc"># All-order estimates for the genuine strong mean fields The actual coordinate velocity estimate supplied by the weak inverse gives the next-shift acceleration estimate and the physical B, B_t estimates. The constants are fixed polynomials in the coefficient amplitudes and the proved inverse bound; none depends on the derivative order.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanAccelerationGevrey" data-a4m-added="6" data-a4m-index="62" data-a4m-dep-index="61" data-a4m-lines="120" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">62</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanAccelerationGevrey</span></p>
+<p class="a4m-outline__module">Euler.MeanAccelerationGevrey</p>
+<p class="a4m-outline__doc"># Genuine spatial estimates for mean acceleration The coordinate acceleration is recovered through the actual coercive Gram inverse. Covariance identifies its parameterized solve with spatial translation of the original field. Consequently the estimates below concern the real spatial orbit, with no assumed derivatives of the inverse.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanGramTranslation" data-a4m-added="15" data-a4m-index="63" data-a4m-dep-index="62" data-a4m-lines="165" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">63</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanGramTranslation</span></p>
+<p class="a4m-outline__module">Euler.MeanGramTranslation</p>
+<p class="a4m-outline__doc"># Translation covariance of the actual mean acceleration The Gram inverse on the fixed solenoidal time space is the genuine coercive inverse. Its translated family has the same lower bound, and its application is the spatial orbit of the original acceleration. The final identification uses the already proved strong equation of the actual variational solution.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanStrongCoordinates" data-a4m-added="3" data-a4m-index="64" data-a4m-dep-index="63" data-a4m-lines="72" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">64</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanStrongCoordinates</span></p>
+<p class="a4m-outline__module">Euler.MeanStrongCoordinates</p>
+<p class="a4m-outline__doc"># Identification of the strong mean velocity with the fixed derivative variable The actual AC label has its actual L² velocity as derivative and zero terminal trace. Terminal-primitive uniqueness therefore identifies every strong realization with the same fixed-coordinate derivative field. Spatial estimates for the fixed inverse consequently apply to the constructed physical velocity.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanStrongEstimates" data-a4m-added="3" data-a4m-index="65" data-a4m-dep-index="64" data-a4m-lines="189" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">65</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanStrongEstimates</span></p>
+<p class="a4m-outline__module">Euler.MeanStrongEstimates</p>
+<p class="a4m-outline__doc"># Quantitative time estimates for the genuine mean inverse The constants depend explicitly and polynomially on the time interval, coefficient bounds, and the inverse-frame bound. The only square roots are the proved finite-time trace/Poincaré factors. These are estimates of the actual Bochner fields and continuous representatives constructed by the inverse.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanVelocityOperator" data-a4m-added="1" data-a4m-index="66" data-a4m-dep-index="65" data-a4m-lines="137" data-a4m-decls="7">
+<p class="a4m-outline__head"><span class="a4m-outline__index">66</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanVelocityOperator</span></p>
+<p class="a4m-outline__module">Euler.MeanVelocityOperator</p>
+<p class="a4m-outline__doc"># The actual bounded linear mean velocity inverse The physical velocity is `η_t-F_t F⁻¹η`. This formula constructs a bounded linear map on the original derivative variable, and the genuine H² evolution identifies it with `F z_t`. Composing with the variational solver gives the actual linear velocity inverse with an explicit finite-time bound.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanVelocityPressure" data-a4m-added="1" data-a4m-index="67" data-a4m-dep-index="66" data-a4m-lines="134" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">67</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanVelocityPressure</span></p>
+<p class="a4m-outline__module">Euler.MeanVelocityPressure</p>
+<p class="a4m-outline__doc"># The actual mean velocity and pressure-gradient residual From a genuine strong mean evolution, construct B=F z_t in Bochner L², its actual time derivative, and the residual f-B_t-MB. Its F-adjoint transform is in the ordinary L² gradient space by the proved strong projected equation.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanStrongInverse" data-a4m-added="1" data-a4m-index="68" data-a4m-dep-index="67" data-a4m-lines="46" data-a4m-decls="1">
+<p class="a4m-outline__head"><span class="a4m-outline__index">68</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanStrongInverse</span></p>
+<p class="a4m-outline__module">Euler.MeanStrongInverse</p>
+<p class="a4m-outline__doc"># Strong regularity of the genuinely constructed mean inverse The result applies the strong-coordinate theorem to the actual coercive solve. The input boundary inequality still has to be supplied by the concrete cutoff operator and harmonic localization. No solution, momentum equation, acceleration, or initial velocity condition is included in the hypotheses.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanStrongEquation" data-a4m-added="7" data-a4m-index="69" data-a4m-dep-index="68" data-a4m-lines="186" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">69</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanStrongEquation</span></p>
+<p class="a4m-outline__module">Euler.MeanStrongEquation</p>
+<p class="a4m-outline__doc"># The actual mean strong equation and initial velocity condition The time variational solution is upgraded to genuine H² solenoidal coordinates using its derived AC momentum and the constructed coercive Gram inverse. The initial momentum trace then cancels the original M0 boundary term. The final fields contain the actual projected equation (9) and `z_t(0)=L A z(0)`.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanMomentumBoundary" data-a4m-added="2" data-a4m-index="70" data-a4m-dep-index="69" data-a4m-lines="138" data-a4m-decls="4">
+<p class="a4m-outline__head"><span class="a4m-outline__index">70</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanMomentumBoundary</span></p>
+<p class="a4m-outline__module">Euler.MeanMomentumBoundary</p>
+<p class="a4m-outline__doc"># The mean variational solve determines its actual initial momentum trace All solenoidal terminal-H¹ tests, including those nonzero initially, identify an explicit AC momentum representative. Its initial value is the adjoint frame applied to the original `M0 + L A` boundary force.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.MeanMomentumRegularity" data-a4m-added="5" data-a4m-index="71" data-a4m-dep-index="70" data-a4m-lines="124" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">71</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">MeanMomentumRegularity</span></p>
+<p class="a4m-outline__module">Euler.MeanMomentumRegularity</p>
+<p class="a4m-outline__doc"># Genuine mean momentum regularity from the variational solve Zero-initial-trace solenoidal test primitives are mapped by F into the actual mean test space. The two original boundary terms then vanish, and the weak identity constructs an AC representative of `Pσ F* η_t`. This is a regularity conclusion, not an assumed momentum equation or an assumed second derivative.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TransverseMomentumRegularity" data-a4m-added="4" data-a4m-index="72" data-a4m-dep-index="71" data-a4m-lines="156" data-a4m-decls="8">
+<p class="a4m-outline__head"><span class="a4m-outline__index">72</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TransverseMomentumRegularity</span></p>
+<p class="a4m-outline__module">Euler.TransverseMomentumRegularity</p>
+<p class="a4m-outline__doc"># Actual momentum regularity of the transverse variational inverse The admissible tests are constructed by differentiating `Q(t) Jv(t)` with the proved time-H¹ product rule. The weak equation then forces `Q* η_t` to have an absolutely continuous representative. No momentum equation or second derivative of the solved displacement is included in the assumptions.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TransverseVariationalInverse" data-a4m-added="3" data-a4m-index="73" data-a4m-dep-index="72" data-a4m-lines="277" data-a4m-decls="22">
+<p class="a4m-outline__head"><span class="a4m-outline__index">73</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TransverseVariationalInverse</span></p>
+<p class="a4m-outline__module">Euler.TransverseVariationalInverse</p>
+<p class="a4m-outline__doc"># The actual zero-endpoint transverse displacement inverse We use the derivative of the physical displacement as the Hilbert-space variable. Terminal integration supplies the displacement. Its initial trace and its moving normal component are bounded linear constraints, hence define a closed Hilbert subspace. The kinetic energy is exactly the squared norm on this space; no norm equivalence or pre-existing differential inverse is assumed. This constructs the weak transverse inverse in source lines 172--184. The coordinate identity `η = F R ξ` and strong coordinate evolution require the separate frame and regularity arguments; they are not assumed in this file.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TransverseFrameCoordinates" data-a4m-added="1" data-a4m-index="74" data-a4m-dep-index="73" data-a4m-lines="131" data-a4m-decls="14">
+<p class="a4m-outline__head"><span class="a4m-outline__index">74</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TransverseFrameCoordinates</span></p>
+<p class="a4m-outline__module">Euler.TransverseFrameCoordinates</p>
+<p class="a4m-outline__doc"># Recovering the source's transverse coordinates The moving plane with normal `(F⁻¹)* m₀` is exactly the image under `F` of the fixed plane `m₀⊥`. Orthogonal projection gives a bounded coordinate map, and on the moving plane its reconstruction is the identity. These are coefficient identities, not assumptions about a differential inverse.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TransverseVariationalOperator" data-a4m-added="1" data-a4m-index="75" data-a4m-dep-index="74" data-a4m-lines="132" data-a4m-decls="9">
+<p class="a4m-outline__head"><span class="a4m-outline__index">75</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TransverseVariationalOperator</span></p>
+<p class="a4m-outline__module">Euler.TransverseVariationalOperator</p>
+<p class="a4m-outline__doc"># The constructed Hilbert operator for the transverse displacement form The time primitive will be substituted for `J` in `TransverseVariationalInverse`. This file constructs, rather than assumes, the inverse of the actual operator `I - J* H J`. Its coercivity follows from the potential upper bound and the primitive estimate. No inverse, solution, or weak equation is an input.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TimeLpMultiplier" data-a4m-added="1" data-a4m-index="76" data-a4m-dep-index="75" data-a4m-lines="87" data-a4m-decls="8">
+<p class="a4m-outline__head"><span class="a4m-outline__index">76</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TimeLpMultiplier</span></p>
+<p class="a4m-outline__module">Euler.TimeLpMultiplier</p>
+<p class="a4m-outline__doc">Actual bounded time-dependent linear operators on Bochner L² time fields.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TimeLpMap" data-a4m-added="1" data-a4m-index="77" data-a4m-dep-index="76" data-a4m-lines="54" data-a4m-decls="3">
+<p class="a4m-outline__head"><span class="a4m-outline__index">77</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TimeLpMap</span></p>
+<p class="a4m-outline__module">Euler.TimeLpMap</p>
+<p class="a4m-outline__doc">Exact bounded-map compatibility for the actual continuous-path to Bochner L² inclusion.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.TimeLp" data-a4m-added="1" data-a4m-index="78" data-a4m-dep-index="77" data-a4m-lines="98" data-a4m-decls="11">
+<p class="a4m-outline__head"><span class="a4m-outline__index">78</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">TimeLp</span></p>
+<p class="a4m-outline__module">Euler.TimeLp</p>
+<p class="a4m-outline__doc">Actual Bochner L² time spaces and continuous-path embeddings used by maximal regularity.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.VolterraConvolution" data-a4m-added="1" data-a4m-index="79" data-a4m-dep-index="78" data-a4m-lines="148" data-a4m-decls="14">
+<p class="a4m-outline__head"><span class="a4m-outline__index">79</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">VolterraConvolution</span></p>
+<p class="a4m-outline__module">Euler.VolterraConvolution</p>
+<p class="a4m-outline__doc">A genuine singular-kernel Volterra convolution on continuous Banach-valued paths.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.CylinderSobolevSpace" data-a4m-added="1" data-a4m-index="80" data-a4m-dep-index="79" data-a4m-lines="146" data-a4m-decls="23">
+<p class="a4m-outline__head"><span class="a4m-outline__index">80</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">CylinderSobolevSpace</span></p>
+<p class="a4m-outline__module">Euler.CylinderSobolevSpace</p>
+<p class="a4m-outline__doc">A complete cylinder Sobolev space constructed from closed graphs of actual L² derivatives.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-station="Euler.ClosedTranslationGraph" data-a4m-added="1" data-a4m-index="81" data-a4m-dep-index="80" data-a4m-lines="87" data-a4m-decls="5">
+<p class="a4m-outline__head"><span class="a4m-outline__index">81</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">ClosedTranslationGraph</span></p>
+<p class="a4m-outline__module">Euler.ClosedTranslationGraph</p>
+<p class="a4m-outline__doc">Closed graphs of the genuine strong cylinder translation derivatives.</p>
+</li>
+<li class="a4m-outline__row" data-a4m-sections="94" data-a4m-station="Euler.EulerProof" data-a4m-added="1" data-a4m-index="82" data-a4m-dep-index="81" data-a4m-lines="20756" data-a4m-decls="1227">
+<p class="a4m-outline__head"><span class="a4m-outline__index">82</span><span class="a4m-outline__sep">·</span><span class="a4m-outline__name">EulerProof</span></p>
+<p class="a4m-outline__module">Euler.EulerProof</p>
+<p class="a4m-outline__doc">Explicit numerical estimates for the factorial majorants used in the proposed Euler construction. These lemmas prove combinatorial implications; they do not assert the analytic estimates needed to apply the implications to Euler.</p>
+<details class="a4m-outline__details" data-a4m-expand="namespaces">
+<summary class="a4m-outline__summary">Expand sections</summary>
+<ol class="a4m-outline__sub">
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerPacketGrowth" data-a4m-lines="1928" data-a4m-decls="64">EulerPacketGrowth</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerPacketRay" data-a4m-lines="1013" data-a4m-decls="37">EulerPacketRay</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerPacketPerturbation" data-a4m-lines="616" data-a4m-decls="19">EulerPacketPerturbation</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerScale" data-a4m-lines="514" data-a4m-decls="23">EulerScale</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerPacketFrameStability" data-a4m-lines="508" data-a4m-decls="16">EulerPacketFrameStability</li>
+  <li class="a4m-outline__sub-item" data-a4m-namespace="EulerMixedCylinderTransport" data-a4m-lines="482" data-a4m-decls="39">EulerMixedCylinderTransport</li>
+  <li class="a4m-outline__sub-item a4m-outline__sub-item--rest" data-a4m-namespaces-rest="88">… (88 more sections in this file)</li>
+</ol>
+</details></li>
+</ol>
+
+</main>
+</body>
+</html>

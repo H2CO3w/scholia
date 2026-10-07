@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9 · SchedulePressure · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.SchedulePressure" data-a4m-index="9" data-a4m-members="14">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="08.html" data-a4m-nav="prev">← Previous 8 · NaturalProfile</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="10.html" data-a4m-nav="next">Next 10 · OutgoingProfile →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">9</span>SchedulePressure</h1>
+<p class="a4m-station__module">NavierStokes.SchedulePressure</p>
+<p class="a4m-station__doc"># The pressure datum of the constructed outgoing angular schedule This module instantiates the abstract pressure integral with `finalAngular`. The pressure-neutral angular-moment correction remains a separate operation.</p>
+<section class="a4m-station__group" data-a4m-family="Smooth">
+<h2 class="a4m-station__family">Smooth</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SmoothCutoffs"><span class="a4m-station__member-name">SmoothCutoffs</span><span class="a4m-station__member-path">NavierStokes.SmoothCutoffs</span><p class="a4m-station__member-doc"># Constructed smooth cutoffs for the diagonal sum and time switch The fixed cutoff is an actual Mathlib `ContDiffBump`, centered at zero, with inner radius `1/2` and outer radius `1`. Smoothness below is `C^∞`, written `∞`; no analyticity assertion is made. The scaled cutoff and time switch are explicit functions obtained from that bump. No convergence or PDE claim is encoded here.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SmoothLoop"><span class="a4m-station__member-name">SmoothLoop</span><span class="a4m-station__member-path">NavierStokes.SmoothLoop</span><p class="a4m-station__member-doc"># Smooth periodic tilt functions and their actual integral moments This file advances the finite moment calculations in `LoopMoments` to genuine smooth functions on the real line, with period `2π` and actual interval integrals. The cosine construction realizes all nonnegative variances. A separate, explicit amplitude bound is required to preserve the stress projection. Smoothness in parameters is stated using the amplitude, avoiding an incorrect claim of smoothness of the square root at zero variance. The positive exponential tilt used by the manuscript is also treated below. Neither a smooth variance-inversion theorem nor a full true-cone result is assumed or asserted.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SmoothParameterIntegral"><span class="a4m-station__member-name">SmoothParameterIntegral</span><span class="a4m-station__member-path">NavierStokes.SmoothParameterIntegral</span><p class="a4m-station__member-doc"># Smooth parameter integrals with local integrable majorants The Taylor coefficients below are integrals of the actual `iteratedFDeriv` of the integrand. Their successive derivative relation is proved using dominated differentiation and the currying identity for `iteratedFDeriv`; it is not an assumption on a separately supplied family of jets.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FlatCutoff"><span class="a4m-station__member-name">FlatCutoff</span><span class="a4m-station__member-path">NavierStokes.FlatCutoff</span><p class="a4m-station__member-doc"># A concrete smooth exponential-flat edge For `c &gt; 0`, this file constructs the actual function `exp (-c / x^2)` on `x &gt; 0`, extended by zero on `x ≤ 0`. The proof works with polynomial multiples in `x⁻¹`, an explicit family closed under differentiation. It establishes smoothness, vanishing derivatives, and smooth inverse-power quotients. These facts concern this scalar edge function, not the manuscript's stress factorization, PDE estimates, or asserted smooth force extension.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.FlatPrimitive"><span class="a4m-station__member-name">FlatPrimitive</span><span class="a4m-station__member-path">NavierStokes.FlatPrimitive</span><p class="a4m-station__member-doc"># Actual primitives of exponential-flat edges This file studies the integral of `exp (-c / u²) * u⁻ʲ * b u` from zero. The integrand uses the smooth zero extension from `FlatCutoff`. In particular, smoothness of the primitive is distinct from smoothness of its quotient by an exponentially small factor. The statements below keep those obligations separate.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.LocalizedMomentRepair"><span class="a4m-station__member-name">LocalizedMomentRepair</span><span class="a4m-station__member-path">NavierStokes.LocalizedMomentRepair</span><p class="a4m-station__member-doc"># Constructed smooth moment repairs The correction profiles are explicit affine rescalings of the constructed smooth cutoff. Their supports lie strictly inside the supplied positive intervals. The generalized-power determinant theorem then gives exact finite-moment repair by an actual compactly supported smooth function.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.LoopMoments"><span class="a4m-station__member-name">LoopMoments</span><span class="a4m-station__member-path">NavierStokes.LoopMoments</span><p class="a4m-station__member-doc"># Exact moment algebra for the true-cone loop construction This file proves the finite-distribution form of the averaging and rephasing identities in Lemma 6.1 of the candidate manuscript. The formulas are algebraic; no existence, smoothness, or invertibility of a circle reparametrization is asserted here. The hypotheses of `rephased_moments` are ordinary mass, mean, and variance constraints, not an assumption that a desired loop exists. The final lemmas give explicit two-point distributions with prescribed variance. They establish finite moment feasibility, including a one-sided support bound.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.MomentRepair"><span class="a4m-station__member-name">MomentRepair</span><span class="a4m-station__member-path">NavierStokes.MomentRepair</span><p class="a4m-station__member-doc"># Finite moment repair This file proves the finite-dimensional algebra behind the manuscript's moment repairs. Nonsingularity is an explicit hypothesis for an arbitrary family of moment functionals and correction profiles. It is proved separately for a two-row weighted point-evaluation matrix. No assertion about the existence of smooth bumps or the conditioning of their moment matrices is implicit here.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.OutgoingSchedule"><span class="a4m-station__member-name">OutgoingSchedule</span><span class="a4m-station__member-path">NavierStokes.OutgoingSchedule</span><p class="a4m-station__member-doc"># Constructed outgoing profiles through the axial pulse The clock is the global logarithmic radius, with the first ramp starting at zero. All functions below are actual formulas. Stage inequalities are hypotheses on real parameters, not assumptions that suitable profiles or corrections exist.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.OutgoingTail"><span class="a4m-station__member-name">OutgoingTail</span><span class="a4m-station__member-path">NavierStokes.OutgoingTail</span><p class="a4m-station__member-doc"># Constructed flattening, release, and terminal power tail This file extends the actual outgoing core. The angular/pressure-neutral moment edit is deliberately a separate operation: its required release datum is used to initialize an explicitly solved scalar ODE, but is not asserted to be the unedited angular history.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParametricRephase"><span class="a4m-station__member-name">ParametricRephase</span><span class="a4m-station__member-path">NavierStokes.ParametricRephase</span><p class="a4m-station__member-doc"># Jointly smooth rephasing by positive periodic densities Each parameter supplies an actual `SmoothLoop.CircleDensity`. The inverse is the globally defined monotone inverse already constructed there. Its joint smoothness is proved with the inverse function theorem applied to the triangular map `(p, θ) ↦ (p, Φ(p, θ))`; no smooth inverse is postulated.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PowerMomentMatrix"><span class="a4m-station__member-name">PowerMomentMatrix</span><span class="a4m-station__member-path">NavierStokes.PowerMomentMatrix</span><p class="a4m-station__member-doc"># Generalized-power evaluation matrices Rolle induction proves uniqueness of an exponential sum at as many ordered nodes as there are distinct real exponents. Taking logarithms gives the generalized-power evaluation-matrix part of manuscript Lemma 3.6.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SchedulePressure"><span class="a4m-station__member-name">SchedulePressure</span><span class="a4m-station__member-path">NavierStokes.SchedulePressure</span><p class="a4m-station__member-doc"># The pressure datum of the constructed outgoing angular schedule This module instantiates the abstract pressure integral with `finalAngular`. The pressure-neutral angular-moment correction remains a separate operation.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.TailEnergyBounds"><span class="a4m-station__member-name">TailEnergyBounds</span><span class="a4m-station__member-path">NavierStokes.TailEnergyBounds</span><p class="a4m-station__member-doc"># Energy of the constructed outgoing tail The integrands in this file are the actual `OutgoingTail.finalAngular`. The long release plateau is retained in the estimates; bounding the release only by its terminal slope would give an incorrect uniformity claim in `h`.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="08.html" data-a4m-nav="prev">← Previous 8 · NaturalProfile</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="10.html" data-a4m-nav="next">Next 10 · OutgoingProfile →</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>37 · ActualInitialExcluded · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.ActualInitialExcluded" data-a4m-index="37" data-a4m-members="11">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="36.html" data-a4m-nav="prev">← Previous 36 · ActualInitialMean</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="38.html" data-a4m-nav="next">Next 38 · ActualCarrierGeometry →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">37</span>ActualInitialExcluded</h1>
+<p class="a4m-station__module">NavierStokes.ActualInitialExcluded</p>
+<p class="a4m-station__doc"># Excluded errors of the actual initialized state The base term is the normalized residual of the same fixed slow base. The primary Gaussian and current gauge aliases are retained literally.</p>
+<section class="a4m-station__group" data-a4m-family="Actual">
+<h2 class="a4m-station__family">Actual</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualInitialCoherence"><span class="a4m-station__member-name">ActualInitialCoherence</span><span class="a4m-station__member-path">NavierStokes.ActualInitialCoherence</span><p class="a4m-station__member-doc"># Coherence of the literal initialized state The state here uses the same active primary labels, physical base error, common gauge, and actual temporal/rank constructors as initialization.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualInitialExcluded"><span class="a4m-station__member-name">ActualInitialExcluded</span><span class="a4m-station__member-path">NavierStokes.ActualInitialExcluded</span><p class="a4m-station__member-doc"># Excluded errors of the actual initialized state The base term is the normalized residual of the same fixed slow base. The primary Gaussian and current gauge aliases are retained literally.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualPhaseJetBounds"><span class="a4m-station__member-name">ActualPhaseJetBounds</span><span class="a4m-station__member-path">NavierStokes.ActualPhaseJetBounds</span><p class="a4m-station__member-doc"># Ordinary jets of the selected primary phase The angle and axial coordinate are affine in the actual phase. Their values need not be bounded, but their positive derivatives have a uniform bound. The remaining expression has polynomial slow jets on the same native phase cells used to construct the primary waves.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ActualPrimaryDynamics"><span class="a4m-station__member-name">ActualPrimaryDynamics</span><span class="a4m-station__member-path">NavierStokes.ActualPrimaryDynamics</span><p class="a4m-station__member-doc"># Exact dynamics of the selected primary pulses The native equation uses the same selected frame, covariance amplitude and pressure as `CorrectionInitialization.ActualPrimary`. Its homogeneous equation is localized to the Gaussian support: the outer attachment cutoff is deliberately differentiated outside that support.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.EndpointCoordinates"><span class="a4m-station__member-name">EndpointCoordinates</span><span class="a4m-station__member-path">NavierStokes.EndpointCoordinates</span><p class="a4m-station__member-doc"># Actual similarity coordinates across the nonzero axial endpoint At `t=1`, `z != 0`, the explicit positive root lies on the regular stable branch. The extension below is built from that branch and agrees with all actual physical coordinate jets at every point with `t&lt;1`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.GaugeExcludedBounds"><span class="a4m-station__member-name">GaugeExcludedBounds</span><span class="a4m-station__member-path">NavierStokes.GaugeExcludedBounds</span><p class="a4m-station__member-doc"># Full-vector bounds for the actual moving-gauge excluded aliases The pressure source class is derived from the primitive base, operators, mean, and covariance. Scalar alias estimates are then applied to that actual source and lifted through fixed linear component maps. All regularity is supplied by the incoming primitive fields and the genuine pressure reconstruction, not by a hypothesis on an alias output.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.GlobalBaseError"><span class="a4m-station__member-name">GlobalBaseError</span><span class="a4m-station__member-path">NavierStokes.GlobalBaseError</span><p class="a4m-station__member-doc"># Joint flatness of the actual excluded slow-base error One fixed schedule controls its entire compact similarity box. Beyond that box the actual residual and virtual stress force both vanish, so the error vanishes in every jet. The resulting estimates impose no upper bound on the similarity radius of the approach to the origin. The field estimated here is `FinalSlowBase.error`, which is the actual Navier--Stokes residual minus its virtual stress force.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.JointResidualLimits"><span class="a4m-station__member-name">JointResidualLimits</span><span class="a4m-station__member-path">NavierStokes.JointResidualLimits</span><p class="a4m-station__member-doc"># Endpoint limits from actual joint jets and local one-sided extensions The input is an actual function, smooth on `t &lt; 1`. Its full Frechet jets vanish jointly at `(1,0)`, and it has an actual smooth local extension near each other point of the terminal slice. The boundary tensor family and its local uniform convergence are constructed below.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.RankStateCoherence"><span class="a4m-station__member-name">RankStateCoherence</span><span class="a4m-station__member-path">NavierStokes.RankStateCoherence</span><p class="a4m-station__member-doc"># Coherence of the actual five-row rank correction The debt is recomputed from the complete incoming state. Primitive chart data and the shared normalized inverse are transported before applying the actual variable-gauge stream and pressure constructors.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SimilarityApproach"><span class="a4m-station__member-name">SimilarityApproach</span><span class="a4m-station__member-path">NavierStokes.SimilarityApproach</span><p class="a4m-station__member-doc"># The actual similarity scale at the singular point The coordinate solves `q - z^2 q^a = tau`. Its positive branch tends to zero when `tau` and `z` tend to zero together. The value assigned outside the positive-time domain is never used in this assertion.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.SlowBaseEndpoint"><span class="a4m-station__member-name">SlowBaseEndpoint</span><span class="a4m-station__member-path">NavierStokes.SlowBaseEndpoint</span><p class="a4m-station__member-doc"># Endpoint extensions of the actual summed slow base At nonzero axial coordinate the stable coordinate extension has positive q. The original cutoff schedule therefore gives a locally finite series on an open neighborhood crossing t = 1. No new summation or cutoff choice is made. For velocity and pressure, the nonzero-axial extension combines with the proved heat exterior on the central plane. The forward-integral potential is only extended at nonzero axial coordinate here; a central-plane gauge correction is a separate construction.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="36.html" data-a4m-nav="prev">← Previous 36 · ActualInitialMean</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="38.html" data-a4m-nav="next">Next 38 · ActualCarrierGeometry →</a></p>
+</main>
+</body>
+</html>

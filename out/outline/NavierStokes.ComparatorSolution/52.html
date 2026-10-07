@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>52 · ActualCandidate · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.R3.ActualCandidate" data-a4m-index="52" data-a4m-members="7">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="51.html" data-a4m-nav="prev">← Previous 51 · R3ActualCandidate</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="53.html" data-a4m-nav="next">Next 53 · Theorem →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">52</span>ActualCandidate</h1>
+<p class="a4m-station__module">NavierStokes.R3.ActualCandidate</p>
+<p class="a4m-station__doc"># The full whole-space candidate from the selected construction The selected construction supplies its actual compact spatial fields and a globally smooth force. A smooth time cutoff preserves the equation and puts the force's entire topological support strictly inside positive time. The whole-space energy estimate then gives one bound up to the singular time.</p>
+<section class="a4m-station__group" data-a4m-family="Compact">
+<h2 class="a4m-station__family">Compact</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.CompactEnergy"><span class="a4m-station__member-name">CompactEnergy</span><span class="a4m-station__member-path">NavierStokes.R3.CompactEnergy</span><p class="a4m-station__member-doc"># Energy of compactly supported fields on Euclidean three-space All integrals in this module are the standard Lebesgue volume integrals on `ProblemStatement.Space`. Compact support supplies integrability; no finite replacement measure or convention about nonintegrable functions is used.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.CompactForceBound"><span class="a4m-station__member-name">CompactForceBound</span><span class="a4m-station__member-path">NavierStokes.R3.CompactForceBound</span><p class="a4m-station__member-doc"># A uniform spatial square-integral bound for compactly supported forces Compact spacetime support gives one compact spatial set supporting all slices. Continuity of the parameterized integral then supplies a finite bound on the closed time interval `[0, 1]`.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.CompactTimeIntegral"><span class="a4m-station__member-name">CompactTimeIntegral</span><span class="a4m-station__member-path">NavierStokes.R3.CompactTimeIntegral</span><p class="a4m-station__member-doc"># Time derivatives of integrals with uniform compact spatial support The public statements use the ordinary volume integral over all of R³. Uniform compact support supplies integrability and a local dominating function.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.ActualCandidate"><span class="a4m-station__member-name">ActualCandidate</span><span class="a4m-station__member-path">NavierStokes.R3.ActualCandidate</span><p class="a4m-station__member-doc"># The full whole-space candidate from the selected construction The selected construction supplies its actual compact spatial fields and a globally smooth force. A smooth time cutoff preserves the equation and puts the force's entire topological support strictly inside positive time. The whole-space energy estimate then gives one bound up to the singular time.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.PositiveTimeForce"><span class="a4m-station__member-name">PositiveTimeForce</span><span class="a4m-station__member-path">NavierStokes.R3.PositiveTimeForce</span><p class="a4m-station__member-doc"># A smooth force cutoff separated from initial time The cutoff equals one throughout `[3/8, 1]`, and its support is contained in `[1/16, 21/16]`. Thus a force with a fixed compact spatial support can be extended to a compactly supported force in strictly positive spacetime.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.ProblemStatement"><span class="a4m-station__member-name">ProblemStatement</span><span class="a4m-station__member-path">NavierStokes.R3.ProblemStatement</span><p class="a4m-station__member-doc"># The whole-space assertion of Part II, Theorem 1.1 This module states the R³ theorem, including its comparison claim, independently of the existing periodic target. The coordinates, Euclidean norm, and differential operators are those of `NavierStokes.ProblemStatement`; no periodicity assumption is made here. Time is the first coordinate of spacetime. The force is a globally smooth function whose topological support is compact and contained in strictly positive time. This represents the zero extension of an element of `C_c^∞(R³ × (0, ∞); R³)` and, in particular, requires support separated from initial time as well as from spatial and future-time infinity. Smoothness of velocity and pressure at time zero is relative to the physical half-domain. The equation uses ordinary derivatives at positive times; zero initial velocity is imposed separately. This avoids differentiating an arbitrary extension to negative time at the boundary. `∞` in the `ContDiff` scope means every finite differentiability order. `breakdownStatement` is the full proposition to prove. Introducing it does not assert that it has a proof or supply a witness.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.R3.ScalarEnergyBound"><span class="a4m-station__member-name">ScalarEnergyBound</span><span class="a4m-station__member-path">NavierStokes.R3.ScalarEnergyBound</span><p class="a4m-station__member-doc"># A scalar bound for the forced energy inequality The integrating factor controls an energy whose time derivative is bounded by the energy plus a constant. Only derivatives in the interior of the time interval are required.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="51.html" data-a4m-nav="prev">← Previous 51 · R3ActualCandidate</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="53.html" data-a4m-nav="next">Next 53 · Theorem →</a></p>
+</main>
+</body>
+</html>

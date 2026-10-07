@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHSH_inequality_of_comm · ai4math 注解账本</title>
+<link rel="stylesheet" href="assets/katex.min.css">
+<link rel="stylesheet" href="assets/a4m.css">
+<!-- 内联我们自己的样式（不含外部字体引用）：单文件打开也可读；
+     KaTeX 的样式必须走外链——它按相对路径 url(fonts/…) 引字体，内联会找错目录 -->
+<style>
+/*! a4m.css — dsh-scholia 静态渲染样式（论文式版面，零装饰）
+ *  命名：SPEC §1.4（a4m- 前缀 + BEM；节点 id a4m-n-…、注解 id a4m-a-…、data-a4m-… 属性）
+ *  过滤：V6 直觉层用属性选择器实现，页面不含任何脚本。
+ *  视觉手段只有：字号 / 字重 / 斜体 / 小型大写 / 居中缩进 / 留白。
+ */
+:root {
+  --a4m-fg: #000;
+  --a4m-muted: #555;
+  --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif;
+}
+
+body {
+  margin: 0;
+  color: var(--a4m-fg);
+  font-family: var(--a4m-serif);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ── 论文容器：单栏 72ch 居中 ───────────────────────────────────── */
+
+.a4m-paper { max-width: 88ch; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+/* ── 标题区 ─────────────────────────────────────────────────────── */
+
+.a4m-paper__head { margin-bottom: 1.6rem; }
+.a4m-paper__title {
+  margin: 0 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.a4m-paper__subtitle { margin: 0; text-align: center; font-variant: small-caps; font-size: .95rem; color: var(--a4m-muted); }
+
+/* 数据质量说明：一行素净斜体（退化 / 截断必须可见，但不能是色块） */
+.a4m-coverage { margin: .6rem 0 0; font-size: .82rem; font-style: italic; color: var(--a4m-muted); text-align: justify; }
+.a4m-coverage--step { font-size: .78rem; }
+
+/* 直觉层开关（V6 的无脚本入口；素色小字，不是按钮） */
+.a4m-layer-toggle { display: block; margin-top: .6rem; text-align: center; font-size: .78rem; color: var(--a4m-muted); cursor: pointer; }
+.a4m-layer-toggle__input { margin: 0 .4em 0 0; }
+.a4m-layer-toggle__label { color: var(--a4m-muted); }
+
+/* ── 摘要（两侧缩进的 abstract）─────────────────────────────────── */
+
+.a4m-abstract { margin: 1.8rem 2.5em 0; }
+.a4m-abstract .a4m-anno__seg { text-align: justify; text-indent: 1.5em; }
+
+/* ── 目录 ───────────────────────────────────────────────────────── */
+
+.a4m-contents { margin: 2.4rem auto; max-width: 34rem; }
+.a4m-contents__title { margin: 0 0 .8rem; text-align: center; font-variant: small-caps; letter-spacing: .25em; font-size: .95rem; font-weight: 700; }
+.a4m-contents__list { list-style: none; margin: 0; padding: 0; }
+.a4m-contents__link { display: flex; gap: .6em; align-items: baseline; color: inherit; text-decoration: none; font-size: .88rem; line-height: 1.7; }
+.a4m-contents__page { margin-left: auto; color: var(--a4m-muted); font-size: .8rem; white-space: nowrap; }
+.a4m-contents__item { }
+.a4m-contents__label { }
+.a4m-contents__item--sub .a4m-contents__link { padding-left: 2em; font-size: .82rem; color: var(--a4m-muted); }
+
+/* ── 章标题（居中、小型大写、带编号）────────────────────────────── */
+
+.a4m-section { margin-top: 2.6rem; }
+.a4m-section__title { margin: 0 0 1.1rem; text-align: center; font-variant: small-caps; letter-spacing: .08em; font-size: 1.05rem; font-weight: 700; }
+.a4m-section__ref { color: inherit; text-decoration: none; }
+
+/* ── 定理块 ─────────────────────────────────────────────────────── */
+
+.a4m-theorem { margin: 0 0 1.2rem; }
+.a4m-theorem__head { margin: 0; font-size: .95rem; font-weight: 700; }
+.a4m-theorem__decl { margin-left: .6em; font-family: var(--a4m-mono); font-size: .74rem; font-weight: 400; color: var(--a4m-muted); }
+.a4m-theorem__label { }
+.a4m-theorem__refs { margin: .25rem 0 0; font-size: .8rem; font-style: italic; color: var(--a4m-muted); }
+.a4m-theorem__ref { color: inherit; }
+
+/* LEAN 源：默认折叠（原生 details，零 JS），小号小型大写、无边框底色 */
+.a4m-lean { margin: .3rem 0 0; }
+.a4m-lean__summary { font-size: .72rem; color: var(--a4m-muted); cursor: pointer; }
+/* 字距在最后一个字后面也留一份空隙，用负边距抵消：标签与全角括号之间不该有空格 */
+.a4m-lean__label { font-variant: small-caps; text-transform: uppercase; letter-spacing: .1em; margin-right: -.1em; }
+.a4m-lean__pre { margin: .45rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 编号公式：居中公式 + 右对齐编号 ────────────────────────────── */
+
+/* 公式块比正文宽一档：公式重的页面里，给公式更多横向空间比把正文拉成超长行、
+   或把公式缩成脚注都更合适。窄屏不外扩，同时把公式字号降一档，
+   使 (栏宽+外扩)×0.95 与 栏宽×0.86 的每行容量一致——同一套折行预算在两种宽度下都成立。 */
+.a4m-equation { position: relative; margin: 1.1rem 0; text-align: center; }
+@media (min-width: 62rem) { .a4m-equation { margin-inline: -4ch; } }
+/* 字号挂在我们自己的容器上（KaTeX 的 katex-display 类不属于 a4m- 命名，不直接选它）：
+   公式内部一律用 em，缩放容器即可整体缩放，行内公式不受影响（那是 .a4m-math）。 */
+.a4m-equation--wide .a4m-equation__body { font-size: 0.9em; }
+@media (max-width: 62rem) { .a4m-equation__body { font-size: 0.86em; } }
+/* 折行优先：公式在顶层关系符处折成 aligned（见 html.mjs），这里不做横向裁切。
+   只有实在没有断点的超宽公式才允许滚动，且渲染层会给一行可见提示。 */
+.a4m-equation__body { display: inline-block; max-width: 100%; font-size: 0.95em; }
+.a4m-equation--wide .a4m-equation__body { overflow-x: auto; }
+.a4m-equation__no { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: .85rem; white-space: nowrap; }
+.a4m-equation__ref { color: inherit; text-decoration: none; }
+.a4m-step { margin: 0 0 .8rem; }
+
+/* ── 证明环境（斜体引导词 + 右对齐的证毕符号）───────────────────── */
+
+.a4m-proof-lead { margin: 1rem 0 .2rem; font-style: italic; }
+.a4m-qed { margin: 1.2rem 0 0; text-align: right; }
+.a4m-note { margin: .5rem 0; font-size: .85rem; font-style: italic; color: var(--a4m-muted); }
+
+/* ── 注解 = 论文的 remark：粗体 run-in 引出词 + 正文（无框、无底色、无缩进块）── */
+
+.a4m-anno { margin: .55rem 0 0; }
+.a4m-anno__seg { margin: 0 0 .3rem; font-size: .93em; text-align: justify; text-indent: 1.5em; }
+.a4m-anno__seg--concept { }
+.a4m-anno__seg--reasoning { }
+.a4m-anno__lex { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lex--missing { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lead { font-weight: 700; color: inherit; text-decoration: none; }
+.a4m-anno--orphan .a4m-anno__lead { font-style: italic; }
+
+/* ── 陈述未知（v1.3 的 signatureUnknown）：说明一行 + 原文块 ─────────
+ * 原文块与 Lean 源块同款式（等宽小字），但独立命名——改 Lean 块不会误伤它。 */
+
+.a4m-unknown { }
+.a4m-unknown__raw { margin: .4rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 数学：KaTeX 服务端渲染 + 等宽回退 ──────────────────────────── */
+
+.a4m-math { }
+.a4m-math--display { display: block; margin: .4rem 0; text-align: center; }
+.a4m-math-fallback { font-family: var(--a4m-mono); font-size: .88em; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 页脚：一行出处 ─────────────────────────────────────────────── */
+
+.a4m-paper__foot { margin-top: 3rem; font-size: .75rem; color: var(--a4m-muted); }
+.a4m-paper__prov { margin: 0; font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-paper__note { margin: .3rem 0 0; font-size: .75rem; }
+
+/* ── V6：直觉层过滤（属性选择器，不写脚本）───────────────────────
+ * 二期只需给容器加 data-a4m-layer="intuition" 即可复用同一套规则；
+ * 一期用下面的 :has() + checkbox 提供等价的无脚本开关。 */
+
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+</style>
+</head>
+<body data-a4m-layer="proof" data-a4m-name="CHSH_inequality_of_comm" data-a4m-spec-version="1.1.0">
+<article class="a4m-paper">
+<header class="a4m-paper__head">
+<h1 class="a4m-paper__title">CHSH_inequality_of_comm</h1>
+<p class="a4m-paper__subtitle">定理 · Mathlib v4.28.0-rc1</p>
+
+<label class="a4m-layer-toggle" for="a4m-layer-intuition"><input class="a4m-layer-toggle__input" type="checkbox" id="a4m-layer-intuition"><span class="a4m-layer-toggle__label">直觉层视图（隐藏形式化 / 文献 / 展开三种精确凭证的注解，V6，纯 CSS）</span></label>
+<p class="a4m-paper__note">注解为模型生成，未经真人校准（H4）。引理语义仅以 concept 段的词典条目为准。</p>
+</header>
+<section class="a4m-abstract" id="a4m-sec-abstract" data-a4m-section="core_idea">
+<article class="a4m-anno" id="a4m-a-c1" data-a4m-anno="c1" data-a4m-role="core_idea" data-a4m-evidence="unfolding" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-0" data-a4m-target="n0">摘要.</a> 整个不等式只关于一个元素：P² = 4P 让 P/4 成为投影，而投影必落在 [0,1]。</p>
+</article>
+</section>
+<nav class="a4m-contents" id="a4m-contents">
+<h2 class="a4m-contents__title">目录</h2>
+<ul class="a4m-contents__list">
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-c1"><span class="a4m-contents__label">摘要</span><span class="a4m-contents__page">1 条</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-c2"><span class="a4m-contents__label">1. 问题</span><span class="a4m-contents__page">1 条</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-c3"><span class="a4m-contents__label">2. 背景</span><span class="a4m-contents__page">1 条</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-sec-step"><span class="a4m-contents__label">3. 定理与证明</span><span class="a4m-contents__page">5 步</span></a></li>
+<li class="a4m-contents__item a4m-contents__item--sub"><a class="a4m-contents__link" href="#a4m-a-s1"><span class="a4m-contents__label">注 3.1</span><span class="a4m-contents__page">式 (3.1)</span></a></li>
+<li class="a4m-contents__item a4m-contents__item--sub"><a class="a4m-contents__link" href="#a4m-a-s2"><span class="a4m-contents__label">注 3.1.1</span><span class="a4m-contents__page">式 (3.1.1)</span></a></li>
+<li class="a4m-contents__item a4m-contents__item--sub"><a class="a4m-contents__link" href="#a4m-a-s3"><span class="a4m-contents__label">注 3.1.2</span><span class="a4m-contents__page">式 (3.1.2)</span></a></li>
+<li class="a4m-contents__item a4m-contents__item--sub"><a class="a4m-contents__link" href="#a4m-a-s4"><span class="a4m-contents__label">注 3.1.2.1</span><span class="a4m-contents__page">式 (3.1.2.1)</span></a></li>
+<li class="a4m-contents__item a4m-contents__item--sub"><a class="a4m-contents__link" href="#a4m-a-s5"><span class="a4m-contents__label">注 3.1.3</span><span class="a4m-contents__page">式 (3.1.3)</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-c4"><span class="a4m-contents__label">4. 评注</span><span class="a4m-contents__page">1 条</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-c5"><span class="a4m-contents__label">5. 负空间</span><span class="a4m-contents__page">1 条</span></a></li>
+</ul>
+</nav>
+<section class="a4m-section" id="a4m-sec-question" data-a4m-section="question">
+<h2 class="a4m-section__title"><a class="a4m-section__ref" href="#a4m-n-0" data-a4m-target="n0">1. 问题</a></h2>
+<article class="a4m-anno" id="a4m-a-c2" data-a4m-anno="c2" data-a4m-role="question" data-a4m-evidence="literature" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">四个可观测量的组合最大能是多少？交换（经典）设定下是 2，量子设定允许到 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">2\sqrt{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord">2</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span></span> —— 这个缺口正是贝尔不等式的可实验内容。本条问的是经典一侧的界，以及它为什么恰好是 2。</p>
+</article>
+</section>
+<section class="a4m-section" id="a4m-sec-birdview" data-a4m-section="birdview">
+<h2 class="a4m-section__title"><a class="a4m-section__ref" href="#a4m-n-0" data-a4m-target="n0">2. 背景</a></h2>
+<article class="a4m-anno" id="a4m-a-c3" data-a4m-anno="c3" data-a4m-role="birdview" data-a4m-evidence="literature" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">CHSH 是贝尔不等式里最常被引用的一条，通常写在概率与测量的语言里。这里它被抬到任意含星序环上，与量子力学脱钩，只剩代数内容：幂等元被 [0,1] 夹住。它在版图上的位置是——把一条物理不等式还原成一条序环里的投影性质。</p>
+</article>
+</section>
+<section class="a4m-section" id="a4m-sec-step" data-a4m-section="step">
+<h2 class="a4m-section__title">3. 定理与证明</h2>
+<section class="a4m-theorem" id="a4m-n-0" data-a4m-node="n0" data-a4m-kind="theorem">
+<h3 class="a4m-theorem__head"><span class="a4m-theorem__label">定理 3.1.</span> <span class="a4m-theorem__decl">CHSH_inequality_of_comm</span></h3>
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi></mrow><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi></mrow><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi></mrow><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi></mrow><mtext> </mtext><mi mathvariant="double-struck">R</mi><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi></mrow><mtext> </mtext><mi mathvariant="double-struck">R</mi><mtext> </mtext><mi>R</mi><mo stretchy="false">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mn>0</mn></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>A</mi><mn>1</mn></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>B</mi><mn>0</mn></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>B</mi><mn>1</mn></msub><mo>:</mo><mi>R</mi><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">(</mo><mi>T</mi><mo>:</mo><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">H</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">H</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi></mrow><mtext> </mtext><msub><mi>A</mi><mn>0</mn></msub><mtext> </mtext><msub><mi>A</mi><mn>1</mn></msub><mtext> </mtext><msub><mi>B</mi><mn>0</mn></msub><mtext> </mtext><msub><mi>B</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>:</mo><msub><mi>A</mi><mn>0</mn></msub><mo>⋅</mo><msub><mi>B</mi><mn>0</mn></msub><mo>+</mo><msub><mi>A</mi><mn>0</mn></msub><mo>⋅</mo><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>A</mi><mn>1</mn></msub><mo>⋅</mo><msub><mi>B</mi><mn>0</mn></msub><mo>−</mo><msub><mi>A</mi><mn>1</mn></msub><mo>⋅</mo><msub><mi>B</mi><mn>1</mn></msub><mo>≤</mo><mn>2</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}&amp;[\mathrm{CommRing}\ R]\ [\mathrm{PartialOrder}\ R]\ [\mathrm{StarRing}\ R]\ [\mathrm{StarOrderedRing}\ R]\ [\mathrm{Algebra}\ \mathbb{R}\ R]\ [\mathrm{IsOrderedModule}\ \mathbb{R}\ R]\\&amp;(A_{0},\ A_{1},\ B_{0},\ B_{1}:R)\ (T:\mathrm{IsCHSHTuple}\ A_{0}\ A_{1}\ B_{0}\ B_{1}):A_{0}\cdot B_{0}+A_{0}\cdot B_{1}+A_{1}\cdot B_{0}-A_{1}\cdot B_{1}\le 2\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.7em;vertical-align:-1.1em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6em;"><span style="top:-3.6em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-2.1em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mopen">[</span><span class="mord"><span class="mord mathrm" style="margin-right:0.0139em;">CommRing</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm">PartialOrder</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm" style="margin-right:0.0139em;">StarRing</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm" style="margin-right:0.0139em;">StarOrderedRing</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm">Algebra</span></span><span class="mspace"> </span><span class="mord mathbb">R</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm">IsOrderedModule</span></span><span class="mspace"> </span><span class="mord mathbb">R</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">]</span></span></span><span style="top:-2.26em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">)</span><span class="mspace"> </span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathrm">IsCHSHTuple</span></span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+
+<details class="a4m-lean"><summary class="a4m-lean__summary"><span class="a4m-lean__label">Lean 源</span>（可直接复制；上方排版后的公式便于阅读，但复制会丢失黑板体 ℝ/ℕ/ℤ 等字形）</summary><pre class="a4m-lean__pre">[CommRing R] [PartialOrder R] [StarRing R] [StarOrderedRing R] [Algebra ℝ R] [IsOrderedModule ℝ R] (A₀ A₁ B₀ B₁ : R)
+  (T : IsCHSHTuple A₀ A₁ B₀ B₁) : A₀ * B₀ + A₀ * B₁ + A₁ * B₀ - A₁ * B₁ ≤ 2</pre></details>
+</section>
+<p class="a4m-coverage a4m-note" data-a4m-degraded="false" data-a4m-truncated="true" data-a4m-mode="tactic-multiline" data-a4m-have-count="5" data-a4m-node-count="6" data-a4m-truncate-reason="证明体被数据集截断（长度 500，或结尾省略号），have 子目标可能不完整；已解析出的 5 个步骤照常做步骤级注解，但不要声称覆盖完整">记录截断（数据集 500 字符上限）：以下步骤来自已解析出的部分，覆盖可能不完整。</p>
+<p class="a4m-proof-lead">证明.</p>
+<section class="a4m-step" id="a4m-n-1" data-a4m-node="n1" data-a4m-kind="have" data-a4m-depth="1">
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">0\le P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span></span><span class="a4m-equation__no"><a class="a4m-equation__ref" href="#a4m-a-s1" data-a4m-target="s1">(3.1)</a></span></div>
+
+
+<article class="a4m-anno" id="a4m-a-s1" data-a4m-anno="s1" data-a4m-role="step" data-a4m-evidence="formal" data-a4m-value-type="structural" data-a4m-height="frog" data-a4m-significance="supporting" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-1" data-a4m-target="n1">注 3.1（结构说明）.</a> 先给出非负这半边。它自己不推进，但少了它，后面的二次方程只能说明 P 是幂等元的四倍，说明不了上界。</p>
+</article>
+</section>
+<section class="a4m-step" id="a4m-n-2" data-a4m-node="n2" data-a4m-kind="have" data-a4m-depth="2">
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>⋅</mo><mi>P</mi><mo>=</mo><mn>4</mn><mo>⋅</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">P\cdot P=4\cdot P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span></span><span class="a4m-equation__no"><a class="a4m-equation__ref" href="#a4m-a-s2" data-a4m-target="s2">(3.1.1)</a></span></div>
+
+
+<article class="a4m-anno" id="a4m-a-s2" data-a4m-anno="s2" data-a4m-role="step" data-a4m-evidence="unfolding" data-a4m-value-type="concept" data-a4m-height="frog" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-2" data-a4m-target="n2">注 3.1.1（概念推进）.</a> 全定理的支点：四个观测量之间的关系被压成一个元素的二次方程，于是 P/4 成了幂等元。至此问题不再关于 CHSH，而关于「投影必落在 [0,1]」。</p>
+</article>
+</section>
+<section class="a4m-step" id="a4m-n-3" data-a4m-node="n3" data-a4m-kind="have" data-a4m-depth="2">
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>:</mo><mi mathvariant="double-struck">R</mi><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mi>P</mi><mo>⋅</mo><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P=(1/4:\mathbb{R})\cdot (P\cdot P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span></span></span><span class="a4m-equation__no"><a class="a4m-equation__ref" href="#a4m-a-s3" data-a4m-target="s3">(3.1.2)</a></span></div>
+
+
+<article class="a4m-anno" id="a4m-a-s3" data-a4m-anno="s3" data-a4m-role="step" data-a4m-evidence="formal" data-a4m-value-type="technical" data-a4m-height="frog" data-a4m-significance="supporting" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math" data-a4m-culture="theory">
+<p class="a4m-anno__seg a4m-anno__seg--concept" data-a4m-seg-kind="concept" data-a4m-lexicon="Algebra.smul_def"><a class="a4m-anno__lead" href="#a4m-n-3" data-a4m-target="n3">注 3.1.2（技术操作，可跳过）.</a> 标量乘法不是新运算，它就等于代数映射之后的乘法。<span class="a4m-anno__lex">（词典：Algebra.smul_def）</span></p>
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">本步只是把 n2 的等式按这个定义重写，无新信息。</p>
+</article>
+</section>
+<section class="a4m-step" id="a4m-n-4" data-a4m-node="n4" data-a4m-kind="have" data-a4m-depth="3">
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>4</mn><mo>⋅</mo><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mi mathvariant="double-struck">R</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">4\cdot P=(4:\mathbb{R})\cdot P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span></span><span class="a4m-equation__no"><a class="a4m-equation__ref" href="#a4m-a-s4" data-a4m-target="s4">(3.1.2.1)</a></span></div>
+
+
+<article class="a4m-anno" id="a4m-a-s4" data-a4m-anno="s4" data-a4m-role="step" data-a4m-evidence="formal" data-a4m-value-type="technical" data-a4m-height="frog" data-a4m-significance="context" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-4" data-a4m-target="n4">注 3.1.2.1（技术操作，可跳过）.</a> 自然数倍与实标量倍的记法换算，纯记号，可跳过。</p>
+</article>
+</section>
+<section class="a4m-step" id="a4m-n-5" data-a4m-node="n5" data-a4m-kind="have" data-a4m-depth="2">
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow><mtext> </mtext><mi>P</mi><mo>=</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\mathrm{star}\ P=P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">star</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span></span><span class="a4m-equation__no"><a class="a4m-equation__ref" href="#a4m-a-s5" data-a4m-target="s5">(3.1.3)</a></span></div>
+
+
+<article class="a4m-anno" id="a4m-a-s5" data-a4m-anno="s5" data-a4m-role="step" data-a4m-evidence="formal" data-a4m-value-type="none" data-a4m-height="frog" data-a4m-significance="context" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-5" data-a4m-target="n5">注 3.1.3（无可提炼的思路）.</a> P 自伴——物理语言里叫「观测量」。本步只为让后面的序论证合法，不含想法。</p>
+</article>
+</section>
+<p class="a4m-qed">∎</p>
+</section>
+<section class="a4m-section" id="a4m-sec-commentary" data-a4m-section="commentary">
+<h2 class="a4m-section__title"><a class="a4m-section__ref" href="#a4m-n-0" data-a4m-target="n0">4. 评注</a></h2>
+<article class="a4m-anno" id="a4m-a-c4" data-a4m-anno="c4" data-a4m-role="commentary" data-a4m-evidence="unfolding" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">证明的骨架极短：造出 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span>，验证 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">0\le P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span> 与 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>⋅</mo><mi>P</mi><mo>=</mo><mn>4</mn><mo>⋅</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">P\cdot P=4\cdot P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span>，剩下就是把 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">P\le 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span> 从这两条里读出来。吃重的是交换性假设——它让 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span> 的平方塌回 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>P</mi></mrow><annotation encoding="application/x-tex">4P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span></span>；同一个组合在量子情形下可以到 <span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">√</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">2\surd 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.2em;"></span><span class="mord">2√2</span></span></span></span></span>。所以 of_comm 不是技术修饰，而是全部内容：它指出经典与量子的分界线恰好落在「<span class="a4m-math" data-a4m-math="katex"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">P/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord">/4</span></span></span></span></span> 是不是幂等元」上。</p>
+</article>
+</section>
+<section class="a4m-section" id="a4m-sec-negative_space" data-a4m-section="negative_space">
+<h2 class="a4m-section__title"><a class="a4m-section__ref" href="#a4m-n-0" data-a4m-target="n0">5. 负空间（直觉，不可作推理前提）</a></h2>
+<article class="a4m-anno" id="a4m-a-c5" data-a4m-anno="c5" data-a4m-role="negative_space" data-a4m-evidence="intuition" data-a4m-height="bird" data-a4m-significance="context" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">形式化看不到的一层：它为什么值得单独命名。这条不等式原本是「局域隐变量理论给出的上界」，实验上被违反才成为量子力学的证据。Lean 只看到序环里的投影性质，看不到「如果它也成立，世界就必须是局部的」这层含义——而这正是它被反复引用的原因。另外 star 在这里扮取共轭的角色，n5 的自伴性在物理语言里叫「观测量」。</p>
+</article>
+</section>
+<footer class="a4m-paper__foot">
+<p class="a4m-paper__prov">由 dsh-scholia 生成 · run=demo-chsh · Mathlib v4.28.0-rc1</p>
+</footer>
+</article>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>34 · CorrectionInitialization · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.CorrectionInitialization" data-a4m-index="34" data-a4m-members="5">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="33.html" data-a4m-nav="prev">← Previous 33 · CorrectionStep</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="35.html" data-a4m-nav="next">Next 35 · ActualPrimaryCoherence →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">34</span>CorrectionInitialization</h1>
+<p class="a4m-station__module">NavierStokes.CorrectionInitialization</p>
+<p class="a4m-station__doc"># Construction of the initial correction fields The operations in this file use the actual shifted pressure primitive, torus inverse, stream potential, and five-row inverse. The covariance identity is also differentiated as an identity of functions, retaining all derivatives of the squared partition. Quantitative initialization is assembled below from the estimates on these same operations.</p>
+<section class="a4m-station__group" data-a4m-family="Base">
+<h2 class="a4m-station__family">Base</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BaseRankPatch"><span class="a4m-station__member-name">BaseRankPatch</span><span class="a4m-station__member-path">NavierStokes.BaseRankPatch</span><p class="a4m-station__member-doc"># The reserved mean-rank patch of the actual summed base The positive-order repair patch precedes the mean patch. The selected global profiles retain their seed values beyond the repair patch; the seeds have already been cut off there. The full summed tangential base therefore has the exact shaped power required by the five-row mean inverse.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Correction">
+<h2 class="a4m-station__family">Correction</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.CorrectionInitialization"><span class="a4m-station__member-name">CorrectionInitialization</span><span class="a4m-station__member-path">NavierStokes.CorrectionInitialization</span><p class="a4m-station__member-doc"># Construction of the initial correction fields The operations in this file use the actual shifted pressure primitive, torus inverse, stream potential, and five-row inverse. The covariance identity is also differentiated as an identity of functions, retaining all derivatives of the squared partition. Quantitative initialization is assembled below from the estimates on these same operations.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Native">
+<h2 class="a4m-station__family">Native</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.NativeBandExtension"><span class="a4m-station__member-name">NativeBandExtension</span><span class="a4m-station__member-path">NavierStokes.NativeBandExtension</span><p class="a4m-station__member-doc"># Smooth attachment at the native dyadic band boundaries The dyadic profile is flat at its support endpoints, although it does not have a zero germ there. Local smoothness of the actual raw primary is proved from the fixed prepared family before using that flatness.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Physical">
+<h2 class="a4m-station__family">Physical</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.PhysicalClassBounds"><span class="a4m-station__member-name">PhysicalClassBounds</span><span class="a4m-station__member-path">NavierStokes.PhysicalClassBounds</span><p class="a4m-station__member-doc"># Uniform weighted coefficients and physical wave sums The constants below are selected before the label and the band. The first step absorbs the actual two flat edges, including every inverse-edge power. Global smoothness and support then extend the estimate across the boundary. The final passage uses genuine common-coordinate compositions and the physical carrier estimates of `PhysicalWaveSum`.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Wave">
+<h2 class="a4m-station__family">Wave</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.WaveEdgeExtension"><span class="a4m-station__member-name">WaveEdgeExtension</span><span class="a4m-station__member-path">NavierStokes.WaveEdgeExtension</span><p class="a4m-station__member-doc"># Smooth zero extension across both moving radial edges The raw coefficient is used only inside the annulus. Gaussian bounds on its actual full derivative tensors prove that its literal zero extension has all derivatives zero on both moving boundary hypersurfaces.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="33.html" data-a4m-nav="prev">← Previous 33 · CorrectionStep</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="35.html" data-a4m-nav="next">Next 35 · ActualPrimaryCoherence →</a></p>
+</main>
+</body>
+</html>

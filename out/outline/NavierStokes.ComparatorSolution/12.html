@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 · HeatedOutgoing · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="NavierStokes.HeatedOutgoing" data-a4m-index="12" data-a4m-members="7">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="11.html" data-a4m-nav="prev">← Previous 11 · OutgoingDilation</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="13.html" data-a4m-nav="next">Next 13 · RenormalizedHeatMoment →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">12</span>HeatedOutgoing</h1>
+<p class="a4m-station__module">NavierStokes.HeatedOutgoing</p>
+<p class="a4m-station__doc"># The physical heat continuation with exact terminal compensation One normalized outgoing profile supplies the angular reset and axial amplitude. Its radial dilation is heated with diffusion `1 - eta^2`, and three additive bumps on its actual second reserved patch restore the three changed moments.</p>
+<section class="a4m-station__group" data-a4m-family="Parametric">
+<h2 class="a4m-station__family">Parametric</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParametricHeatTail"><span class="a4m-station__member-name">ParametricHeatTail</span><span class="a4m-station__member-path">NavierStokes.ParametricHeatTail</span><p class="a4m-station__member-doc"># The physical heat edit: diffusion is `1 - eta^2` The diffusion variable is allowed to reach zero. All endpoint derivatives below are derivatives within the closed parameter domain; no extension to negative diffusion is assumed.</p></li>
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.ParametricTerminalCompensation"><span class="a4m-station__member-name">ParametricTerminalCompensation</span><span class="a4m-station__member-path">NavierStokes.ParametricTerminalCompensation</span><p class="a4m-station__member-doc"># Terminal compensation for genuinely parameter-dependent debts The physical heat parameter is `1-η²`. This module retains its contribution to the debt derivative. Smoothness at the ends of a compact parameter range is relative smoothness; all endpoint derivatives are actual `derivWithin`.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Borel">
+<h2 class="a4m-station__family">Borel</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.BorelExtension"><span class="a4m-station__member-name">BorelExtension</span><span class="a4m-station__member-path">NavierStokes.BorelExtension</span><p class="a4m-station__member-doc"># A constructed compactly supported Taylor–Borel extension The input is an arbitrary sequence in a real Banach space. We choose increasing integer cutoff scales and sum actual cutoff monomials. All derivative bounds, convergence, smoothness, support, and prescribed derivatives at zero are proved.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Diagonal">
+<h2 class="a4m-station__family">Diagonal</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.DiagonalScale"><span class="a4m-station__member-name">DiagonalScale</span><span class="a4m-station__member-path">NavierStokes.DiagonalScale</span><p class="a4m-station__member-doc"># Diagonal cutoff scales from actual logarithmic limits This module proves the numerical cutoff-selection step in Lemma 11.3 of the candidate manuscript. The decay of powers times logarithms is proved using Mathlib's exponential asymptotic, not assumed as a cutoff-schedule hypothesis. The resulting schedule enforces every requested finite collection of jet bounds. It does not construct the analytic increments or prove their PDE estimates.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Endpoint">
+<h2 class="a4m-station__family">Endpoint</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.EndpointExtension"><span class="a4m-station__member-name">EndpointExtension</span><span class="a4m-station__member-path">NavierStokes.EndpointExtension</span><p class="a4m-station__member-doc"># Smooth gluing from matching one-sided derivative jets If a real-parameter curve is smooth on each closed half-line and all of its one-sided derivatives agree at the common endpoint, its piecewise glue is smooth. The derivatives are actual `iteratedDerivWithin` values. No smooth extension across the endpoint is assumed for either branch. This is the gluing step needed after the left endpoint regularity and the right Taylor--Borel construction in Lemmas 11.5--11.6. It does not construct a right branch with arbitrary prescribed jets.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Heat">
+<h2 class="a4m-station__family">Heat</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.HeatProfileExtension"><span class="a4m-station__member-name">HeatProfileExtension</span><span class="a4m-station__member-path">NavierStokes.HeatProfileExtension</span><p class="a4m-station__member-doc"># A genuine smooth extension of the radial heat profile For each fixed `a &gt; 1`, the actual gamma-integral derivative kernels prescribe all right jets at zero. A constructed Taylor--Borel series realizes precisely these jets on the negative side. Gluing the two branches preserves the actual heat profile on the entire nonnegative half-line and gives a globally smooth function. No kernel formula at a negative argument is used.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Heated">
+<h2 class="a4m-station__family">Heated</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="NavierStokes.HeatedOutgoing"><span class="a4m-station__member-name">HeatedOutgoing</span><span class="a4m-station__member-path">NavierStokes.HeatedOutgoing</span><p class="a4m-station__member-doc"># The physical heat continuation with exact terminal compensation One normalized outgoing profile supplies the angular reset and axial amplitude. Its radial dilation is heated with diffusion `1 - eta^2`, and three additive bumps on its actual second reserved patch restore the three changed moments.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="11.html" data-a4m-nav="prev">← Previous 11 · OutgoingDilation</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="13.html" data-a4m-nav="next">Next 13 · RenormalizedHeatMoment →</a></p>
+</main>
+</body>
+</html>

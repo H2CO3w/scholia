@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Even.add · ai4math 注解账本</title>
+<link rel="stylesheet" href="assets/katex.min.css">
+<link rel="stylesheet" href="assets/a4m.css">
+<!-- 内联我们自己的样式（不含外部字体引用）：单文件打开也可读；
+     KaTeX 的样式必须走外链——它按相对路径 url(fonts/…) 引字体，内联会找错目录 -->
+<style>
+/*! a4m.css — dsh-scholia 静态渲染样式（论文式版面，零装饰）
+ *  命名：SPEC §1.4（a4m- 前缀 + BEM；节点 id a4m-n-…、注解 id a4m-a-…、data-a4m-… 属性）
+ *  过滤：V6 直觉层用属性选择器实现，页面不含任何脚本。
+ *  视觉手段只有：字号 / 字重 / 斜体 / 小型大写 / 居中缩进 / 留白。
+ */
+:root {
+  --a4m-fg: #000;
+  --a4m-muted: #555;
+  --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif;
+}
+
+body {
+  margin: 0;
+  color: var(--a4m-fg);
+  font-family: var(--a4m-serif);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ── 论文容器：单栏 72ch 居中 ───────────────────────────────────── */
+
+.a4m-paper { max-width: 88ch; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+/* ── 标题区 ─────────────────────────────────────────────────────── */
+
+.a4m-paper__head { margin-bottom: 1.6rem; }
+.a4m-paper__title {
+  margin: 0 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.a4m-paper__subtitle { margin: 0; text-align: center; font-variant: small-caps; font-size: .95rem; color: var(--a4m-muted); }
+
+/* 数据质量说明：一行素净斜体（退化 / 截断必须可见，但不能是色块） */
+.a4m-coverage { margin: .6rem 0 0; font-size: .82rem; font-style: italic; color: var(--a4m-muted); text-align: justify; }
+.a4m-coverage--step { font-size: .78rem; }
+
+/* 直觉层开关（V6 的无脚本入口；素色小字，不是按钮） */
+.a4m-layer-toggle { display: block; margin-top: .6rem; text-align: center; font-size: .78rem; color: var(--a4m-muted); cursor: pointer; }
+.a4m-layer-toggle__input { margin: 0 .4em 0 0; }
+.a4m-layer-toggle__label { color: var(--a4m-muted); }
+
+/* ── 摘要（两侧缩进的 abstract）─────────────────────────────────── */
+
+.a4m-abstract { margin: 1.8rem 2.5em 0; }
+.a4m-abstract .a4m-anno__seg { text-align: justify; text-indent: 1.5em; }
+
+/* ── 目录 ───────────────────────────────────────────────────────── */
+
+.a4m-contents { margin: 2.4rem auto; max-width: 34rem; }
+.a4m-contents__title { margin: 0 0 .8rem; text-align: center; font-variant: small-caps; letter-spacing: .25em; font-size: .95rem; font-weight: 700; }
+.a4m-contents__list { list-style: none; margin: 0; padding: 0; }
+.a4m-contents__link { display: flex; gap: .6em; align-items: baseline; color: inherit; text-decoration: none; font-size: .88rem; line-height: 1.7; }
+.a4m-contents__page { margin-left: auto; color: var(--a4m-muted); font-size: .8rem; white-space: nowrap; }
+.a4m-contents__item { }
+.a4m-contents__label { }
+.a4m-contents__item--sub .a4m-contents__link { padding-left: 2em; font-size: .82rem; color: var(--a4m-muted); }
+
+/* ── 章标题（居中、小型大写、带编号）────────────────────────────── */
+
+.a4m-section { margin-top: 2.6rem; }
+.a4m-section__title { margin: 0 0 1.1rem; text-align: center; font-variant: small-caps; letter-spacing: .08em; font-size: 1.05rem; font-weight: 700; }
+.a4m-section__ref { color: inherit; text-decoration: none; }
+
+/* ── 定理块 ─────────────────────────────────────────────────────── */
+
+.a4m-theorem { margin: 0 0 1.2rem; }
+.a4m-theorem__head { margin: 0; font-size: .95rem; font-weight: 700; }
+.a4m-theorem__decl { margin-left: .6em; font-family: var(--a4m-mono); font-size: .74rem; font-weight: 400; color: var(--a4m-muted); }
+.a4m-theorem__label { }
+.a4m-theorem__refs { margin: .25rem 0 0; font-size: .8rem; font-style: italic; color: var(--a4m-muted); }
+.a4m-theorem__ref { color: inherit; }
+
+/* LEAN 源：默认折叠（原生 details，零 JS），小号小型大写、无边框底色 */
+.a4m-lean { margin: .3rem 0 0; }
+.a4m-lean__summary { font-size: .72rem; color: var(--a4m-muted); cursor: pointer; }
+/* 字距在最后一个字后面也留一份空隙，用负边距抵消：标签与全角括号之间不该有空格 */
+.a4m-lean__label { font-variant: small-caps; text-transform: uppercase; letter-spacing: .1em; margin-right: -.1em; }
+.a4m-lean__pre { margin: .45rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 编号公式：居中公式 + 右对齐编号 ────────────────────────────── */
+
+/* 公式块比正文宽一档：公式重的页面里，给公式更多横向空间比把正文拉成超长行、
+   或把公式缩成脚注都更合适。窄屏不外扩，同时把公式字号降一档，
+   使 (栏宽+外扩)×0.95 与 栏宽×0.86 的每行容量一致——同一套折行预算在两种宽度下都成立。 */
+.a4m-equation { position: relative; margin: 1.1rem 0; text-align: center; }
+@media (min-width: 62rem) { .a4m-equation { margin-inline: -4ch; } }
+/* 字号挂在我们自己的容器上（KaTeX 的 katex-display 类不属于 a4m- 命名，不直接选它）：
+   公式内部一律用 em，缩放容器即可整体缩放，行内公式不受影响（那是 .a4m-math）。 */
+.a4m-equation--wide .a4m-equation__body { font-size: 0.9em; }
+@media (max-width: 62rem) { .a4m-equation__body { font-size: 0.86em; } }
+/* 折行优先：公式在顶层关系符处折成 aligned（见 html.mjs），这里不做横向裁切。
+   只有实在没有断点的超宽公式才允许滚动，且渲染层会给一行可见提示。 */
+.a4m-equation__body { display: inline-block; max-width: 100%; font-size: 0.95em; }
+.a4m-equation--wide .a4m-equation__body { overflow-x: auto; }
+.a4m-equation__no { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: .85rem; white-space: nowrap; }
+.a4m-equation__ref { color: inherit; text-decoration: none; }
+.a4m-step { margin: 0 0 .8rem; }
+
+/* ── 证明环境（斜体引导词 + 右对齐的证毕符号）───────────────────── */
+
+.a4m-proof-lead { margin: 1rem 0 .2rem; font-style: italic; }
+.a4m-qed { margin: 1.2rem 0 0; text-align: right; }
+.a4m-note { margin: .5rem 0; font-size: .85rem; font-style: italic; color: var(--a4m-muted); }
+
+/* ── 注解 = 论文的 remark：粗体 run-in 引出词 + 正文（无框、无底色、无缩进块）── */
+
+.a4m-anno { margin: .55rem 0 0; }
+.a4m-anno__seg { margin: 0 0 .3rem; font-size: .93em; text-align: justify; text-indent: 1.5em; }
+.a4m-anno__seg--concept { }
+.a4m-anno__seg--reasoning { }
+.a4m-anno__lex { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lex--missing { font-style: italic; color: var(--a4m-muted); }
+.a4m-anno__lead { font-weight: 700; color: inherit; text-decoration: none; }
+.a4m-anno--orphan .a4m-anno__lead { font-style: italic; }
+
+/* ── 陈述未知（v1.3 的 signatureUnknown）：说明一行 + 原文块 ─────────
+ * 原文块与 Lean 源块同款式（等宽小字），但独立命名——改 Lean 块不会误伤它。 */
+
+.a4m-unknown { }
+.a4m-unknown__raw { margin: .4rem 0 0; font-family: var(--a4m-mono); font-size: .74rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 数学：KaTeX 服务端渲染 + 等宽回退 ──────────────────────────── */
+
+.a4m-math { }
+.a4m-math--display { display: block; margin: .4rem 0; text-align: center; }
+.a4m-math-fallback { font-family: var(--a4m-mono); font-size: .88em; white-space: pre-wrap; word-break: break-word; }
+
+/* ── 页脚：一行出处 ─────────────────────────────────────────────── */
+
+.a4m-paper__foot { margin-top: 3rem; font-size: .75rem; color: var(--a4m-muted); }
+.a4m-paper__prov { margin: 0; font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-paper__note { margin: .3rem 0 0; font-size: .75rem; }
+
+/* ── V6：直觉层过滤（属性选择器，不写脚本）───────────────────────
+ * 二期只需给容器加 data-a4m-layer="intuition" 即可复用同一套规则；
+ * 一期用下面的 :has() + checkbox 提供等价的无脚本开关。 */
+
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+[data-a4m-layer="intuition"] .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="formal"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="literature"] { display: none; }
+body:has(#a4m-layer-intuition:checked) .a4m-anno[data-a4m-evidence="unfolding"] { display: none; }
+</style>
+</head>
+<body data-a4m-layer="proof" data-a4m-name="Even.add" data-a4m-spec-version="1.0.0">
+<article class="a4m-paper">
+<header class="a4m-paper__head">
+<h1 class="a4m-paper__title">Even.add</h1>
+<p class="a4m-paper__subtitle">定理 · Mathlib v4.28.0-rc1</p>
+
+<label class="a4m-layer-toggle" for="a4m-layer-intuition"><input class="a4m-layer-toggle__input" type="checkbox" id="a4m-layer-intuition"><span class="a4m-layer-toggle__label">直觉层视图（隐藏形式化 / 文献 / 展开三种精确凭证的注解，V6，纯 CSS）</span></label>
+<p class="a4m-paper__note">注解为模型生成，未经真人校准（H4）。引理语义仅以 concept 段的词典条目为准。</p>
+</header>
+<section class="a4m-abstract" id="a4m-sec-abstract" data-a4m-section="core_idea">
+<article class="a4m-anno" id="a4m-a-1" data-a4m-anno="a1" data-a4m-role="core_idea" data-a4m-evidence="unfolding" data-a4m-height="bird" data-a4m-significance="main" data-a4m-presentation="exact" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning"><a class="a4m-anno__lead" href="#a4m-n-0" data-a4m-target="n0">摘要.</a> 偶性是一个可加的谓词：它把整除结构翻译成加法封闭性。</p>
+</article>
+</section>
+<nav class="a4m-contents" id="a4m-contents">
+<h2 class="a4m-contents__title">目录</h2>
+<ul class="a4m-contents__list">
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-1"><span class="a4m-contents__label">摘要</span><span class="a4m-contents__page">1 条</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-sec-step"><span class="a4m-contents__label">1. 定理与证明</span><span class="a4m-contents__page">退化</span></a></li>
+<li class="a4m-contents__item"><a class="a4m-contents__link" href="#a4m-a-2"><span class="a4m-contents__label">2. 评注</span><span class="a4m-contents__page">1 条</span></a></li>
+</ul>
+</nav>
+<section class="a4m-section" id="a4m-sec-step" data-a4m-section="step">
+<h2 class="a4m-section__title">1. 定理与证明</h2>
+<section class="a4m-theorem" id="a4m-n-0" data-a4m-node="n0" data-a4m-kind="theorem">
+<h3 class="a4m-theorem__head"><span class="a4m-theorem__label">定理 1.1.</span> <span class="a4m-theorem__decl">Even.add</span></h3>
+<div class="a4m-equation"><span class="a4m-equation__body" data-a4m-math="katex"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∀</mi><mtext> </mtext><mo stretchy="false">{</mo><mi>α</mi><mo>:</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi></mrow><mtext> </mtext><msub><mi>u</mi><mn>2</mn></msub><mo stretchy="false">}</mo><mtext> </mtext><mo stretchy="false">[</mo><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mo>:</mo><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi></mrow><mtext> </mtext><mi>α</mi><mo stretchy="false">]</mo><mtext> </mtext><mo stretchy="false">{</mo><mi>a</mi><mo separator="true">,</mo><mtext> </mtext><mi>b</mi><mo>:</mo><mi>α</mi><mo stretchy="false">}</mo><mo separator="true">,</mo><mtext> </mtext><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi></mrow><mtext> </mtext><mi>a</mi><mo>→</mo><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi></mrow><mtext> </mtext><mi>b</mi><mo>→</mo><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi></mrow><mtext> </mtext><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\forall\ \{\alpha :\mathrm{Type}\ u_{2}\}\ [\mathrm{inst}:\mathrm{AddCommSemigroup}\ \alpha ]\ \{a,\ b:\alpha \},\ \mathrm{Even}\ a\to \mathrm{Even}\ b\to \mathrm{Even}\ (a+b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mspace"> </span><span class="mopen">{</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">Type</span></span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span><span class="mspace"> </span><span class="mopen">[</span><span class="mord"><span class="mord mathrm">inst</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">AddCommSemigroup</span></span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mclose">]</span><span class="mspace"> </span><span class="mopen">{</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mclose">}</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">Even</span></span><span class="mspace"> </span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathrm">Even</span></span><span class="mspace"> </span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">Even</span></span><span class="mspace"> </span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span></span></span></div>
+
+<details class="a4m-lean"><summary class="a4m-lean__summary"><span class="a4m-lean__label">Lean 源</span>（可直接复制；上方排版后的公式便于阅读，但复制会丢失黑板体 ℝ/ℕ/ℤ 等字形）</summary><pre class="a4m-lean__pre">∀ {α : Type u_2} [inst : AddCommSemigroup α] {a b : α}, Even a → Even b → Even (a + b)</pre></details>
+</section>
+<p class="a4m-coverage a4m-note" data-a4m-degraded="true" data-a4m-truncated="false" data-a4m-mode="failed" data-a4m-have-count="0" data-a4m-node-count="1" data-a4m-degrade-reason="证明体为空，无法建树（definition / inductive 等记录通常没有 value）；请改用能提供证明体的定理记录">本定理没有可解析的证明步骤，下面只给出定理陈述与整体注解。</p>
+</section>
+<section class="a4m-section" id="a4m-sec-commentary" data-a4m-section="commentary">
+<h2 class="a4m-section__title"><a class="a4m-section__ref" href="#a4m-n-0" data-a4m-target="n0">2. 评注</a></h2>
+<article class="a4m-anno" id="a4m-a-2" data-a4m-anno="a2" data-a4m-role="commentary" data-a4m-evidence="literature" data-a4m-height="bird" data-a4m-significance="supporting" data-a4m-presentation="paraphrase" data-a4m-audience="grad-math">
+<p class="a4m-anno__seg a4m-anno__seg--reasoning" data-a4m-seg-kind="reasoning">这条定律把「偶数」从一条算术观察抬成一个可推理的代数谓词，因而能在任意加法交换半群中复用。</p>
+</article>
+</section>
+<footer class="a4m-paper__foot">
+<p class="a4m-paper__prov">由 dsh-scholia 生成 · run=m3-acceptance · Mathlib v4.28.0-rc1</p>
+</footer>
+</article>
+</body>
+</html>

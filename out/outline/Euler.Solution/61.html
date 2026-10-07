@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>61 · ParentHomogeneousPacketLowBounds · ai4math main line</title>
+<style>
+/* station page: same visual language as the outline (serif + paper palette), zero script, no counts in the prose */
+:root { --a4m-fg: #000; --a4m-muted: #555; --a4m-serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", serif; --a4m-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+html, body { margin: 0; background: #fff; color: var(--a4m-fg); }
+body { font-family: var(--a4m-serif); line-height: 1.55; }
+.a4m-station { max-width: 78ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+.a4m-station__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.a4m-station__index { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .8rem; margin-right: .5em; }
+.a4m-station__module { margin: 0 0 1rem; color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .72rem; }
+.a4m-station__doc { margin: 0 0 2rem; text-align: justify; }
+.a4m-station__family { margin: 1.75rem 0 .35rem; font-size: .95rem; font-weight: 700; }
+.a4m-station__members { list-style: none; margin: 0; padding: 0; }
+.a4m-station__member { margin: 0 0 .9rem; }
+.a4m-station__member-name { font-weight: 700; font-size: .9rem; margin-right: .5em; }
+.a4m-station__member-path { color: var(--a4m-muted); font-family: var(--a4m-mono); font-size: .7rem; }
+.a4m-station__member-doc { margin: .15rem 0 0; font-size: .87rem; text-align: justify; }
+.a4m-station__sections { list-style: none; margin: 0; padding: 0; columns: 2; }
+.a4m-station__section { font-family: var(--a4m-mono); font-size: .78rem; padding: .05rem 0; }
+.a4m-station__nav { display: flex; gap: 1.5em; flex-wrap: wrap; margin: 2.5rem 0 0; font-size: .82rem; }
+.a4m-station__nav-link { color: var(--a4m-fg); }
+</style>
+</head>
+<body>
+<main class="a4m-station" data-a4m-station="Euler.ParentHomogeneousPacketLowBounds" data-a4m-index="61" data-a4m-members="5">
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="60.html" data-a4m-nav="prev">← Previous 60 · PacketForwardChildLowBounds</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="62.html" data-a4m-nav="next">Next 62 · BasePacketLowBounds →</a></p>
+<h1 class="a4m-station__title"><span class="a4m-station__index">61</span>ParentHomogeneousPacketLowBounds</h1>
+<p class="a4m-station__module">Euler.ParentHomogeneousPacketLowBounds</p>
+<p class="a4m-station__doc">Exact low-order propagation for the first homogeneous packet, whose amplitude is delta times the desired initial shear.</p>
+<section class="a4m-station__group" data-a4m-family="Packet">
+<h2 class="a4m-station__family">Packet</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketFirstLowBounds"><span class="a4m-station__member-name">PacketFirstLowBounds</span><span class="a4m-station__member-path">Euler.PacketFirstLowBounds</span><p class="a4m-station__member-doc">On the short base interval the actual normal and homogeneous velocity have absolute size at most two. This gives the first packet's size and sign estimates without any amplification-stage hypotheses.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketShortTimePhysicalGrowth"><span class="a4m-station__member-name">PacketShortTimePhysicalGrowth</span><span class="a4m-station__member-path">Euler.PacketShortTimePhysicalGrowth</span><p class="a4m-station__member-doc">The source tangent equation is a reflection of the strain applied to the velocity. Its actual norm is therefore unchanged by the normal factor. A short interval controlled by the low strain norm supplies H3 with g=1.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.PacketShortTimePropagator"><span class="a4m-station__member-name">PacketShortTimePropagator</span><span class="a4m-station__member-path">Euler.PacketShortTimePropagator</span><p class="a4m-station__member-doc">The first-packet homogeneous estimate follows from the actual constructed coordinate evolution. Its coefficient is bounded by the source deformation and its first time derivative; determinant one supplies the inverse bound. The resulting forward budget has constant profile one and propagator cost two.</p></li>
+</ul>
+</section>
+<section class="a4m-station__group" data-a4m-family="Other">
+<h2 class="a4m-station__family">Other</h2>
+<ul class="a4m-station__members">
+  <li class="a4m-station__member" data-a4m-member="Euler.ParentHomogeneousPacketLowBounds"><span class="a4m-station__member-name">ParentHomogeneousPacketLowBounds</span><span class="a4m-station__member-path">Euler.ParentHomogeneousPacketLowBounds</span><p class="a4m-station__member-doc">Exact low-order propagation for the first homogeneous packet, whose amplitude is delta times the desired initial shear.</p></li>
+  <li class="a4m-station__member" data-a4m-member="Euler.ShortTimeLinearGrowth"><span class="a4m-station__member-name">ShortTimeLinearGrowth</span><span class="a4m-station__member-path">Euler.ShortTimeLinearGrowth</span><p class="a4m-station__member-doc">A short-interval estimate for actual differentiable trajectories. The proof uses the supremum norm and the mean value inequality, so the constant is two under the stated smallness condition.</p></li>
+</ul>
+</section>
+<p class="a4m-station__nav"><a class="a4m-station__nav-link" href="60.html" data-a4m-nav="prev">← Previous 60 · PacketForwardChildLowBounds</a>
+<a class="a4m-station__nav-link" href="index.html" data-a4m-nav="outline">Back to outline</a>
+<a class="a4m-station__nav-link" href="62.html" data-a4m-nav="next">Next 62 · BasePacketLowBounds →</a></p>
+</main>
+</body>
+</html>
