@@ -6,6 +6,9 @@ cache/
 # 依赖
 node_modules/
 
+# 本地工作材料（设计依据、文献、探针数据）——不进公开仓库
+notes/
+
 # 临时脚手架与归档
 out/archive/
 out/verify/

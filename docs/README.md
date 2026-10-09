@@ -15,8 +15,8 @@
 | [plan-v1.0.md](../plan-v1.0.md) | 研究记录 — 判据 `RD@K` 的推导与实测 | 想知道"为什么这样定"时 |
 | [decisions.md](../decisions.md) | 决策记录 D1–D8 | 想知道"谁拍过板"时 |
 | [pilot/report-m1.md](../pilot/report-m1.md) | 实验报告 — K0 判据可行性 | 想知道"判据成立吗"时 |
-| [ai4math-annotator-prerequisites.md](../../ai4math-annotator-prerequisites.md) | 前置侦察 v0.1（背景，部分机制已过时） | 查环境事实与外部接口 |
-| [ai4math-annotator-dev-plan-v2.md](../../ai4math-annotator-dev-plan-v2.md) | 设计依据 v2.1 — 注解类型学的文献来源 | 查 Thurston/Tao/Gowers/Dyson 那条线 |
+| [ai4math-annotator-prerequisites.md](../notes/ai4math-annotator-prerequisites.md) | 前置侦察 v0.1（背景，部分机制已过时） | 查环境事实与外部接口 |
+| [ai4math-annotator-dev-plan-v2.md](../notes/ai4math-annotator-dev-plan-v2.md) | 设计依据 v2.1 — 注解类型学的文献来源 | 查 Thurston/Tao/Gowers/Dyson 那条线 |
 
 **权威顺序**：`SPEC.md` > `ARCHITECTURE.md` > `plan-v1.0.md` > 其余（背景）。
 

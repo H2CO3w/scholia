@@ -3,7 +3,7 @@
 > **文档地位**：**规范性文档（normative）**。命名、数据契约、校验规则、分层约束以本文为准；与本文冲突的其他文档以本文为准。
 > **版本**：`spec_version = 1.4.0`
 > **日期**：2026-10-07
-> **上游依据**：[plan-v1.0.md](../plan-v1.0.md)（数据模型与三轴可信度）、[decisions.md](../decisions.md)（D1–D8 已拍板）、[../ai4math-annotator-dev-plan-v2.md](../../ai4math-annotator-dev-plan-v2.md)（注解类型学）
+> **上游依据**：[plan-v1.0.md](../plan-v1.0.md)（数据模型与三轴可信度）、[decisions.md](../decisions.md)（D1–D8 已拍板）、[../ai4math-annotator-dev-plan-v2.md](../notes/ai4math-annotator-dev-plan-v2.md)（注解类型学）
 > **配套**：[ARCHITECTURE.md](./ARCHITECTURE.md)（架构）、[README.md](./README.md)（文档地图）
 
 ---
@@ -17,7 +17,7 @@
 | **SPEC.md（本文）** | 规范 | 命名 / 字段 / 枚举 / 校验规则 / 分层约束 |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | 描述 | 模块划分 / 数据流 / 打包 / 扩展点 |
 | [plan-v1.0.md](../plan-v1.0.md) | 背景与研究记录 | 判据（`RD@K`）的推导与实测 |
-| [dev-plan-v2.md](../../ai4math-annotator-dev-plan-v2.md) | 背景与设计依据 | 注解类型学的文献依据 |
+| [dev-plan-v2.md](../notes/ai4math-annotator-dev-plan-v2.md) | 背景与设计依据 | 注解类型学的文献依据 |
 
 ### 0.2 两条设计谱系的合并
 
